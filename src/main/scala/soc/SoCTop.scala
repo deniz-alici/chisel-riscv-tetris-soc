@@ -32,7 +32,7 @@ class SoCTop extends Module {
   // sw/program.hex dosyasından başlatılacak
   val rom = SyncReadMem(4096, UInt(32.W))
   // Chisel 6.0.0 uyumlu hex yükleme (Verilog sentezinde BRAM initialization olur)
-  chisel3.util.experimental.loadMemoryFromFile(rom, "sw/program.hex")
+  chisel3.util.experimental.loadMemoryFromFile(rom, "program.hex")
 
   // ROM Okuma (Instruction Fetch)
   // pc adresi 4 byte hizalıdır, bu yüzden 2 bit sağa kaydırarak word indeksini alıyoruz

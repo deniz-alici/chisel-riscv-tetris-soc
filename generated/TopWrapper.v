@@ -136,11 +136,26 @@ module TopWrapper (
     );
 
     // =========================================================================
-    // 4. HDMI Clock Output via Differential Buffer
-    // DVI/HDMI specifications allow outputting the pixel clock directly
+    // 4. HDMI Clock Output via ODDR (Phase-Aligned to Data)
     // =========================================================================
+    wire hdmi_clk_out;
+    
+    ODDR #(
+        .DDR_CLK_EDGE("SAME_EDGE"), 
+        .INIT(1'b0),    
+        .SRTYPE("SYNC") 
+    ) ODDR_hdmi_clk (
+        .Q(hdmi_clk_out),   
+        .C(clk_25m),   
+        .CE(1'b1), 
+        .D1(1'b1), 
+        .D2(1'b0), 
+        .R(1'b0),   
+        .S(1'b0)    
+    );
+
     OBUFDS hdmi_clk_buf (
-        .I  (clk_25m),
+        .I  (hdmi_clk_out),
         .O  (hdmi_tx_clk_p),
         .OB (hdmi_tx_clk_n)
     );
