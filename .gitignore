@@ -1,0 +1,34 @@
+# Scala / SBT outputs
+target/
+project/project/
+project/target/
+lib_managed/
+src_managed/
+project/src_managed/
+.history
+.sbt-server-status
+.bsp/
+.metals/
+.ammonite/
+out/
+
+# IDE/Editor outputs
+.idea/
+.vscode/
+*.class
+*.log
+
+# Vivado / FPGA outputs
+*.jou
+*.log
+.Xil/
+write_bitstream.log
+vivado*.str
+vivado*.jou
+vivado*.log
+
+# Generated hardware files
+*.v
+*.sv
+*.fir
+*.anno.json
