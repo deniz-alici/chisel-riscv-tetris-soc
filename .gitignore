@@ -20,15 +20,19 @@ out/
 
 # Vivado / FPGA outputs
 *.jou
-*.log
 .Xil/
-write_bitstream.log
 vivado*.str
-vivado*.jou
-vivado*.log
+vivado_project/
 
-# Generated hardware files
-*.v
-*.sv
-*.fir
-*.anno.json
+# Chisel intermediate outputs (root level only)
+/*.fir
+/*.anno.json
+
+# Compiled C outputs (keep program.hex)
+sw/*.o
+sw/*.elf
+sw/*.bin
+
+# OS files
+.DS_Store
+Thumbs.db
