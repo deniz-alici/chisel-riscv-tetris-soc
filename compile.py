@@ -1,6 +1,7 @@
 import subprocess
 import os
 import sys
+import shutil
 
 def convert_bin_to_hex(bin_file, hex_file):
     if not os.path.exists(bin_file):
@@ -28,19 +29,41 @@ def convert_bin_to_hex(bin_file, hex_file):
         sys.exit(1)
 
 def main():
-    toolchain_dir = r"C:\Users\deniz\OneDrive\Masaüstü\tübitak_uzay\riscv-toolchain"
     gcc_path = None
     objcopy_path = None
-    
-    # riscv-none-elf-gcc.exe dosyasini tara
-    for root, dirs, files in os.walk(toolchain_dir):
-        if "riscv-none-elf-gcc.exe" in files:
-            gcc_path = os.path.join(root, "riscv-none-elf-gcc.exe")
-            objcopy_path = os.path.join(root, "riscv-none-elf-objcopy.exe")
+
+    # 1) Once PATH'te bir RISC-V gcc ara (WSL chipyard: riscv64-unknown-elf-gcc,
+    #    Windows xpack: riscv-none-elf-gcc). Boylece sabit yola bagimli degiliz.
+    for prefix in ("riscv64-unknown-elf-", "riscv-none-elf-", "riscv32-unknown-elf-"):
+        found = shutil.which(prefix + "gcc")
+        if found:
+            gcc_path = found
+            objcopy_path = shutil.which(prefix + "objcopy")
             break
-            
+
+    # 2) PATH'te yoksa, bilinen kurulum dizinlerini tara (son care)
+    if not gcc_path:
+        fallback_dirs = [
+            r"C:\Users\deniz\OneDrive\Masaüstü\tübitak_uzay\riscv-toolchain",
+        ]
+        for toolchain_dir in fallback_dirs:
+            if not os.path.isdir(toolchain_dir):
+                continue
+            for root, dirs, files in os.walk(toolchain_dir):
+                for gcc_name in ("riscv-none-elf-gcc.exe", "riscv64-unknown-elf-gcc"):
+                    if gcc_name in files:
+                        gcc_path = os.path.join(root, gcc_name)
+                        objcopy_path = gcc_path.replace("gcc", "objcopy")
+                        break
+                if gcc_path:
+                    break
+            if gcc_path:
+                break
+
     if not gcc_path or not os.path.exists(gcc_path):
-        print("Hata: riscv-none-elf-gcc.exe bulunamadi! Lutfen toolchain kurulumunu kontrol edin.")
+        print("Hata: RISC-V gcc bulunamadi!")
+        print("  - WSL'de: 'source ~/chipyard/env.sh' ile riscv64-unknown-elf-gcc PATH'e gelir.")
+        print("  - Windows'ta: riscv-none-elf-gcc.exe (xpack) PATH'te olmali veya kurulum dizinini ekleyin.")
         sys.exit(1)
         
     print(f"Derleyici bulundu: {gcc_path}")
@@ -56,6 +79,7 @@ def main():
         "-T", "sw/link.ld",
         "sw/boot.S",
         "sw/main.c",
+        "sw/libgcc_min.c",   # RV32I icin __divsi3/__mulsi3 vb. (libgcc yerine)
         "-o", "sw/program.elf"
     ]
     res = subprocess.run(cmd_compile)

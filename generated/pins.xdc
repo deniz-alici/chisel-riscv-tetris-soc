@@ -8,8 +8,10 @@ set_property -dict { PACKAGE_PIN R4    IOSTANDARD LVCMOS33 } [get_ports { sys_cl
 create_clock -period 10.000 -name sys_clk [get_ports sys_clk]
 
 ## ---- UART ----
-set_property -dict { PACKAGE_PIN AA19  IOSTANDARD LVCMOS33 } [get_ports { uart_rx }]
-set_property -dict { PACKAGE_PIN V18   IOSTANDARD LVCMOS33 } [get_ports { uart_tx }]
+## Nexys Video: FPGA TX (uart_tx) -> AA19 (kopru RX'i), FPGA RX (uart_rx) -> V18 (kopru TX'i)
+## (Onceki surumde TX/RX pinleri terstu; bu yuzden host hicbir sey duymuyordu.)
+set_property -dict { PACKAGE_PIN V18   IOSTANDARD LVCMOS33 } [get_ports { uart_rx }]
+set_property -dict { PACKAGE_PIN AA19  IOSTANDARD LVCMOS33 } [get_ports { uart_tx }]
 
 ## ---- LEDs ----
 set_property -dict { PACKAGE_PIN T14   IOSTANDARD LVCMOS25 } [get_ports { led[0] }]
@@ -22,11 +24,12 @@ set_property -dict { PACKAGE_PIN W15   IOSTANDARD LVCMOS25 } [get_ports { led[6]
 set_property -dict { PACKAGE_PIN Y13   IOSTANDARD LVCMOS25 } [get_ports { led[7] }]
 
 ## ---- Buttons ----
-set_property -dict { PACKAGE_PIN B22   IOSTANDARD LVCMOS12 } [get_ports { btn[0] }] ;# btnC (Center) - Tetromino Döndür
-set_property -dict { PACKAGE_PIN C22   IOSTANDARD LVCMOS12 } [get_ports { btn[1] }] ;# btnL (Left)   - Sola Hareket
-set_property -dict { PACKAGE_PIN B21   IOSTANDARD LVCMOS12 } [get_ports { btn[2] }] ;# btnR (Right)  - Sağa Hareket
-set_property -dict { PACKAGE_PIN D21   IOSTANDARD LVCMOS12 } [get_ports { btn[3] }] ;# btnD (Down)   - Hızlı Düşür
-set_property -dict { PACKAGE_PIN D22   IOSTANDARD LVCMOS12 } [get_ports { btn[4] }] ;# btnU (Up)     - Sıfırla
+## Nexys Video buton pinleri (Digilent master XDC ile birebir)
+set_property -dict { PACKAGE_PIN B22   IOSTANDARD LVCMOS12 } [get_ports { btn[0] }] ;# btnC (Center, B22) - Tetromino Döndür
+set_property -dict { PACKAGE_PIN C22   IOSTANDARD LVCMOS12 } [get_ports { btn[1] }] ;# btnL (Left,   C22) - Sola Hareket
+set_property -dict { PACKAGE_PIN D14   IOSTANDARD LVCMOS12 } [get_ports { btn[2] }] ;# btnR (Right,  D14) - Sağa Hareket
+set_property -dict { PACKAGE_PIN D22   IOSTANDARD LVCMOS12 } [get_ports { btn[3] }] ;# btnD (Down,   D22) - Hızlı Düşür
+set_property -dict { PACKAGE_PIN F15   IOSTANDARD LVCMOS12 } [get_ports { btn[4] }] ;# btnU (Up,     F15) - Sıfırla
 
 ## ---- HDMI TX (Output to Monitor) ----
 ## TMDS Clock

@@ -36,10 +36,22 @@ puts "============================================"
 puts " ADIM 2: Kaynak dosyalari ekleniyor..."
 puts "============================================"
 
+# ⭐ ROM init yolunu MUTLAKLAŞTIR (portatif): bağıl "program.hex" Vivado sentez
+# çalışma dizininde bulunamıyor (CRITICAL WARNING -> ROM boş). Build anında [pwd]'den
+# mutlak yola çeviriyoruz; böylece kaynak bağıl kalır, her makinede yerel yol kullanılır.
+set svfile "$generated_dir/SoCTop.sv"
+if {[file exists $svfile]} {
+    set fp [open $svfile r]; set c [read $fp]; close $fp
+    set c [string map [list "\$readmemh(\"program.hex\"" "\$readmemh(\"$sw_dir/program.hex\""] $c]
+    set fp [open $svfile w]; puts -nonewline $fp $c; close $fp
+    puts "ROM init yolu mutlaklastirildi: $sw_dir/program.hex"
+}
+
 # SystemVerilog / Verilog kaynak dosyaları
+# NOT: SoCTop.sv kendi kendine yeterlidir (Core + tüm alt modülleri içerir).
+# Core.sv fazlalıktır; eklenirse "module Core" çift tanımlanır -> bu yüzden eklenmiyor.
 add_files -norecurse [list \
     "$generated_dir/SoCTop.sv" \
-    "$generated_dir/Core.sv" \
     "$generated_dir/TopWrapper.v" \
     "$generated_dir/tmds_channel_encoder.v" \
 ]
@@ -52,6 +64,11 @@ add_files -fileset constrs_1 -norecurse "$generated_dir/pins.xdc"
 
 # Top modülü ayarla
 set_property top TopWrapper [current_fileset]
+
+# ⭐ KRİTİK: ROM/BRAM init ($readmemh) firtool tarafından `ifndef SYNTHESIS arkasına
+# konur (sadece-simülasyon). Sentezde de çalışıp ROM'u gerçekten initialize etmesi için
+# ENABLE_INITIAL_MEM_ makrosunu tanımlıyoruz. Bu olmazsa kartta ROM BOŞ kalır (siyah ekran).
+set_property verilog_define {ENABLE_INITIAL_MEM_} [current_fileset]
 
 # Dosyaları güncelle
 update_compile_order -fileset sources_1

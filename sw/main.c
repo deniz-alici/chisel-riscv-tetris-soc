@@ -108,6 +108,18 @@ int modulo(int a, int b) {
     return a;
 }
 
+// 7 tetromino tipi için EŞİT olasılıklı (uniform) rastgele seçim.
+// Rejection sampling ile mod-7 sapması kaldırılır -> her blok aynı olasılıkta.
+// LCG'nin en rastgele biti olan üst baytı kullanır.
+int rand_tetromino() {
+    unsigned int r;
+    do {
+        rand_state = rand_state * 1103515245u + 12345u;
+        r = (rand_state >> 24) & 0xFFu;     // üst bayt: 0..255
+    } while (r >= 252u);                     // 252 = 7*36 -> 0..251 uniform
+    return modulo((int)r, 7);                // uniform 0..6
+}
+
 // Sayıyı desimal olarak UART'a yazdır
 void uart_print_num(int n) {
     if (n == 0) {
@@ -572,7 +584,7 @@ void clear_lines() {
 // Yeni tetromino üret
 void spawn_new_tetromino() {
     current_type = next_type;
-    next_type = modulo(my_rand(), 7);
+    next_type = rand_tetromino();        // eşit olasılıklı yeni blok
     current_rotation = 0;
     current_x = 3;
     current_y = 0;
@@ -587,7 +599,7 @@ void reset_game() {
     }
     score = 0;
     lines_cleared = 0;
-    next_type = modulo(my_rand(), 7);
+    next_type = rand_tetromino();        // eşit olasılıklı ilk blok
     spawn_new_tetromino();
     clear_screen(COLOR_BLACK);
 }
@@ -680,9 +692,9 @@ int main() {
             uart_puts("Oyun sifirlandi!\r\n");
         }
 
-        // --- Yerçekimi (otomatik düşüş) ---
+        // --- Yerçekimi (otomatik düşüş) --- daha hızlı düşüş için eşik düşürüldü
         ticks++;
-        if (ticks >= 20) {
+        if (ticks >= 4) {
             ticks = 0;
             if (!check_collision(current_x, current_y + 1, current_rotation)) {
                 current_y++;
@@ -701,9 +713,9 @@ int main() {
             }
         }
 
-        // --- Ekranı yeniden çiz ---
+        // --- Ekranı yeniden çiz --- daha hızlı tempo (blok geçişleri hızlı)
         redraw_game();
-        delay(30000);
+        delay(10000);
     }
 
     return 0;

@@ -15,24 +15,39 @@ SECTIONS
     _text_end = .;
   } > rom
 
-  /* Salt Okunur Sabitler (ROM) */
+  /* Salt Okunur Sabitler (ROM). RISC-V küçük salt-okunur veriyi .srodata'ya koyar. */
   .rodata : {
     *(.rodata)
     *(.rodata.*)
+    *(.srodata)
+    *(.srodata.*)
   } > rom
 
-  /* Başlangıç değeri atanmış değişkenler (ROM'da saklanır, RAM'e kopyalanmazsa doğrudan ROM'dan da okunabilir) */
-  .data : {
+  /* Başlangıç değeri atanmış değişkenler:
+     VMA = RAM (çalışma anında buradan okunur), LMA = ROM (görüntü burada saklanır).
+     boot.S içindeki crt0, _data_rom -> _data_start arası baytları RAM'e kopyalar. */
+  .data : ALIGN(4) {
+    _data_start = .;
     *(.data)
     *(.data.*)
+    *(.sdata)       /* RISC-V küçük başlangıç değerli globaller (current_x, rand_state...) */
+    *(.sdata.*)
+    . = ALIGN(4);
+    _data_end = .;
   } > ram AT > rom
+  /* .data bölümünün ROM'daki yükleme adresi (kopyalama kaynağı) */
+  _data_rom = LOADADDR(.data);
 
   /* Başlangıç değeri atanmamış değişkenler (BSS - RAM) */
-  .bss : {
+  .bss : ALIGN(4) {
     _bss_start = .;
+    *(.sbss)        /* RISC-V küçük sıfır-init globaller (game_state, score, current_y...) */
+    *(.sbss.*)
+    *(.scommon)
     *(.bss)
     *(.bss.*)
     *(COMMON)
+    . = ALIGN(4);
     _bss_end = .;
   } > ram
 

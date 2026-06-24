@@ -30,9 +30,15 @@ class SoCTop extends Module {
 
   // 2. ROM (BUYRUK BELLEĞİ) - 16 KB (4096 Word x 32-bit)
   // sw/program.hex dosyasından başlatılacak
+  // SENKRON BRAM (SyncReadMem): bitstream'de $readmemh ile GÜVENİLİR initialize olur
+  // (distributed RAM/Mem init bitstream'e işlenmiyordu). CPU multi-cycle olduğu için
+  // 1-cycle okuma gecikmesi sorun değil (fetch/exec/mem FSM'i bunu yönetiyor).
   val rom = SyncReadMem(4096, UInt(32.W))
-  // Chisel 6.0.0 uyumlu hex yükleme (Verilog sentezinde BRAM initialization olur)
-  chisel3.util.experimental.loadMemoryFromFile(rom, "program.hex")
+  // ROM init: inline $readmemh (BRAM init). Asıl düzeltme vivado_build.tcl'deki
+  // ENABLE_INITIAL_MEM_ makrosudur (yoksa firtool bunu `ifndef SYNTHESIS arkasına koyup
+  // sentezde dışlıyordu -> ROM boş kalıyordu). Yol bağıl: Vivado, add_files ile eklenen
+  // program.hex'i kaynak dizinlerinde arar.
+  chisel3.util.experimental.loadMemoryFromFileInline(rom, "program.hex")
 
   // ROM Okuma (Instruction Fetch)
   // pc adresi 4 byte hizalıdır, bu yüzden 2 bit sağa kaydırarak word indeksini alıyoruz
@@ -41,13 +47,14 @@ class SoCTop extends Module {
 
   // 3. RAM (VERİ BELLEĞİ) - 16 KB (4096 Word x 4 Byte)
   // Byte bazlı yazmayı (maske) desteklemek için Vec(4, UInt(8.W)) kullanıyoruz
-  val ram = SyncReadMem(4096, Vec(4, UInt(8.W)))
+  val ram = SyncReadMem(4096, Vec(4, UInt(8.W)))   // senkron BRAM (multi-cycle CPU yönetir)
 
   // 4. ADRES ÇÖZÜMLEME VE BARA YÖNLENDİRME (MEMORY MAPPER)
   val memAddr = cpu.io.memAddr
   
   // Bölgelerin Belirlenmesi
   // Büyük sayıların Scala tarafından negatif olarak algılanmasını önlemek için Long (L) kullanıyoruz
+  val isRom   = memAddr < 0x00004000.U                              // 0-16KB ROM (komut + .rodata/.data sabitleri)
   val isRam   = memAddr >= 0x00004000.U && memAddr < 0x00008000.U // 16KB - 32KB arası RAM
   val isGpio  = memAddr >= 0x80000000L.U && memAddr < 0x80000010L.U // GPIO MMIO
   val isUart  = memAddr >= 0x80000010L.U && memAddr < 0x80000020L.U // UART MMIO
@@ -66,8 +73,14 @@ class SoCTop extends Module {
     ram.write(ramWordAddr, ramWriteDataVec, cpu.io.memWriteMask.asBools)
   }
   
-  val ramReadDataVec = ram.read(ramWordAddr, cpu.io.memReadEnable && isRam)
+  val ramReadDataVec = ram.read(ramWordAddr, cpu.io.memReadEnable && isRam)   // senkron okuma
   val ramReadData    = ramReadDataVec.asUInt
+
+  // ROM Veri Okuma Portu (ikinci okuma portu - Port B)
+  // CPU'nun .rodata sabitlerini (tetromino_colors, tetrominoes, digit_bitmaps...)
+  // ve crt0'nın .data başlangıç değerlerini ROM'dan okuyabilmesi için gerekli.
+  // (Komut portu yukarıda; SyncReadMem çift-port BRAM'e sentezlenir.)
+  val romReadData = rom.read(memAddr(13, 2), cpu.io.memReadEnable && isRom)   // senkron okuma
 
   // GPIO Bağlantıları
   gpio.io.addr        := memAddr
@@ -89,6 +102,7 @@ class SoCTop extends Module {
   hdmi.io.addr        := memAddr
   hdmi.io.writeData   := cpu.io.memWriteData
   hdmi.io.writeEnable := cpu.io.memWriteEnable && isHdmi
+  hdmi.io.writeMask   := cpu.io.memWriteMask
   
   // HDMI Framebuffer (Port B - Video Okuma ve Zamanlama)
   hdmi.io.pixelClk    := io.videoPixelClk
@@ -100,7 +114,8 @@ class SoCTop extends Module {
   // 5. İŞLEMCİ OKUMA VERİSİ MUX'I
   // İşlemci bellekten veri okumak istediğinde adres bölgesine göre veri döndürülür
   cpu.io.memReadData := Mux(isRam, ramReadData,
-                          Mux(isGpio, gpio.io.readData,
-                            Mux(isUart, uart.io.readData, 
-                              0.U(32.W))))
+                          Mux(isRom, romReadData,
+                            Mux(isGpio, gpio.io.readData,
+                              Mux(isUart, uart.io.readData,
+                                0.U(32.W)))))
 }

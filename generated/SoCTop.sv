@@ -55,50 +55,50 @@
   `endif // not def ENABLE_INITIAL_MEM_
 `endif // not def SYNTHESIS
 
-module RegisterFile(	// \\src\\main\\scala\\RegisterFile.scala:5:7
-  input         clock,	// <stdin>:52:11
-                reset,	// <stdin>:53:11
-  input  [4:0]  io_rs1Addr,	// \\src\\main\\scala\\RegisterFile.scala:6:14
-                io_rs2Addr,	// \\src\\main\\scala\\RegisterFile.scala:6:14
-                io_rdAddr,	// \\src\\main\\scala\\RegisterFile.scala:6:14
-  input  [31:0] io_writeData,	// \\src\\main\\scala\\RegisterFile.scala:6:14
-  input         io_writeEnable,	// \\src\\main\\scala\\RegisterFile.scala:6:14
-  output [31:0] io_rs1Data,	// \\src\\main\\scala\\RegisterFile.scala:6:14
-                io_rs2Data	// \\src\\main\\scala\\RegisterFile.scala:6:14
+module RegisterFile(	// src/main/scala/RegisterFile.scala:5:7
+  input         clock,	// <stdin>:51:11
+                reset,	// <stdin>:52:11
+  input  [4:0]  io_rs1Addr,	// src/main/scala/RegisterFile.scala:6:14
+                io_rs2Addr,	// src/main/scala/RegisterFile.scala:6:14
+                io_rdAddr,	// src/main/scala/RegisterFile.scala:6:14
+  input  [31:0] io_writeData,	// src/main/scala/RegisterFile.scala:6:14
+  input         io_writeEnable,	// src/main/scala/RegisterFile.scala:6:14
+  output [31:0] io_rs1Data,	// src/main/scala/RegisterFile.scala:6:14
+                io_rs2Data	// src/main/scala/RegisterFile.scala:6:14
 );
 
-  reg  [31:0]       regs_0;	// \\src\\main\\scala\\RegisterFile.scala:18:21
-  reg  [31:0]       regs_1;	// \\src\\main\\scala\\RegisterFile.scala:18:21
-  reg  [31:0]       regs_2;	// \\src\\main\\scala\\RegisterFile.scala:18:21
-  reg  [31:0]       regs_3;	// \\src\\main\\scala\\RegisterFile.scala:18:21
-  reg  [31:0]       regs_4;	// \\src\\main\\scala\\RegisterFile.scala:18:21
-  reg  [31:0]       regs_5;	// \\src\\main\\scala\\RegisterFile.scala:18:21
-  reg  [31:0]       regs_6;	// \\src\\main\\scala\\RegisterFile.scala:18:21
-  reg  [31:0]       regs_7;	// \\src\\main\\scala\\RegisterFile.scala:18:21
-  reg  [31:0]       regs_8;	// \\src\\main\\scala\\RegisterFile.scala:18:21
-  reg  [31:0]       regs_9;	// \\src\\main\\scala\\RegisterFile.scala:18:21
-  reg  [31:0]       regs_10;	// \\src\\main\\scala\\RegisterFile.scala:18:21
-  reg  [31:0]       regs_11;	// \\src\\main\\scala\\RegisterFile.scala:18:21
-  reg  [31:0]       regs_12;	// \\src\\main\\scala\\RegisterFile.scala:18:21
-  reg  [31:0]       regs_13;	// \\src\\main\\scala\\RegisterFile.scala:18:21
-  reg  [31:0]       regs_14;	// \\src\\main\\scala\\RegisterFile.scala:18:21
-  reg  [31:0]       regs_15;	// \\src\\main\\scala\\RegisterFile.scala:18:21
-  reg  [31:0]       regs_16;	// \\src\\main\\scala\\RegisterFile.scala:18:21
-  reg  [31:0]       regs_17;	// \\src\\main\\scala\\RegisterFile.scala:18:21
-  reg  [31:0]       regs_18;	// \\src\\main\\scala\\RegisterFile.scala:18:21
-  reg  [31:0]       regs_19;	// \\src\\main\\scala\\RegisterFile.scala:18:21
-  reg  [31:0]       regs_20;	// \\src\\main\\scala\\RegisterFile.scala:18:21
-  reg  [31:0]       regs_21;	// \\src\\main\\scala\\RegisterFile.scala:18:21
-  reg  [31:0]       regs_22;	// \\src\\main\\scala\\RegisterFile.scala:18:21
-  reg  [31:0]       regs_23;	// \\src\\main\\scala\\RegisterFile.scala:18:21
-  reg  [31:0]       regs_24;	// \\src\\main\\scala\\RegisterFile.scala:18:21
-  reg  [31:0]       regs_25;	// \\src\\main\\scala\\RegisterFile.scala:18:21
-  reg  [31:0]       regs_26;	// \\src\\main\\scala\\RegisterFile.scala:18:21
-  reg  [31:0]       regs_27;	// \\src\\main\\scala\\RegisterFile.scala:18:21
-  reg  [31:0]       regs_28;	// \\src\\main\\scala\\RegisterFile.scala:18:21
-  reg  [31:0]       regs_29;	// \\src\\main\\scala\\RegisterFile.scala:18:21
-  reg  [31:0]       regs_30;	// \\src\\main\\scala\\RegisterFile.scala:18:21
-  reg  [31:0]       regs_31;	// \\src\\main\\scala\\RegisterFile.scala:18:21
+  reg  [31:0]       regs_0;	// src/main/scala/RegisterFile.scala:18:21
+  reg  [31:0]       regs_1;	// src/main/scala/RegisterFile.scala:18:21
+  reg  [31:0]       regs_2;	// src/main/scala/RegisterFile.scala:18:21
+  reg  [31:0]       regs_3;	// src/main/scala/RegisterFile.scala:18:21
+  reg  [31:0]       regs_4;	// src/main/scala/RegisterFile.scala:18:21
+  reg  [31:0]       regs_5;	// src/main/scala/RegisterFile.scala:18:21
+  reg  [31:0]       regs_6;	// src/main/scala/RegisterFile.scala:18:21
+  reg  [31:0]       regs_7;	// src/main/scala/RegisterFile.scala:18:21
+  reg  [31:0]       regs_8;	// src/main/scala/RegisterFile.scala:18:21
+  reg  [31:0]       regs_9;	// src/main/scala/RegisterFile.scala:18:21
+  reg  [31:0]       regs_10;	// src/main/scala/RegisterFile.scala:18:21
+  reg  [31:0]       regs_11;	// src/main/scala/RegisterFile.scala:18:21
+  reg  [31:0]       regs_12;	// src/main/scala/RegisterFile.scala:18:21
+  reg  [31:0]       regs_13;	// src/main/scala/RegisterFile.scala:18:21
+  reg  [31:0]       regs_14;	// src/main/scala/RegisterFile.scala:18:21
+  reg  [31:0]       regs_15;	// src/main/scala/RegisterFile.scala:18:21
+  reg  [31:0]       regs_16;	// src/main/scala/RegisterFile.scala:18:21
+  reg  [31:0]       regs_17;	// src/main/scala/RegisterFile.scala:18:21
+  reg  [31:0]       regs_18;	// src/main/scala/RegisterFile.scala:18:21
+  reg  [31:0]       regs_19;	// src/main/scala/RegisterFile.scala:18:21
+  reg  [31:0]       regs_20;	// src/main/scala/RegisterFile.scala:18:21
+  reg  [31:0]       regs_21;	// src/main/scala/RegisterFile.scala:18:21
+  reg  [31:0]       regs_22;	// src/main/scala/RegisterFile.scala:18:21
+  reg  [31:0]       regs_23;	// src/main/scala/RegisterFile.scala:18:21
+  reg  [31:0]       regs_24;	// src/main/scala/RegisterFile.scala:18:21
+  reg  [31:0]       regs_25;	// src/main/scala/RegisterFile.scala:18:21
+  reg  [31:0]       regs_26;	// src/main/scala/RegisterFile.scala:18:21
+  reg  [31:0]       regs_27;	// src/main/scala/RegisterFile.scala:18:21
+  reg  [31:0]       regs_28;	// src/main/scala/RegisterFile.scala:18:21
+  reg  [31:0]       regs_29;	// src/main/scala/RegisterFile.scala:18:21
+  reg  [31:0]       regs_30;	// src/main/scala/RegisterFile.scala:18:21
+  reg  [31:0]       regs_31;	// src/main/scala/RegisterFile.scala:18:21
   wire [31:0][31:0] _GEN =
     {{regs_31},
      {regs_30},
@@ -131,186 +131,186 @@ module RegisterFile(	// \\src\\main\\scala\\RegisterFile.scala:5:7
      {regs_3},
      {regs_2},
      {regs_1},
-     {regs_0}};	// \\src\\main\\scala\\RegisterFile.scala:18:21, :26:20
-  always @(posedge clock) begin	// <stdin>:52:11
-    if (reset) begin	// <stdin>:52:11
-      regs_0 <= 32'h0;	// \\src\\main\\scala\\RegisterFile.scala:18:{21,29}
-      regs_1 <= 32'h0;	// \\src\\main\\scala\\RegisterFile.scala:18:{21,29}
-      regs_2 <= 32'h0;	// \\src\\main\\scala\\RegisterFile.scala:18:{21,29}
-      regs_3 <= 32'h0;	// \\src\\main\\scala\\RegisterFile.scala:18:{21,29}
-      regs_4 <= 32'h0;	// \\src\\main\\scala\\RegisterFile.scala:18:{21,29}
-      regs_5 <= 32'h0;	// \\src\\main\\scala\\RegisterFile.scala:18:{21,29}
-      regs_6 <= 32'h0;	// \\src\\main\\scala\\RegisterFile.scala:18:{21,29}
-      regs_7 <= 32'h0;	// \\src\\main\\scala\\RegisterFile.scala:18:{21,29}
-      regs_8 <= 32'h0;	// \\src\\main\\scala\\RegisterFile.scala:18:{21,29}
-      regs_9 <= 32'h0;	// \\src\\main\\scala\\RegisterFile.scala:18:{21,29}
-      regs_10 <= 32'h0;	// \\src\\main\\scala\\RegisterFile.scala:18:{21,29}
-      regs_11 <= 32'h0;	// \\src\\main\\scala\\RegisterFile.scala:18:{21,29}
-      regs_12 <= 32'h0;	// \\src\\main\\scala\\RegisterFile.scala:18:{21,29}
-      regs_13 <= 32'h0;	// \\src\\main\\scala\\RegisterFile.scala:18:{21,29}
-      regs_14 <= 32'h0;	// \\src\\main\\scala\\RegisterFile.scala:18:{21,29}
-      regs_15 <= 32'h0;	// \\src\\main\\scala\\RegisterFile.scala:18:{21,29}
-      regs_16 <= 32'h0;	// \\src\\main\\scala\\RegisterFile.scala:18:{21,29}
-      regs_17 <= 32'h0;	// \\src\\main\\scala\\RegisterFile.scala:18:{21,29}
-      regs_18 <= 32'h0;	// \\src\\main\\scala\\RegisterFile.scala:18:{21,29}
-      regs_19 <= 32'h0;	// \\src\\main\\scala\\RegisterFile.scala:18:{21,29}
-      regs_20 <= 32'h0;	// \\src\\main\\scala\\RegisterFile.scala:18:{21,29}
-      regs_21 <= 32'h0;	// \\src\\main\\scala\\RegisterFile.scala:18:{21,29}
-      regs_22 <= 32'h0;	// \\src\\main\\scala\\RegisterFile.scala:18:{21,29}
-      regs_23 <= 32'h0;	// \\src\\main\\scala\\RegisterFile.scala:18:{21,29}
-      regs_24 <= 32'h0;	// \\src\\main\\scala\\RegisterFile.scala:18:{21,29}
-      regs_25 <= 32'h0;	// \\src\\main\\scala\\RegisterFile.scala:18:{21,29}
-      regs_26 <= 32'h0;	// \\src\\main\\scala\\RegisterFile.scala:18:{21,29}
-      regs_27 <= 32'h0;	// \\src\\main\\scala\\RegisterFile.scala:18:{21,29}
-      regs_28 <= 32'h0;	// \\src\\main\\scala\\RegisterFile.scala:18:{21,29}
-      regs_29 <= 32'h0;	// \\src\\main\\scala\\RegisterFile.scala:18:{21,29}
-      regs_30 <= 32'h0;	// \\src\\main\\scala\\RegisterFile.scala:18:{21,29}
-      regs_31 <= 32'h0;	// \\src\\main\\scala\\RegisterFile.scala:18:{21,29}
+     {regs_0}};	// src/main/scala/RegisterFile.scala:18:21, :26:20
+  always @(posedge clock) begin	// <stdin>:51:11
+    if (reset) begin	// <stdin>:51:11
+      regs_0 <= 32'h0;	// src/main/scala/RegisterFile.scala:18:{21,29}
+      regs_1 <= 32'h0;	// src/main/scala/RegisterFile.scala:18:{21,29}
+      regs_2 <= 32'h0;	// src/main/scala/RegisterFile.scala:18:{21,29}
+      regs_3 <= 32'h0;	// src/main/scala/RegisterFile.scala:18:{21,29}
+      regs_4 <= 32'h0;	// src/main/scala/RegisterFile.scala:18:{21,29}
+      regs_5 <= 32'h0;	// src/main/scala/RegisterFile.scala:18:{21,29}
+      regs_6 <= 32'h0;	// src/main/scala/RegisterFile.scala:18:{21,29}
+      regs_7 <= 32'h0;	// src/main/scala/RegisterFile.scala:18:{21,29}
+      regs_8 <= 32'h0;	// src/main/scala/RegisterFile.scala:18:{21,29}
+      regs_9 <= 32'h0;	// src/main/scala/RegisterFile.scala:18:{21,29}
+      regs_10 <= 32'h0;	// src/main/scala/RegisterFile.scala:18:{21,29}
+      regs_11 <= 32'h0;	// src/main/scala/RegisterFile.scala:18:{21,29}
+      regs_12 <= 32'h0;	// src/main/scala/RegisterFile.scala:18:{21,29}
+      regs_13 <= 32'h0;	// src/main/scala/RegisterFile.scala:18:{21,29}
+      regs_14 <= 32'h0;	// src/main/scala/RegisterFile.scala:18:{21,29}
+      regs_15 <= 32'h0;	// src/main/scala/RegisterFile.scala:18:{21,29}
+      regs_16 <= 32'h0;	// src/main/scala/RegisterFile.scala:18:{21,29}
+      regs_17 <= 32'h0;	// src/main/scala/RegisterFile.scala:18:{21,29}
+      regs_18 <= 32'h0;	// src/main/scala/RegisterFile.scala:18:{21,29}
+      regs_19 <= 32'h0;	// src/main/scala/RegisterFile.scala:18:{21,29}
+      regs_20 <= 32'h0;	// src/main/scala/RegisterFile.scala:18:{21,29}
+      regs_21 <= 32'h0;	// src/main/scala/RegisterFile.scala:18:{21,29}
+      regs_22 <= 32'h0;	// src/main/scala/RegisterFile.scala:18:{21,29}
+      regs_23 <= 32'h0;	// src/main/scala/RegisterFile.scala:18:{21,29}
+      regs_24 <= 32'h0;	// src/main/scala/RegisterFile.scala:18:{21,29}
+      regs_25 <= 32'h0;	// src/main/scala/RegisterFile.scala:18:{21,29}
+      regs_26 <= 32'h0;	// src/main/scala/RegisterFile.scala:18:{21,29}
+      regs_27 <= 32'h0;	// src/main/scala/RegisterFile.scala:18:{21,29}
+      regs_28 <= 32'h0;	// src/main/scala/RegisterFile.scala:18:{21,29}
+      regs_29 <= 32'h0;	// src/main/scala/RegisterFile.scala:18:{21,29}
+      regs_30 <= 32'h0;	// src/main/scala/RegisterFile.scala:18:{21,29}
+      regs_31 <= 32'h0;	// src/main/scala/RegisterFile.scala:18:{21,29}
     end
-    else begin	// <stdin>:52:11
-      automatic logic _GEN_0 = io_writeEnable & (|io_rdAddr);	// \\src\\main\\scala\\RegisterFile.scala:21:{23,36}
-      if (_GEN_0 & ~(|io_rdAddr))	// \\src\\main\\scala\\RegisterFile.scala:18:21, :21:{23,36,45}, :22:21
-        regs_0 <= io_writeData;	// \\src\\main\\scala\\RegisterFile.scala:18:21
-      if (_GEN_0 & io_rdAddr == 5'h1)	// \\src\\main\\scala\\RegisterFile.scala:5:7, :18:21, :21:{23,45}, :22:21
-        regs_1 <= io_writeData;	// \\src\\main\\scala\\RegisterFile.scala:18:21
-      if (_GEN_0 & io_rdAddr == 5'h2)	// \\src\\main\\scala\\RegisterFile.scala:5:7, :18:21, :21:{23,45}, :22:21
-        regs_2 <= io_writeData;	// \\src\\main\\scala\\RegisterFile.scala:18:21
-      if (_GEN_0 & io_rdAddr == 5'h3)	// \\src\\main\\scala\\RegisterFile.scala:5:7, :18:21, :21:{23,45}, :22:21
-        regs_3 <= io_writeData;	// \\src\\main\\scala\\RegisterFile.scala:18:21
-      if (_GEN_0 & io_rdAddr == 5'h4)	// \\src\\main\\scala\\RegisterFile.scala:5:7, :18:21, :21:{23,45}, :22:21
-        regs_4 <= io_writeData;	// \\src\\main\\scala\\RegisterFile.scala:18:21
-      if (_GEN_0 & io_rdAddr == 5'h5)	// \\src\\main\\scala\\RegisterFile.scala:5:7, :18:21, :21:{23,45}, :22:21
-        regs_5 <= io_writeData;	// \\src\\main\\scala\\RegisterFile.scala:18:21
-      if (_GEN_0 & io_rdAddr == 5'h6)	// \\src\\main\\scala\\RegisterFile.scala:5:7, :18:21, :21:{23,45}, :22:21
-        regs_6 <= io_writeData;	// \\src\\main\\scala\\RegisterFile.scala:18:21
-      if (_GEN_0 & io_rdAddr == 5'h7)	// \\src\\main\\scala\\RegisterFile.scala:5:7, :18:21, :21:{23,45}, :22:21
-        regs_7 <= io_writeData;	// \\src\\main\\scala\\RegisterFile.scala:18:21
-      if (_GEN_0 & io_rdAddr == 5'h8)	// \\src\\main\\scala\\RegisterFile.scala:5:7, :18:21, :21:{23,45}, :22:21
-        regs_8 <= io_writeData;	// \\src\\main\\scala\\RegisterFile.scala:18:21
-      if (_GEN_0 & io_rdAddr == 5'h9)	// \\src\\main\\scala\\RegisterFile.scala:5:7, :18:21, :21:{23,45}, :22:21
-        regs_9 <= io_writeData;	// \\src\\main\\scala\\RegisterFile.scala:18:21
-      if (_GEN_0 & io_rdAddr == 5'hA)	// \\src\\main\\scala\\RegisterFile.scala:5:7, :18:21, :21:{23,45}, :22:21
-        regs_10 <= io_writeData;	// \\src\\main\\scala\\RegisterFile.scala:18:21
-      if (_GEN_0 & io_rdAddr == 5'hB)	// \\src\\main\\scala\\RegisterFile.scala:5:7, :18:21, :21:{23,45}, :22:21
-        regs_11 <= io_writeData;	// \\src\\main\\scala\\RegisterFile.scala:18:21
-      if (_GEN_0 & io_rdAddr == 5'hC)	// \\src\\main\\scala\\RegisterFile.scala:5:7, :18:21, :21:{23,45}, :22:21
-        regs_12 <= io_writeData;	// \\src\\main\\scala\\RegisterFile.scala:18:21
-      if (_GEN_0 & io_rdAddr == 5'hD)	// \\src\\main\\scala\\RegisterFile.scala:5:7, :18:21, :21:{23,45}, :22:21
-        regs_13 <= io_writeData;	// \\src\\main\\scala\\RegisterFile.scala:18:21
-      if (_GEN_0 & io_rdAddr == 5'hE)	// \\src\\main\\scala\\RegisterFile.scala:5:7, :18:21, :21:{23,45}, :22:21
-        regs_14 <= io_writeData;	// \\src\\main\\scala\\RegisterFile.scala:18:21
-      if (_GEN_0 & io_rdAddr == 5'hF)	// \\src\\main\\scala\\RegisterFile.scala:5:7, :18:21, :21:{23,45}, :22:21
-        regs_15 <= io_writeData;	// \\src\\main\\scala\\RegisterFile.scala:18:21
-      if (_GEN_0 & io_rdAddr == 5'h10)	// \\src\\main\\scala\\RegisterFile.scala:5:7, :18:21, :21:{23,45}, :22:21
-        regs_16 <= io_writeData;	// \\src\\main\\scala\\RegisterFile.scala:18:21
-      if (_GEN_0 & io_rdAddr == 5'h11)	// \\src\\main\\scala\\RegisterFile.scala:5:7, :18:21, :21:{23,45}, :22:21
-        regs_17 <= io_writeData;	// \\src\\main\\scala\\RegisterFile.scala:18:21
-      if (_GEN_0 & io_rdAddr == 5'h12)	// \\src\\main\\scala\\RegisterFile.scala:5:7, :18:21, :21:{23,45}, :22:21
-        regs_18 <= io_writeData;	// \\src\\main\\scala\\RegisterFile.scala:18:21
-      if (_GEN_0 & io_rdAddr == 5'h13)	// \\src\\main\\scala\\RegisterFile.scala:5:7, :18:21, :21:{23,45}, :22:21
-        regs_19 <= io_writeData;	// \\src\\main\\scala\\RegisterFile.scala:18:21
-      if (_GEN_0 & io_rdAddr == 5'h14)	// \\src\\main\\scala\\RegisterFile.scala:5:7, :18:21, :21:{23,45}, :22:21
-        regs_20 <= io_writeData;	// \\src\\main\\scala\\RegisterFile.scala:18:21
-      if (_GEN_0 & io_rdAddr == 5'h15)	// \\src\\main\\scala\\RegisterFile.scala:5:7, :18:21, :21:{23,45}, :22:21
-        regs_21 <= io_writeData;	// \\src\\main\\scala\\RegisterFile.scala:18:21
-      if (_GEN_0 & io_rdAddr == 5'h16)	// \\src\\main\\scala\\RegisterFile.scala:5:7, :18:21, :21:{23,45}, :22:21
-        regs_22 <= io_writeData;	// \\src\\main\\scala\\RegisterFile.scala:18:21
-      if (_GEN_0 & io_rdAddr == 5'h17)	// \\src\\main\\scala\\RegisterFile.scala:5:7, :18:21, :21:{23,45}, :22:21
-        regs_23 <= io_writeData;	// \\src\\main\\scala\\RegisterFile.scala:18:21
-      if (_GEN_0 & io_rdAddr == 5'h18)	// \\src\\main\\scala\\RegisterFile.scala:5:7, :18:21, :21:{23,45}, :22:21
-        regs_24 <= io_writeData;	// \\src\\main\\scala\\RegisterFile.scala:18:21
-      if (_GEN_0 & io_rdAddr == 5'h19)	// \\src\\main\\scala\\RegisterFile.scala:5:7, :18:21, :21:{23,45}, :22:21
-        regs_25 <= io_writeData;	// \\src\\main\\scala\\RegisterFile.scala:18:21
-      if (_GEN_0 & io_rdAddr == 5'h1A)	// \\src\\main\\scala\\RegisterFile.scala:5:7, :18:21, :21:{23,45}, :22:21
-        regs_26 <= io_writeData;	// \\src\\main\\scala\\RegisterFile.scala:18:21
-      if (_GEN_0 & io_rdAddr == 5'h1B)	// \\src\\main\\scala\\RegisterFile.scala:5:7, :18:21, :21:{23,45}, :22:21
-        regs_27 <= io_writeData;	// \\src\\main\\scala\\RegisterFile.scala:18:21
-      if (_GEN_0 & io_rdAddr == 5'h1C)	// \\src\\main\\scala\\RegisterFile.scala:5:7, :18:21, :21:{23,45}, :22:21
-        regs_28 <= io_writeData;	// \\src\\main\\scala\\RegisterFile.scala:18:21
-      if (_GEN_0 & io_rdAddr == 5'h1D)	// \\src\\main\\scala\\RegisterFile.scala:5:7, :18:21, :21:{23,45}, :22:21
-        regs_29 <= io_writeData;	// \\src\\main\\scala\\RegisterFile.scala:18:21
-      if (_GEN_0 & io_rdAddr == 5'h1E)	// \\src\\main\\scala\\RegisterFile.scala:5:7, :18:21, :21:{23,45}, :22:21
-        regs_30 <= io_writeData;	// \\src\\main\\scala\\RegisterFile.scala:18:21
-      if (_GEN_0 & (&io_rdAddr))	// \\src\\main\\scala\\RegisterFile.scala:18:21, :21:{23,45}, :22:21
-        regs_31 <= io_writeData;	// \\src\\main\\scala\\RegisterFile.scala:18:21
+    else begin	// <stdin>:51:11
+      automatic logic _GEN_0 = io_writeEnable & (|io_rdAddr);	// src/main/scala/RegisterFile.scala:21:{23,36}
+      if (_GEN_0 & ~(|io_rdAddr))	// src/main/scala/RegisterFile.scala:18:21, :21:{23,36,45}, :22:21
+        regs_0 <= io_writeData;	// src/main/scala/RegisterFile.scala:18:21
+      if (_GEN_0 & io_rdAddr == 5'h1)	// src/main/scala/RegisterFile.scala:5:7, :18:21, :21:{23,45}, :22:21
+        regs_1 <= io_writeData;	// src/main/scala/RegisterFile.scala:18:21
+      if (_GEN_0 & io_rdAddr == 5'h2)	// src/main/scala/RegisterFile.scala:5:7, :18:21, :21:{23,45}, :22:21
+        regs_2 <= io_writeData;	// src/main/scala/RegisterFile.scala:18:21
+      if (_GEN_0 & io_rdAddr == 5'h3)	// src/main/scala/RegisterFile.scala:5:7, :18:21, :21:{23,45}, :22:21
+        regs_3 <= io_writeData;	// src/main/scala/RegisterFile.scala:18:21
+      if (_GEN_0 & io_rdAddr == 5'h4)	// src/main/scala/RegisterFile.scala:5:7, :18:21, :21:{23,45}, :22:21
+        regs_4 <= io_writeData;	// src/main/scala/RegisterFile.scala:18:21
+      if (_GEN_0 & io_rdAddr == 5'h5)	// src/main/scala/RegisterFile.scala:5:7, :18:21, :21:{23,45}, :22:21
+        regs_5 <= io_writeData;	// src/main/scala/RegisterFile.scala:18:21
+      if (_GEN_0 & io_rdAddr == 5'h6)	// src/main/scala/RegisterFile.scala:5:7, :18:21, :21:{23,45}, :22:21
+        regs_6 <= io_writeData;	// src/main/scala/RegisterFile.scala:18:21
+      if (_GEN_0 & io_rdAddr == 5'h7)	// src/main/scala/RegisterFile.scala:5:7, :18:21, :21:{23,45}, :22:21
+        regs_7 <= io_writeData;	// src/main/scala/RegisterFile.scala:18:21
+      if (_GEN_0 & io_rdAddr == 5'h8)	// src/main/scala/RegisterFile.scala:5:7, :18:21, :21:{23,45}, :22:21
+        regs_8 <= io_writeData;	// src/main/scala/RegisterFile.scala:18:21
+      if (_GEN_0 & io_rdAddr == 5'h9)	// src/main/scala/RegisterFile.scala:5:7, :18:21, :21:{23,45}, :22:21
+        regs_9 <= io_writeData;	// src/main/scala/RegisterFile.scala:18:21
+      if (_GEN_0 & io_rdAddr == 5'hA)	// src/main/scala/RegisterFile.scala:5:7, :18:21, :21:{23,45}, :22:21
+        regs_10 <= io_writeData;	// src/main/scala/RegisterFile.scala:18:21
+      if (_GEN_0 & io_rdAddr == 5'hB)	// src/main/scala/RegisterFile.scala:5:7, :18:21, :21:{23,45}, :22:21
+        regs_11 <= io_writeData;	// src/main/scala/RegisterFile.scala:18:21
+      if (_GEN_0 & io_rdAddr == 5'hC)	// src/main/scala/RegisterFile.scala:5:7, :18:21, :21:{23,45}, :22:21
+        regs_12 <= io_writeData;	// src/main/scala/RegisterFile.scala:18:21
+      if (_GEN_0 & io_rdAddr == 5'hD)	// src/main/scala/RegisterFile.scala:5:7, :18:21, :21:{23,45}, :22:21
+        regs_13 <= io_writeData;	// src/main/scala/RegisterFile.scala:18:21
+      if (_GEN_0 & io_rdAddr == 5'hE)	// src/main/scala/RegisterFile.scala:5:7, :18:21, :21:{23,45}, :22:21
+        regs_14 <= io_writeData;	// src/main/scala/RegisterFile.scala:18:21
+      if (_GEN_0 & io_rdAddr == 5'hF)	// src/main/scala/RegisterFile.scala:5:7, :18:21, :21:{23,45}, :22:21
+        regs_15 <= io_writeData;	// src/main/scala/RegisterFile.scala:18:21
+      if (_GEN_0 & io_rdAddr == 5'h10)	// src/main/scala/RegisterFile.scala:5:7, :18:21, :21:{23,45}, :22:21
+        regs_16 <= io_writeData;	// src/main/scala/RegisterFile.scala:18:21
+      if (_GEN_0 & io_rdAddr == 5'h11)	// src/main/scala/RegisterFile.scala:5:7, :18:21, :21:{23,45}, :22:21
+        regs_17 <= io_writeData;	// src/main/scala/RegisterFile.scala:18:21
+      if (_GEN_0 & io_rdAddr == 5'h12)	// src/main/scala/RegisterFile.scala:5:7, :18:21, :21:{23,45}, :22:21
+        regs_18 <= io_writeData;	// src/main/scala/RegisterFile.scala:18:21
+      if (_GEN_0 & io_rdAddr == 5'h13)	// src/main/scala/RegisterFile.scala:5:7, :18:21, :21:{23,45}, :22:21
+        regs_19 <= io_writeData;	// src/main/scala/RegisterFile.scala:18:21
+      if (_GEN_0 & io_rdAddr == 5'h14)	// src/main/scala/RegisterFile.scala:5:7, :18:21, :21:{23,45}, :22:21
+        regs_20 <= io_writeData;	// src/main/scala/RegisterFile.scala:18:21
+      if (_GEN_0 & io_rdAddr == 5'h15)	// src/main/scala/RegisterFile.scala:5:7, :18:21, :21:{23,45}, :22:21
+        regs_21 <= io_writeData;	// src/main/scala/RegisterFile.scala:18:21
+      if (_GEN_0 & io_rdAddr == 5'h16)	// src/main/scala/RegisterFile.scala:5:7, :18:21, :21:{23,45}, :22:21
+        regs_22 <= io_writeData;	// src/main/scala/RegisterFile.scala:18:21
+      if (_GEN_0 & io_rdAddr == 5'h17)	// src/main/scala/RegisterFile.scala:5:7, :18:21, :21:{23,45}, :22:21
+        regs_23 <= io_writeData;	// src/main/scala/RegisterFile.scala:18:21
+      if (_GEN_0 & io_rdAddr == 5'h18)	// src/main/scala/RegisterFile.scala:5:7, :18:21, :21:{23,45}, :22:21
+        regs_24 <= io_writeData;	// src/main/scala/RegisterFile.scala:18:21
+      if (_GEN_0 & io_rdAddr == 5'h19)	// src/main/scala/RegisterFile.scala:5:7, :18:21, :21:{23,45}, :22:21
+        regs_25 <= io_writeData;	// src/main/scala/RegisterFile.scala:18:21
+      if (_GEN_0 & io_rdAddr == 5'h1A)	// src/main/scala/RegisterFile.scala:5:7, :18:21, :21:{23,45}, :22:21
+        regs_26 <= io_writeData;	// src/main/scala/RegisterFile.scala:18:21
+      if (_GEN_0 & io_rdAddr == 5'h1B)	// src/main/scala/RegisterFile.scala:5:7, :18:21, :21:{23,45}, :22:21
+        regs_27 <= io_writeData;	// src/main/scala/RegisterFile.scala:18:21
+      if (_GEN_0 & io_rdAddr == 5'h1C)	// src/main/scala/RegisterFile.scala:5:7, :18:21, :21:{23,45}, :22:21
+        regs_28 <= io_writeData;	// src/main/scala/RegisterFile.scala:18:21
+      if (_GEN_0 & io_rdAddr == 5'h1D)	// src/main/scala/RegisterFile.scala:5:7, :18:21, :21:{23,45}, :22:21
+        regs_29 <= io_writeData;	// src/main/scala/RegisterFile.scala:18:21
+      if (_GEN_0 & io_rdAddr == 5'h1E)	// src/main/scala/RegisterFile.scala:5:7, :18:21, :21:{23,45}, :22:21
+        regs_30 <= io_writeData;	// src/main/scala/RegisterFile.scala:18:21
+      if (_GEN_0 & (&io_rdAddr))	// src/main/scala/RegisterFile.scala:18:21, :21:{23,45}, :22:21
+        regs_31 <= io_writeData;	// src/main/scala/RegisterFile.scala:18:21
     end
   end // always @(posedge)
-  `ifdef ENABLE_INITIAL_REG_	// \\src\\main\\scala\\RegisterFile.scala:5:7
-    `ifdef FIRRTL_BEFORE_INITIAL	// \\src\\main\\scala\\RegisterFile.scala:5:7
-      `FIRRTL_BEFORE_INITIAL	// \\src\\main\\scala\\RegisterFile.scala:5:7
+  `ifdef ENABLE_INITIAL_REG_	// src/main/scala/RegisterFile.scala:5:7
+    `ifdef FIRRTL_BEFORE_INITIAL	// src/main/scala/RegisterFile.scala:5:7
+      `FIRRTL_BEFORE_INITIAL	// src/main/scala/RegisterFile.scala:5:7
     `endif // FIRRTL_BEFORE_INITIAL
-    initial begin	// \\src\\main\\scala\\RegisterFile.scala:5:7
-      automatic logic [31:0] _RANDOM[0:31];	// \\src\\main\\scala\\RegisterFile.scala:5:7
-      `ifdef INIT_RANDOM_PROLOG_	// \\src\\main\\scala\\RegisterFile.scala:5:7
-        `INIT_RANDOM_PROLOG_	// \\src\\main\\scala\\RegisterFile.scala:5:7
+    initial begin	// src/main/scala/RegisterFile.scala:5:7
+      automatic logic [31:0] _RANDOM[0:31];	// src/main/scala/RegisterFile.scala:5:7
+      `ifdef INIT_RANDOM_PROLOG_	// src/main/scala/RegisterFile.scala:5:7
+        `INIT_RANDOM_PROLOG_	// src/main/scala/RegisterFile.scala:5:7
       `endif // INIT_RANDOM_PROLOG_
-      `ifdef RANDOMIZE_REG_INIT	// \\src\\main\\scala\\RegisterFile.scala:5:7
+      `ifdef RANDOMIZE_REG_INIT	// src/main/scala/RegisterFile.scala:5:7
         for (logic [5:0] i = 6'h0; i < 6'h20; i += 6'h1) begin
-          _RANDOM[i[4:0]] = `RANDOM;	// \\src\\main\\scala\\RegisterFile.scala:5:7
-        end	// \\src\\main\\scala\\RegisterFile.scala:5:7
-        regs_0 = _RANDOM[5'h0];	// \\src\\main\\scala\\RegisterFile.scala:5:7, :18:21
-        regs_1 = _RANDOM[5'h1];	// \\src\\main\\scala\\RegisterFile.scala:5:7, :18:21
-        regs_2 = _RANDOM[5'h2];	// \\src\\main\\scala\\RegisterFile.scala:5:7, :18:21
-        regs_3 = _RANDOM[5'h3];	// \\src\\main\\scala\\RegisterFile.scala:5:7, :18:21
-        regs_4 = _RANDOM[5'h4];	// \\src\\main\\scala\\RegisterFile.scala:5:7, :18:21
-        regs_5 = _RANDOM[5'h5];	// \\src\\main\\scala\\RegisterFile.scala:5:7, :18:21
-        regs_6 = _RANDOM[5'h6];	// \\src\\main\\scala\\RegisterFile.scala:5:7, :18:21
-        regs_7 = _RANDOM[5'h7];	// \\src\\main\\scala\\RegisterFile.scala:5:7, :18:21
-        regs_8 = _RANDOM[5'h8];	// \\src\\main\\scala\\RegisterFile.scala:5:7, :18:21
-        regs_9 = _RANDOM[5'h9];	// \\src\\main\\scala\\RegisterFile.scala:5:7, :18:21
-        regs_10 = _RANDOM[5'hA];	// \\src\\main\\scala\\RegisterFile.scala:5:7, :18:21
-        regs_11 = _RANDOM[5'hB];	// \\src\\main\\scala\\RegisterFile.scala:5:7, :18:21
-        regs_12 = _RANDOM[5'hC];	// \\src\\main\\scala\\RegisterFile.scala:5:7, :18:21
-        regs_13 = _RANDOM[5'hD];	// \\src\\main\\scala\\RegisterFile.scala:5:7, :18:21
-        regs_14 = _RANDOM[5'hE];	// \\src\\main\\scala\\RegisterFile.scala:5:7, :18:21
-        regs_15 = _RANDOM[5'hF];	// \\src\\main\\scala\\RegisterFile.scala:5:7, :18:21
-        regs_16 = _RANDOM[5'h10];	// \\src\\main\\scala\\RegisterFile.scala:5:7, :18:21
-        regs_17 = _RANDOM[5'h11];	// \\src\\main\\scala\\RegisterFile.scala:5:7, :18:21
-        regs_18 = _RANDOM[5'h12];	// \\src\\main\\scala\\RegisterFile.scala:5:7, :18:21
-        regs_19 = _RANDOM[5'h13];	// \\src\\main\\scala\\RegisterFile.scala:5:7, :18:21
-        regs_20 = _RANDOM[5'h14];	// \\src\\main\\scala\\RegisterFile.scala:5:7, :18:21
-        regs_21 = _RANDOM[5'h15];	// \\src\\main\\scala\\RegisterFile.scala:5:7, :18:21
-        regs_22 = _RANDOM[5'h16];	// \\src\\main\\scala\\RegisterFile.scala:5:7, :18:21
-        regs_23 = _RANDOM[5'h17];	// \\src\\main\\scala\\RegisterFile.scala:5:7, :18:21
-        regs_24 = _RANDOM[5'h18];	// \\src\\main\\scala\\RegisterFile.scala:5:7, :18:21
-        regs_25 = _RANDOM[5'h19];	// \\src\\main\\scala\\RegisterFile.scala:5:7, :18:21
-        regs_26 = _RANDOM[5'h1A];	// \\src\\main\\scala\\RegisterFile.scala:5:7, :18:21
-        regs_27 = _RANDOM[5'h1B];	// \\src\\main\\scala\\RegisterFile.scala:5:7, :18:21
-        regs_28 = _RANDOM[5'h1C];	// \\src\\main\\scala\\RegisterFile.scala:5:7, :18:21
-        regs_29 = _RANDOM[5'h1D];	// \\src\\main\\scala\\RegisterFile.scala:5:7, :18:21
-        regs_30 = _RANDOM[5'h1E];	// \\src\\main\\scala\\RegisterFile.scala:5:7, :18:21
-        regs_31 = _RANDOM[5'h1F];	// \\src\\main\\scala\\RegisterFile.scala:5:7, :18:21
+          _RANDOM[i[4:0]] = `RANDOM;	// src/main/scala/RegisterFile.scala:5:7
+        end	// src/main/scala/RegisterFile.scala:5:7
+        regs_0 = _RANDOM[5'h0];	// src/main/scala/RegisterFile.scala:5:7, :18:21
+        regs_1 = _RANDOM[5'h1];	// src/main/scala/RegisterFile.scala:5:7, :18:21
+        regs_2 = _RANDOM[5'h2];	// src/main/scala/RegisterFile.scala:5:7, :18:21
+        regs_3 = _RANDOM[5'h3];	// src/main/scala/RegisterFile.scala:5:7, :18:21
+        regs_4 = _RANDOM[5'h4];	// src/main/scala/RegisterFile.scala:5:7, :18:21
+        regs_5 = _RANDOM[5'h5];	// src/main/scala/RegisterFile.scala:5:7, :18:21
+        regs_6 = _RANDOM[5'h6];	// src/main/scala/RegisterFile.scala:5:7, :18:21
+        regs_7 = _RANDOM[5'h7];	// src/main/scala/RegisterFile.scala:5:7, :18:21
+        regs_8 = _RANDOM[5'h8];	// src/main/scala/RegisterFile.scala:5:7, :18:21
+        regs_9 = _RANDOM[5'h9];	// src/main/scala/RegisterFile.scala:5:7, :18:21
+        regs_10 = _RANDOM[5'hA];	// src/main/scala/RegisterFile.scala:5:7, :18:21
+        regs_11 = _RANDOM[5'hB];	// src/main/scala/RegisterFile.scala:5:7, :18:21
+        regs_12 = _RANDOM[5'hC];	// src/main/scala/RegisterFile.scala:5:7, :18:21
+        regs_13 = _RANDOM[5'hD];	// src/main/scala/RegisterFile.scala:5:7, :18:21
+        regs_14 = _RANDOM[5'hE];	// src/main/scala/RegisterFile.scala:5:7, :18:21
+        regs_15 = _RANDOM[5'hF];	// src/main/scala/RegisterFile.scala:5:7, :18:21
+        regs_16 = _RANDOM[5'h10];	// src/main/scala/RegisterFile.scala:5:7, :18:21
+        regs_17 = _RANDOM[5'h11];	// src/main/scala/RegisterFile.scala:5:7, :18:21
+        regs_18 = _RANDOM[5'h12];	// src/main/scala/RegisterFile.scala:5:7, :18:21
+        regs_19 = _RANDOM[5'h13];	// src/main/scala/RegisterFile.scala:5:7, :18:21
+        regs_20 = _RANDOM[5'h14];	// src/main/scala/RegisterFile.scala:5:7, :18:21
+        regs_21 = _RANDOM[5'h15];	// src/main/scala/RegisterFile.scala:5:7, :18:21
+        regs_22 = _RANDOM[5'h16];	// src/main/scala/RegisterFile.scala:5:7, :18:21
+        regs_23 = _RANDOM[5'h17];	// src/main/scala/RegisterFile.scala:5:7, :18:21
+        regs_24 = _RANDOM[5'h18];	// src/main/scala/RegisterFile.scala:5:7, :18:21
+        regs_25 = _RANDOM[5'h19];	// src/main/scala/RegisterFile.scala:5:7, :18:21
+        regs_26 = _RANDOM[5'h1A];	// src/main/scala/RegisterFile.scala:5:7, :18:21
+        regs_27 = _RANDOM[5'h1B];	// src/main/scala/RegisterFile.scala:5:7, :18:21
+        regs_28 = _RANDOM[5'h1C];	// src/main/scala/RegisterFile.scala:5:7, :18:21
+        regs_29 = _RANDOM[5'h1D];	// src/main/scala/RegisterFile.scala:5:7, :18:21
+        regs_30 = _RANDOM[5'h1E];	// src/main/scala/RegisterFile.scala:5:7, :18:21
+        regs_31 = _RANDOM[5'h1F];	// src/main/scala/RegisterFile.scala:5:7, :18:21
       `endif // RANDOMIZE_REG_INIT
     end // initial
-    `ifdef FIRRTL_AFTER_INITIAL	// \\src\\main\\scala\\RegisterFile.scala:5:7
-      `FIRRTL_AFTER_INITIAL	// \\src\\main\\scala\\RegisterFile.scala:5:7
+    `ifdef FIRRTL_AFTER_INITIAL	// src/main/scala/RegisterFile.scala:5:7
+      `FIRRTL_AFTER_INITIAL	// src/main/scala/RegisterFile.scala:5:7
     `endif // FIRRTL_AFTER_INITIAL
   `endif // ENABLE_INITIAL_REG_
-  assign io_rs1Data = io_rs1Addr == 5'h0 ? 32'h0 : _GEN[io_rs1Addr];	// \\src\\main\\scala\\RegisterFile.scala:5:7, :18:29, :26:{20,32}
-  assign io_rs2Data = io_rs2Addr == 5'h0 ? 32'h0 : _GEN[io_rs2Addr];	// \\src\\main\\scala\\RegisterFile.scala:5:7, :18:29, :26:20, :27:{20,32}
+  assign io_rs1Data = io_rs1Addr == 5'h0 ? 32'h0 : _GEN[io_rs1Addr];	// src/main/scala/RegisterFile.scala:5:7, :18:29, :26:{20,32}
+  assign io_rs2Data = io_rs2Addr == 5'h0 ? 32'h0 : _GEN[io_rs2Addr];	// src/main/scala/RegisterFile.scala:5:7, :18:29, :26:20, :27:{20,32}
 endmodule
 
-module InstructionDecode(	// \\src\\main\\scala\\InstructionDecode.scala:6:7
-  input  [31:0] io_inst,	// \\src\\main\\scala\\InstructionDecode.scala:7:14
-  output [4:0]  io_rs1Addr,	// \\src\\main\\scala\\InstructionDecode.scala:7:14
-                io_rs2Addr,	// \\src\\main\\scala\\InstructionDecode.scala:7:14
-                io_rdAddr,	// \\src\\main\\scala\\InstructionDecode.scala:7:14
-  output [31:0] io_imm,	// \\src\\main\\scala\\InstructionDecode.scala:7:14
-  output [3:0]  io_aluOp,	// \\src\\main\\scala\\InstructionDecode.scala:7:14
-  output        io_aluSrcB,	// \\src\\main\\scala\\InstructionDecode.scala:7:14
-                io_rfWriteEnable,	// \\src\\main\\scala\\InstructionDecode.scala:7:14
-                io_memWrite,	// \\src\\main\\scala\\InstructionDecode.scala:7:14
-                io_memRead,	// \\src\\main\\scala\\InstructionDecode.scala:7:14
-                io_memToReg,	// \\src\\main\\scala\\InstructionDecode.scala:7:14
-                io_isBranch,	// \\src\\main\\scala\\InstructionDecode.scala:7:14
-                io_isJump,	// \\src\\main\\scala\\InstructionDecode.scala:7:14
-                io_isJalr,	// \\src\\main\\scala\\InstructionDecode.scala:7:14
-                io_isAuipc	// \\src\\main\\scala\\InstructionDecode.scala:7:14
+module InstructionDecode(	// src/main/scala/InstructionDecode.scala:6:7
+  input  [31:0] io_inst,	// src/main/scala/InstructionDecode.scala:7:14
+  output [4:0]  io_rs1Addr,	// src/main/scala/InstructionDecode.scala:7:14
+                io_rs2Addr,	// src/main/scala/InstructionDecode.scala:7:14
+                io_rdAddr,	// src/main/scala/InstructionDecode.scala:7:14
+  output [31:0] io_imm,	// src/main/scala/InstructionDecode.scala:7:14
+  output [3:0]  io_aluOp,	// src/main/scala/InstructionDecode.scala:7:14
+  output        io_aluSrcB,	// src/main/scala/InstructionDecode.scala:7:14
+                io_rfWriteEnable,	// src/main/scala/InstructionDecode.scala:7:14
+                io_memWrite,	// src/main/scala/InstructionDecode.scala:7:14
+                io_memRead,	// src/main/scala/InstructionDecode.scala:7:14
+                io_memToReg,	// src/main/scala/InstructionDecode.scala:7:14
+                io_isBranch,	// src/main/scala/InstructionDecode.scala:7:14
+                io_isJump,	// src/main/scala/InstructionDecode.scala:7:14
+                io_isJalr,	// src/main/scala/InstructionDecode.scala:7:14
+                io_isAuipc	// src/main/scala/InstructionDecode.scala:7:14
 );
 
-  wire            _GEN = io_inst[6:0] == 7'h33;	// \\src\\main\\scala\\InstructionDecode.scala:33:23, :63:18
+  wire            _GEN = io_inst[6:0] == 7'h33;	// src/main/scala/InstructionDecode.scala:33:23, :63:18
   wire [3:0]      _GEN_0 =
-    io_inst[14:12] == 3'h6 ? 4'h8 : (&(io_inst[14:12])) ? 4'h9 : 4'h0;	// \\src\\main\\scala\\InstructionDecode.scala:34:23, :50:20, :70:22, :77:33, :78:33
+    io_inst[14:12] == 3'h6 ? 4'h8 : (&(io_inst[14:12])) ? 4'h9 : 4'h0;	// src/main/scala/InstructionDecode.scala:34:23, :50:20, :70:22, :77:33, :78:33
   wire [7:0][3:0] _GEN_1 =
     {{_GEN_0},
      {_GEN_0},
@@ -319,26 +319,26 @@ module InstructionDecode(	// \\src\\main\\scala\\InstructionDecode.scala:6:7
      {4'h4},
      {4'h3},
      {4'h2},
-     {{3'h0, io_inst[30]}}};	// \\src\\main\\scala\\InstructionDecode.scala:35:23, :70:22, :71:{33,39,46}, :72:33, :73:33, :74:33, :75:33, :76:{33,39,46}, :77:33
-  wire            _GEN_2 = io_inst[6:0] == 7'h13;	// \\src\\main\\scala\\InstructionDecode.scala:33:23, :63:18
+     {{3'h0, io_inst[30]}}};	// src/main/scala/InstructionDecode.scala:35:23, :70:22, :71:{33,39,46}, :72:33, :73:33, :74:33, :75:33, :76:{33,39,46}, :77:33
+  wire            _GEN_2 = io_inst[6:0] == 7'h13;	// src/main/scala/InstructionDecode.scala:33:23, :63:18
   wire [7:0][3:0] _GEN_3 =
-    {{_GEN_0}, {_GEN_0}, {{3'h3, io_inst[30]}}, {4'h5}, {4'h4}, {4'h3}, {4'h2}, {4'h0}};	// \\src\\main\\scala\\InstructionDecode.scala:35:23, :50:20, :70:22, :72:33, :73:33, :74:33, :75:33, :77:33, :88:22, :89:33, :90:33, :91:33, :92:33, :93:33, :94:{33,39,46}
-  wire            _GEN_4 = io_inst[6:0] == 7'h3;	// \\src\\main\\scala\\InstructionDecode.scala:33:23, :63:18
-  wire            io_memRead_0 = ~(_GEN | _GEN_2) & _GEN_4;	// \\src\\main\\scala\\InstructionDecode.scala:54:20, :63:18
-  wire            _GEN_5 = io_inst[6:0] == 7'h23;	// \\src\\main\\scala\\InstructionDecode.scala:33:23, :63:18
-  wire            _GEN_6 = _GEN | _GEN_2 | _GEN_4;	// \\src\\main\\scala\\InstructionDecode.scala:53:20, :63:18
-  wire            _GEN_7 = io_inst[6:0] == 7'h63;	// \\src\\main\\scala\\InstructionDecode.scala:33:23, :63:18
-  wire            _GEN_8 = _GEN_4 | _GEN_5;	// \\src\\main\\scala\\InstructionDecode.scala:56:20, :63:18
-  wire            _GEN_9 = _GEN_2 | _GEN_8;	// \\src\\main\\scala\\InstructionDecode.scala:56:20, :63:18
-  wire            _GEN_10 = io_inst[6:0] == 7'h37;	// \\src\\main\\scala\\InstructionDecode.scala:33:23, :63:18
-  wire            _GEN_11 = io_inst[6:0] == 7'h17;	// \\src\\main\\scala\\InstructionDecode.scala:33:23, :63:18
-  wire            _GEN_12 = io_inst[6:0] == 7'h6F;	// \\src\\main\\scala\\InstructionDecode.scala:33:23, :63:18
-  wire            _GEN_13 = io_inst[6:0] == 7'h67;	// \\src\\main\\scala\\InstructionDecode.scala:33:23, :63:18
-  wire            _GEN_14 = _GEN_10 | _GEN_11 | _GEN_12;	// \\src\\main\\scala\\InstructionDecode.scala:63:18, :130:24, :139:24, :148:24
-  wire            _GEN_15 = _GEN_10 | _GEN_11;	// \\src\\main\\scala\\InstructionDecode.scala:63:18, :131:24, :140:24
-  assign io_rs1Addr = io_inst[19:15];	// \\src\\main\\scala\\InstructionDecode.scala:6:7, :37:24
-  assign io_rs2Addr = io_inst[24:20];	// \\src\\main\\scala\\InstructionDecode.scala:6:7, :38:24
-  assign io_rdAddr = io_inst[11:7];	// \\src\\main\\scala\\InstructionDecode.scala:6:7, :39:24
+    {{_GEN_0}, {_GEN_0}, {{3'h3, io_inst[30]}}, {4'h5}, {4'h4}, {4'h3}, {4'h2}, {4'h0}};	// src/main/scala/InstructionDecode.scala:35:23, :50:20, :70:22, :72:33, :73:33, :74:33, :75:33, :77:33, :88:22, :89:33, :90:33, :91:33, :92:33, :93:33, :94:{33,39,46}
+  wire            _GEN_4 = io_inst[6:0] == 7'h3;	// src/main/scala/InstructionDecode.scala:33:23, :63:18
+  wire            io_memRead_0 = ~(_GEN | _GEN_2) & _GEN_4;	// src/main/scala/InstructionDecode.scala:54:20, :63:18
+  wire            _GEN_5 = io_inst[6:0] == 7'h23;	// src/main/scala/InstructionDecode.scala:33:23, :63:18
+  wire            _GEN_6 = _GEN | _GEN_2 | _GEN_4;	// src/main/scala/InstructionDecode.scala:53:20, :63:18
+  wire            _GEN_7 = io_inst[6:0] == 7'h63;	// src/main/scala/InstructionDecode.scala:33:23, :63:18
+  wire            _GEN_8 = _GEN_4 | _GEN_5;	// src/main/scala/InstructionDecode.scala:56:20, :63:18
+  wire            _GEN_9 = _GEN_2 | _GEN_8;	// src/main/scala/InstructionDecode.scala:56:20, :63:18
+  wire            _GEN_10 = io_inst[6:0] == 7'h37;	// src/main/scala/InstructionDecode.scala:33:23, :63:18
+  wire            _GEN_11 = io_inst[6:0] == 7'h17;	// src/main/scala/InstructionDecode.scala:33:23, :63:18
+  wire            _GEN_12 = io_inst[6:0] == 7'h6F;	// src/main/scala/InstructionDecode.scala:33:23, :63:18
+  wire            _GEN_13 = io_inst[6:0] == 7'h67;	// src/main/scala/InstructionDecode.scala:33:23, :63:18
+  wire            _GEN_14 = _GEN_10 | _GEN_11 | _GEN_12;	// src/main/scala/InstructionDecode.scala:63:18, :130:24, :139:24, :148:24
+  wire            _GEN_15 = _GEN_10 | _GEN_11;	// src/main/scala/InstructionDecode.scala:63:18, :131:24, :140:24
+  assign io_rs1Addr = io_inst[19:15];	// src/main/scala/InstructionDecode.scala:6:7, :37:24
+  assign io_rs2Addr = io_inst[24:20];	// src/main/scala/InstructionDecode.scala:6:7, :38:24
+  assign io_rdAddr = io_inst[11:7];	// src/main/scala/InstructionDecode.scala:6:7, :39:24
   assign io_imm =
     _GEN_6
       ? {{20{io_inst[31]}}, io_inst[31:20]}
@@ -351,33 +351,33 @@ module InstructionDecode(	// \\src\\main\\scala\\InstructionDecode.scala:6:7
                   : {{12{io_inst[31]}},
                      _GEN_12
                        ? {io_inst[19:12], io_inst[20], io_inst[30:21], 1'h0}
-                       : {{8{io_inst[31]}}, io_inst[31:20]}};	// \\src\\main\\scala\\InstructionDecode.scala:6:7, :35:23, :39:24, :42:{17,22,34,48}, :43:{17,22}, :44:{17,61,73,90}, :45:{17,25}, :46:{17,61,78,91}, :49:20, :53:20, :63:18, :86:24, :104:24, :113:19, :121:19, :131:24, :132:24, :140:24, :141:24, :149:24
+                       : {{8{io_inst[31]}}, io_inst[31:20]}};	// src/main/scala/InstructionDecode.scala:6:7, :35:23, :39:24, :42:{17,22,34,48}, :43:{17,22}, :44:{17,61,73,90}, :45:{17,25}, :46:{17,61,78,91}, :49:20, :53:20, :63:18, :86:24, :104:24, :113:19, :121:19, :131:24, :132:24, :140:24, :141:24, :149:24
   assign io_aluOp =
     _GEN
       ? _GEN_1[io_inst[14:12]]
       : _GEN_2
           ? _GEN_3[io_inst[14:12]]
-          : _GEN_8 ? 4'h0 : _GEN_7 ? 4'h1 : _GEN_10 ? 4'hA : 4'h0;	// \\src\\main\\scala\\InstructionDecode.scala:6:7, :34:23, :50:20, :56:20, :63:18, :70:22, :71:{33,39}, :72:33, :73:33, :74:33, :75:33, :76:33, :88:22, :89:33, :90:33, :91:33, :92:33, :93:33, :94:33, :105:24, :114:19, :125:19, :133:24
-  assign io_aluSrcB = ~_GEN & (_GEN_9 | ~_GEN_7 & (_GEN_15 | ~_GEN_12 & _GEN_13));	// \\src\\main\\scala\\InstructionDecode.scala:6:7, :51:20, :56:20, :63:18, :67:24, :85:24, :103:24, :112:19, :120:19, :131:24, :140:24
-  assign io_rfWriteEnable = _GEN_6 | ~(_GEN_5 | _GEN_7) & (_GEN_14 | _GEN_13);	// \\src\\main\\scala\\InstructionDecode.scala:6:7, :52:20, :53:20, :63:18, :66:24, :84:24, :102:24, :130:24, :139:24, :148:24
-  assign io_memWrite = ~_GEN_6 & _GEN_5;	// \\src\\main\\scala\\InstructionDecode.scala:6:7, :53:20, :63:18
-  assign io_memRead = io_memRead_0;	// \\src\\main\\scala\\InstructionDecode.scala:6:7, :54:20, :63:18
-  assign io_memToReg = io_memRead_0;	// \\src\\main\\scala\\InstructionDecode.scala:6:7, :54:20, :63:18
-  assign io_isBranch = ~(_GEN | _GEN_9) & _GEN_7;	// \\src\\main\\scala\\InstructionDecode.scala:6:7, :56:20, :63:18
+          : _GEN_8 ? 4'h0 : _GEN_7 ? 4'h1 : _GEN_10 ? 4'hA : 4'h0;	// src/main/scala/InstructionDecode.scala:6:7, :34:23, :50:20, :56:20, :63:18, :70:22, :71:{33,39}, :72:33, :73:33, :74:33, :75:33, :76:33, :88:22, :89:33, :90:33, :91:33, :92:33, :93:33, :94:33, :105:24, :114:19, :125:19, :133:24
+  assign io_aluSrcB = ~_GEN & (_GEN_9 | ~_GEN_7 & (_GEN_15 | ~_GEN_12 & _GEN_13));	// src/main/scala/InstructionDecode.scala:6:7, :51:20, :56:20, :63:18, :67:24, :85:24, :103:24, :112:19, :120:19, :131:24, :140:24
+  assign io_rfWriteEnable = _GEN_6 | ~(_GEN_5 | _GEN_7) & (_GEN_14 | _GEN_13);	// src/main/scala/InstructionDecode.scala:6:7, :52:20, :53:20, :63:18, :66:24, :84:24, :102:24, :130:24, :139:24, :148:24
+  assign io_memWrite = ~_GEN_6 & _GEN_5;	// src/main/scala/InstructionDecode.scala:6:7, :53:20, :63:18
+  assign io_memRead = io_memRead_0;	// src/main/scala/InstructionDecode.scala:6:7, :54:20, :63:18
+  assign io_memToReg = io_memRead_0;	// src/main/scala/InstructionDecode.scala:6:7, :54:20, :63:18
+  assign io_isBranch = ~(_GEN | _GEN_9) & _GEN_7;	// src/main/scala/InstructionDecode.scala:6:7, :56:20, :63:18
   assign io_isJump =
-    ~(_GEN | _GEN_2 | _GEN_4 | _GEN_5 | _GEN_7 | _GEN_15) & (_GEN_12 | _GEN_13);	// \\src\\main\\scala\\InstructionDecode.scala:6:7, :57:20, :63:18, :131:24, :140:24, :150:24
-  assign io_isJalr = ~(_GEN | _GEN_2 | _GEN_4 | _GEN_5 | _GEN_7 | _GEN_14) & _GEN_13;	// \\src\\main\\scala\\InstructionDecode.scala:6:7, :58:20, :63:18, :130:24, :139:24, :148:24
-  assign io_isAuipc = ~(_GEN | _GEN_2 | _GEN_4 | _GEN_5 | _GEN_7 | _GEN_10) & _GEN_11;	// \\src\\main\\scala\\InstructionDecode.scala:6:7, :60:20, :63:18
+    ~(_GEN | _GEN_2 | _GEN_4 | _GEN_5 | _GEN_7 | _GEN_15) & (_GEN_12 | _GEN_13);	// src/main/scala/InstructionDecode.scala:6:7, :57:20, :63:18, :131:24, :140:24, :150:24
+  assign io_isJalr = ~(_GEN | _GEN_2 | _GEN_4 | _GEN_5 | _GEN_7 | _GEN_14) & _GEN_13;	// src/main/scala/InstructionDecode.scala:6:7, :58:20, :63:18, :130:24, :139:24, :148:24
+  assign io_isAuipc = ~(_GEN | _GEN_2 | _GEN_4 | _GEN_5 | _GEN_7 | _GEN_10) & _GEN_11;	// src/main/scala/InstructionDecode.scala:6:7, :60:20, :63:18
 endmodule
 
-module ALU(	// \\src\\main\\scala\\ALU.scala:20:7
-  input  [3:0]  io_op,	// \\src\\main\\scala\\ALU.scala:21:14
-  input  [31:0] io_inA,	// \\src\\main\\scala\\ALU.scala:21:14
-                io_inB,	// \\src\\main\\scala\\ALU.scala:21:14
-  output [31:0] io_out	// \\src\\main\\scala\\ALU.scala:21:14
+module ALU(	// src/main/scala/ALU.scala:20:7
+  input  [3:0]  io_op,	// src/main/scala/ALU.scala:21:14
+  input  [31:0] io_inA,	// src/main/scala/ALU.scala:21:14
+                io_inB,	// src/main/scala/ALU.scala:21:14
+  output [31:0] io_out	// src/main/scala/ALU.scala:21:14
 );
 
-  wire [62:0]       _outResult_T_5 = {31'h0, io_inA} << io_inB[4:0];	// \\src\\main\\scala\\ALU.scala:35:{42,51}
+  wire [62:0]       _outResult_T_5 = {31'h0, io_inA} << io_inB[4:0];	// src/main/scala/ALU.scala:35:{42,51}
   wire [15:0][31:0] _GEN =
     {{32'h0},
      {32'h0},
@@ -394,55 +394,59 @@ module ALU(	// \\src\\main\\scala\\ALU.scala:20:7
      {{31'h0, $signed(io_inA) < $signed(io_inB)}},
      {_outResult_T_5[31:0]},
      {io_inA - io_inB},
-     {io_inA + io_inB}};	// \\src\\main\\scala\\ALU.scala:30:13, :32:17, :33:{32,42}, :34:{32,42}, :35:{32,42}, :36:{32,50}, :37:{32,43}, :38:{32,42}, :39:{32,42,51}, :40:{32,50,59}, :41:{32,42}, :42:{32,42}, :43:33
-  assign io_out = _GEN[io_op];	// \\src\\main\\scala\\ALU.scala:20:7, :30:13, :32:17, :33:32, :34:32, :35:32, :36:32, :37:32, :38:32, :39:32, :40:32, :41:32, :42:32, :43:33
+     {io_inA + io_inB}};	// src/main/scala/ALU.scala:30:13, :32:17, :33:{32,42}, :34:{32,42}, :35:{32,42}, :36:{32,50}, :37:{32,43}, :38:{32,42}, :39:{32,42,51}, :40:{32,50,59}, :41:{32,42}, :42:{32,42}, :43:33
+  assign io_out = _GEN[io_op];	// src/main/scala/ALU.scala:20:7, :30:13, :32:17, :33:32, :34:32, :35:32, :36:32, :37:32, :38:32, :39:32, :40:32, :41:32, :42:32, :43:33
 endmodule
 
-module Core(	// \\src\\main\\scala\\Core.scala:6:7
-  input         clock,	// <stdin>:369:11
-                reset,	// <stdin>:370:11
-  output [31:0] io_instAddr,	// \\src\\main\\scala\\Core.scala:7:14
-  input  [31:0] io_inst,	// \\src\\main\\scala\\Core.scala:7:14
-  output [31:0] io_memAddr,	// \\src\\main\\scala\\Core.scala:7:14
-                io_memWriteData,	// \\src\\main\\scala\\Core.scala:7:14
-  output [3:0]  io_memWriteMask,	// \\src\\main\\scala\\Core.scala:7:14
-  input  [31:0] io_memReadData,	// \\src\\main\\scala\\Core.scala:7:14
-  output        io_memWriteEnable,	// \\src\\main\\scala\\Core.scala:7:14
-                io_memReadEnable	// \\src\\main\\scala\\Core.scala:7:14
+module Core(	// src/main/scala/Core.scala:6:7
+  input         clock,	// <stdin>:368:11
+                reset,	// <stdin>:369:11
+  output [31:0] io_instAddr,	// src/main/scala/Core.scala:7:14
+  input  [31:0] io_inst,	// src/main/scala/Core.scala:7:14
+  output [31:0] io_memAddr,	// src/main/scala/Core.scala:7:14
+                io_memWriteData,	// src/main/scala/Core.scala:7:14
+  output [3:0]  io_memWriteMask,	// src/main/scala/Core.scala:7:14
+  input  [31:0] io_memReadData,	// src/main/scala/Core.scala:7:14
+  output        io_memWriteEnable,	// src/main/scala/Core.scala:7:14
+                io_memReadEnable	// src/main/scala/Core.scala:7:14
 );
 
-  wire [31:0]      _alu_io_out;	// \\src\\main\\scala\\Core.scala:24:23
-  wire [4:0]       _decoder_io_rs1Addr;	// \\src\\main\\scala\\Core.scala:23:23
-  wire [4:0]       _decoder_io_rs2Addr;	// \\src\\main\\scala\\Core.scala:23:23
-  wire [4:0]       _decoder_io_rdAddr;	// \\src\\main\\scala\\Core.scala:23:23
-  wire [31:0]      _decoder_io_imm;	// \\src\\main\\scala\\Core.scala:23:23
-  wire [3:0]       _decoder_io_aluOp;	// \\src\\main\\scala\\Core.scala:23:23
-  wire             _decoder_io_aluSrcB;	// \\src\\main\\scala\\Core.scala:23:23
-  wire             _decoder_io_rfWriteEnable;	// \\src\\main\\scala\\Core.scala:23:23
-  wire             _decoder_io_memToReg;	// \\src\\main\\scala\\Core.scala:23:23
-  wire             _decoder_io_isBranch;	// \\src\\main\\scala\\Core.scala:23:23
-  wire             _decoder_io_isJump;	// \\src\\main\\scala\\Core.scala:23:23
-  wire             _decoder_io_isJalr;	// \\src\\main\\scala\\Core.scala:23:23
-  wire             _decoder_io_isAuipc;	// \\src\\main\\scala\\Core.scala:23:23
-  wire [31:0]      _regFile_io_rs1Data;	// \\src\\main\\scala\\Core.scala:22:23
-  wire [31:0]      _regFile_io_rs2Data;	// \\src\\main\\scala\\Core.scala:22:23
-  reg  [31:0]      pc;	// \\src\\main\\scala\\Core.scala:27:19
-  wire             _GEN = io_inst[14:12] == 3'h0;	// \\src\\main\\scala\\Core.scala:51:32, :59:18
-  wire             _writeMask_T = _alu_io_out[1:0] == 2'h1;	// \\src\\main\\scala\\Core.scala:24:23, :50:27, :61:64, :67:54
-  wire             _writeMask_T_2 = _alu_io_out[1:0] == 2'h2;	// \\src\\main\\scala\\Core.scala:24:23, :50:27, :61:64
-  wire             _GEN_0 = io_inst[14:12] == 3'h1;	// \\src\\main\\scala\\Core.scala:51:32, :59:18
+  wire [31:0]      _alu_io_out;	// src/main/scala/Core.scala:24:23
+  wire [4:0]       _decoder_io_rs1Addr;	// src/main/scala/Core.scala:23:23
+  wire [4:0]       _decoder_io_rs2Addr;	// src/main/scala/Core.scala:23:23
+  wire [4:0]       _decoder_io_rdAddr;	// src/main/scala/Core.scala:23:23
+  wire [31:0]      _decoder_io_imm;	// src/main/scala/Core.scala:23:23
+  wire [3:0]       _decoder_io_aluOp;	// src/main/scala/Core.scala:23:23
+  wire             _decoder_io_aluSrcB;	// src/main/scala/Core.scala:23:23
+  wire             _decoder_io_rfWriteEnable;	// src/main/scala/Core.scala:23:23
+  wire             _decoder_io_memWrite;	// src/main/scala/Core.scala:23:23
+  wire             _decoder_io_memRead;	// src/main/scala/Core.scala:23:23
+  wire             _decoder_io_memToReg;	// src/main/scala/Core.scala:23:23
+  wire             _decoder_io_isBranch;	// src/main/scala/Core.scala:23:23
+  wire             _decoder_io_isJump;	// src/main/scala/Core.scala:23:23
+  wire             _decoder_io_isJalr;	// src/main/scala/Core.scala:23:23
+  wire             _decoder_io_isAuipc;	// src/main/scala/Core.scala:23:23
+  wire [31:0]      _regFile_io_rs1Data;	// src/main/scala/Core.scala:22:23
+  wire [31:0]      _regFile_io_rs2Data;	// src/main/scala/Core.scala:22:23
+  reg  [31:0]      pc;	// src/main/scala/Core.scala:27:19
+  reg  [1:0]       state;	// src/main/scala/Core.scala:38:22
+  wire             _GEN = io_inst[14:12] == 3'h0;	// src/main/scala/Core.scala:57:32, :68:18
+  wire             _writeMask_T = _alu_io_out[1:0] == 2'h1;	// src/main/scala/Core.scala:6:7, :24:23, :56:27, :70:64
+  wire             _writeMask_T_2 = _alu_io_out[1:0] == 2'h2;	// src/main/scala/Core.scala:6:7, :24:23, :56:27, :70:64
+  wire             _GEN_0 = io_inst[14:12] == 3'h1;	// src/main/scala/Core.scala:57:32, :68:18
+  wire             _complete_T = state == 2'h1;	// src/main/scala/Core.scala:6:7, :38:22, :99:31
   wire [3:0][7:0]  _GEN_1 =
     {{io_memReadData[31:24]},
      {io_memReadData[23:16]},
      {io_memReadData[15:8]},
-     {io_memReadData[7:0]}};	// \\src\\main\\scala\\Core.scala:96:{44,51}, :98:23, :99:23, :100:23
-  wire [7:0]       byte_0 = _GEN_1[_alu_io_out[1:0]];	// \\src\\main\\scala\\Core.scala:24:23, :50:27, :96:51
-  wire [15:0]      half = _alu_io_out[1] ? io_memReadData[31:16] : io_memReadData[15:0];	// \\src\\main\\scala\\Core.scala:24:23, :50:27, :105:{21,29,41,58}
+     {io_memReadData[7:0]}};	// src/main/scala/Core.scala:109:{44,51}, :111:23, :112:23, :113:23
+  wire [7:0]       byte_0 = _GEN_1[_alu_io_out[1:0]];	// src/main/scala/Core.scala:24:23, :56:27, :109:51
+  wire [15:0]      half = _alu_io_out[1] ? io_memReadData[31:16] : io_memReadData[15:0];	// src/main/scala/Core.scala:24:23, :56:27, :118:{21,29,41,58}
   wire [3:0][7:0]  _GEN_2 =
     {{io_memReadData[31:24]},
      {io_memReadData[23:16]},
      {io_memReadData[15:8]},
-     {io_memReadData[7:0]}};	// \\src\\main\\scala\\Core.scala:112:{44,51}, :114:23, :115:23, :116:23
+     {io_memReadData[7:0]}};	// src/main/scala/Core.scala:125:{44,51}, :127:23, :128:23, :129:23
   wire [7:0][31:0] _GEN_3 =
     {{io_memReadData},
      {io_memReadData},
@@ -451,72 +455,83 @@ module Core(	// \\src\\main\\scala\\Core.scala:6:7
      {io_memReadData},
      {io_memReadData},
      {{{16{half[15]}}, half}},
-     {{{24{byte_0[7]}}, byte_0}}};	// \\src\\main\\scala\\Core.scala:24:23, :50:27, :59:18, :92:14, :94:18, :96:51, :102:{18,24,29,38}, :105:21, :106:{18,24,29,38}, :109:18, :112:51, :118:{18,24}, :121:{21,29,41,58}, :122:{18,24}
-  wire [31:0]      _nextPc_T_10 = pc + 32'h4;	// \\src\\main\\scala\\Core.scala:27:19, :131:53
-  always @(posedge clock) begin	// <stdin>:369:11
-    if (reset)	// <stdin>:369:11
-      pc <= 32'h0;	// \\src\\main\\scala\\Core.scala:27:19
-    else begin	// <stdin>:369:11
-      automatic logic [31:0] _nextPc_T_8;	// \\src\\main\\scala\\Core.scala:153:23
-      _nextPc_T_8 = pc + _decoder_io_imm;	// \\src\\main\\scala\\Core.scala:23:23, :27:19, :153:23
-      if (_decoder_io_isJump) begin	// \\src\\main\\scala\\Core.scala:23:23
-        if (_decoder_io_isJalr)	// \\src\\main\\scala\\Core.scala:23:23
-          pc <= _regFile_io_rs1Data + _decoder_io_imm & 32'hFFFFFFFE;	// \\src\\main\\scala\\Core.scala:22:23, :23:23, :27:19, :152:{40,58,60}
-        else	// \\src\\main\\scala\\Core.scala:23:23
-          pc <= _nextPc_T_8;	// \\src\\main\\scala\\Core.scala:27:19, :153:23
+     {{{24{byte_0[7]}}, byte_0}}};	// src/main/scala/Core.scala:24:23, :56:27, :68:18, :105:14, :107:18, :109:51, :115:{18,24,29,38}, :118:21, :119:{18,24,29,38}, :122:18, :125:51, :131:{18,24}, :134:{21,29,41,58}, :135:{18,24}
+  wire             complete = _complete_T & ~_decoder_io_memRead | state == 2'h2;	// src/main/scala/Core.scala:6:7, :23:23, :38:22, :99:31, :141:{36,39,48,58}
+  wire [31:0]      _nextPc_T_10 = pc + 32'h4;	// src/main/scala/Core.scala:27:19, :145:53
+  always @(posedge clock) begin	// <stdin>:368:11
+    if (reset) begin	// <stdin>:368:11
+      pc <= 32'h0;	// src/main/scala/Core.scala:27:19
+      state <= 2'h0;	// src/main/scala/Core.scala:6:7, :38:22
+    end
+    else begin	// <stdin>:368:11
+      automatic logic [3:0][1:0] _GEN_4;	// src/main/scala/Core.scala:38:22, :177:17, :178:25, :179:25, :180:25
+      if (complete) begin	// src/main/scala/Core.scala:141:48
+        automatic logic [31:0] _nextPc_T_8;	// src/main/scala/Core.scala:165:23
+        _nextPc_T_8 = pc + _decoder_io_imm;	// src/main/scala/Core.scala:23:23, :27:19, :165:23
+        if (_decoder_io_isJump) begin	// src/main/scala/Core.scala:23:23
+          if (_decoder_io_isJalr)	// src/main/scala/Core.scala:23:23
+            pc <= _regFile_io_rs1Data + _decoder_io_imm & 32'hFFFFFFFE;	// src/main/scala/Core.scala:22:23, :23:23, :27:19, :164:{40,58,60}
+          else	// src/main/scala/Core.scala:23:23
+            pc <= _nextPc_T_8;	// src/main/scala/Core.scala:27:19, :165:23
+        end
+        else begin	// src/main/scala/Core.scala:23:23
+          automatic logic       _GEN_5 =
+            (&(io_inst[14:12])) & _regFile_io_rs1Data >= _regFile_io_rs2Data;	// src/main/scala/Core.scala:22:23, :57:32, :151:17, :153:18, :159:{34,57}
+          automatic logic [7:0] _GEN_6 =
+            {{_GEN_5},
+             {_regFile_io_rs1Data < _regFile_io_rs2Data},
+             {$signed(_regFile_io_rs1Data) >= $signed(_regFile_io_rs2Data)},
+             {$signed(_regFile_io_rs1Data) < $signed(_regFile_io_rs2Data)},
+             {_GEN_5},
+             {_GEN_5},
+             {_regFile_io_rs1Data != _regFile_io_rs2Data},
+             {_regFile_io_rs1Data == _regFile_io_rs2Data}};	// src/main/scala/Core.scala:22:23, :68:18, :107:18, :151:17, :153:18, :154:{34,57}, :155:{34,57}, :156:{34,64}, :157:{34,64}, :158:{34,57}, :159:34
+          if (_decoder_io_isBranch & _GEN_6[io_inst[14:12]])	// src/main/scala/Core.scala:23:23, :57:32, :68:18, :107:18, :153:18, :154:34, :155:34, :156:34, :157:34, :158:34, :166:42
+            pc <= _nextPc_T_8;	// src/main/scala/Core.scala:27:19, :165:23
+          else	// src/main/scala/Core.scala:166:42
+            pc <= _nextPc_T_10;	// src/main/scala/Core.scala:27:19, :145:53
+        end
       end
-      else begin	// \\src\\main\\scala\\Core.scala:23:23
-        automatic logic       _GEN_4 =
-          (&(io_inst[14:12])) & _regFile_io_rs1Data >= _regFile_io_rs2Data;	// \\src\\main\\scala\\Core.scala:22:23, :51:32, :138:17, :140:18, :146:{34,57}
-        automatic logic [7:0] _GEN_5 =
-          {{_GEN_4},
-           {_regFile_io_rs1Data < _regFile_io_rs2Data},
-           {$signed(_regFile_io_rs1Data) >= $signed(_regFile_io_rs2Data)},
-           {$signed(_regFile_io_rs1Data) < $signed(_regFile_io_rs2Data)},
-           {_GEN_4},
-           {_GEN_4},
-           {_regFile_io_rs1Data != _regFile_io_rs2Data},
-           {_regFile_io_rs1Data == _regFile_io_rs2Data}};	// \\src\\main\\scala\\Core.scala:22:23, :59:18, :94:18, :138:17, :140:18, :141:{34,57}, :142:{34,57}, :143:{34,64}, :144:{34,64}, :145:{34,57}, :146:34
-        if (_decoder_io_isBranch & _GEN_5[io_inst[14:12]])	// \\src\\main\\scala\\Core.scala:23:23, :51:32, :59:18, :94:18, :140:18, :141:34, :142:34, :143:34, :144:34, :145:34, :154:42
-          pc <= _nextPc_T_8;	// \\src\\main\\scala\\Core.scala:27:19, :153:23
-        else	// \\src\\main\\scala\\Core.scala:154:42
-          pc <= _nextPc_T_10;	// \\src\\main\\scala\\Core.scala:27:19, :131:53
-      end
+      _GEN_4 = {{state}, {2'h0}, {{_decoder_io_memRead, 1'h0}}, {2'h1}};	// src/main/scala/Core.scala:6:7, :23:23, :38:22, :177:17, :178:25, :179:{25,31}, :180:25
+      state <= _GEN_4[state];	// src/main/scala/Core.scala:38:22, :177:17, :178:25, :179:25, :180:25
     end
   end // always @(posedge)
-  `ifdef ENABLE_INITIAL_REG_	// \\src\\main\\scala\\Core.scala:6:7
-    `ifdef FIRRTL_BEFORE_INITIAL	// \\src\\main\\scala\\Core.scala:6:7
-      `FIRRTL_BEFORE_INITIAL	// \\src\\main\\scala\\Core.scala:6:7
+  `ifdef ENABLE_INITIAL_REG_	// src/main/scala/Core.scala:6:7
+    `ifdef FIRRTL_BEFORE_INITIAL	// src/main/scala/Core.scala:6:7
+      `FIRRTL_BEFORE_INITIAL	// src/main/scala/Core.scala:6:7
     `endif // FIRRTL_BEFORE_INITIAL
-    initial begin	// \\src\\main\\scala\\Core.scala:6:7
-      automatic logic [31:0] _RANDOM[0:0];	// \\src\\main\\scala\\Core.scala:6:7
-      `ifdef INIT_RANDOM_PROLOG_	// \\src\\main\\scala\\Core.scala:6:7
-        `INIT_RANDOM_PROLOG_	// \\src\\main\\scala\\Core.scala:6:7
+    initial begin	// src/main/scala/Core.scala:6:7
+      automatic logic [31:0] _RANDOM[0:1];	// src/main/scala/Core.scala:6:7
+      `ifdef INIT_RANDOM_PROLOG_	// src/main/scala/Core.scala:6:7
+        `INIT_RANDOM_PROLOG_	// src/main/scala/Core.scala:6:7
       `endif // INIT_RANDOM_PROLOG_
-      `ifdef RANDOMIZE_REG_INIT	// \\src\\main\\scala\\Core.scala:6:7
-        _RANDOM[/*Zero width*/ 1'b0] = `RANDOM;	// \\src\\main\\scala\\Core.scala:6:7
-        pc = _RANDOM[/*Zero width*/ 1'b0];	// \\src\\main\\scala\\Core.scala:6:7, :27:19
+      `ifdef RANDOMIZE_REG_INIT	// src/main/scala/Core.scala:6:7
+        for (logic [1:0] i = 2'h0; i < 2'h2; i += 2'h1) begin
+          _RANDOM[i[0]] = `RANDOM;	// src/main/scala/Core.scala:6:7
+        end	// src/main/scala/Core.scala:6:7
+        pc = _RANDOM[1'h0];	// src/main/scala/Core.scala:6:7, :27:19
+        state = _RANDOM[1'h1][1:0];	// src/main/scala/Core.scala:6:7, :38:22
       `endif // RANDOMIZE_REG_INIT
     end // initial
-    `ifdef FIRRTL_AFTER_INITIAL	// \\src\\main\\scala\\Core.scala:6:7
-      `FIRRTL_AFTER_INITIAL	// \\src\\main\\scala\\Core.scala:6:7
+    `ifdef FIRRTL_AFTER_INITIAL	// src/main/scala/Core.scala:6:7
+      `FIRRTL_AFTER_INITIAL	// src/main/scala/Core.scala:6:7
     `endif // FIRRTL_AFTER_INITIAL
   `endif // ENABLE_INITIAL_REG_
-  RegisterFile regFile (	// \\src\\main\\scala\\Core.scala:22:23
+  RegisterFile regFile (	// src/main/scala/Core.scala:22:23
     .clock          (clock),
     .reset          (reset),
-    .io_rs1Addr     (_decoder_io_rs1Addr),	// \\src\\main\\scala\\Core.scala:23:23
-    .io_rs2Addr     (_decoder_io_rs2Addr),	// \\src\\main\\scala\\Core.scala:23:23
-    .io_rdAddr      (_decoder_io_rdAddr),	// \\src\\main\\scala\\Core.scala:23:23
+    .io_rs1Addr     (_decoder_io_rs1Addr),	// src/main/scala/Core.scala:23:23
+    .io_rs2Addr     (_decoder_io_rs2Addr),	// src/main/scala/Core.scala:23:23
+    .io_rdAddr      (_decoder_io_rdAddr),	// src/main/scala/Core.scala:23:23
     .io_writeData
       (_decoder_io_isJump
          ? _nextPc_T_10
-         : _decoder_io_memToReg ? _GEN_3[io_inst[14:12]] : _alu_io_out),	// \\src\\main\\scala\\Core.scala:23:23, :24:23, :51:32, :59:18, :92:14, :94:18, :102:18, :106:18, :109:18, :118:18, :122:18, :131:{30,53}, :132:32
-    .io_writeEnable (_decoder_io_rfWriteEnable),	// \\src\\main\\scala\\Core.scala:23:23
+         : _decoder_io_memToReg ? _GEN_3[io_inst[14:12]] : _alu_io_out),	// src/main/scala/Core.scala:23:23, :24:23, :57:32, :68:18, :105:14, :107:18, :115:18, :119:18, :122:18, :131:18, :135:18, :145:{30,53}, :146:32
+    .io_writeEnable (_decoder_io_rfWriteEnable & complete),	// src/main/scala/Core.scala:23:23, :141:48, :143:54
     .io_rs1Data     (_regFile_io_rs1Data),
     .io_rs2Data     (_regFile_io_rs2Data)
   );
-  InstructionDecode decoder (	// \\src\\main\\scala\\Core.scala:23:23
+  InstructionDecode decoder (	// src/main/scala/Core.scala:23:23
     .io_inst          (io_inst),
     .io_rs1Addr       (_decoder_io_rs1Addr),
     .io_rs2Addr       (_decoder_io_rs2Addr),
@@ -525,22 +540,22 @@ module Core(	// \\src\\main\\scala\\Core.scala:6:7
     .io_aluOp         (_decoder_io_aluOp),
     .io_aluSrcB       (_decoder_io_aluSrcB),
     .io_rfWriteEnable (_decoder_io_rfWriteEnable),
-    .io_memWrite      (io_memWriteEnable),
-    .io_memRead       (io_memReadEnable),
+    .io_memWrite      (_decoder_io_memWrite),
+    .io_memRead       (_decoder_io_memRead),
     .io_memToReg      (_decoder_io_memToReg),
     .io_isBranch      (_decoder_io_isBranch),
     .io_isJump        (_decoder_io_isJump),
     .io_isJalr        (_decoder_io_isJalr),
     .io_isAuipc       (_decoder_io_isAuipc)
   );
-  ALU alu (	// \\src\\main\\scala\\Core.scala:24:23
-    .io_op  (_decoder_io_aluOp),	// \\src\\main\\scala\\Core.scala:23:23
-    .io_inA (_decoder_io_isAuipc ? pc : _regFile_io_rs1Data),	// \\src\\main\\scala\\Core.scala:22:23, :23:23, :27:19, :41:20
-    .io_inB (_decoder_io_aluSrcB ? _decoder_io_imm : _regFile_io_rs2Data),	// \\src\\main\\scala\\Core.scala:22:23, :23:23, :44:20
+  ALU alu (	// src/main/scala/Core.scala:24:23
+    .io_op  (_decoder_io_aluOp),	// src/main/scala/Core.scala:23:23
+    .io_inA (_decoder_io_isAuipc ? pc : _regFile_io_rs1Data),	// src/main/scala/Core.scala:22:23, :23:23, :27:19, :50:20
+    .io_inB (_decoder_io_aluSrcB ? _decoder_io_imm : _regFile_io_rs2Data),	// src/main/scala/Core.scala:22:23, :23:23, :51:20
     .io_out (_alu_io_out)
   );
-  assign io_instAddr = pc;	// \\src\\main\\scala\\Core.scala:6:7, :27:19
-  assign io_memAddr = _alu_io_out & 32'hFFFFFFFC;	// \\src\\main\\scala\\Core.scala:6:7, :24:23, :48:{28,30}
+  assign io_instAddr = pc;	// src/main/scala/Core.scala:6:7, :27:19
+  assign io_memAddr = _alu_io_out & 32'hFFFFFFFC;	// src/main/scala/Core.scala:6:7, :24:23, :54:{28,30}
   assign io_memWriteData =
     _GEN
       ? ((&(_alu_io_out[1:0]))
@@ -556,227 +571,229 @@ module Core(	// \\src\\main\\scala\\Core.scala:6:7
           ? (_alu_io_out[1]
                ? {_regFile_io_rs2Data[15:0], 16'h0}
                : {16'h0, _regFile_io_rs2Data[15:0]})
-          : _regFile_io_rs2Data;	// \\src\\main\\scala\\Core.scala:6:7, :22:23, :24:23, :50:27, :59:18, :61:{17,57,64}, :63:42, :64:42, :65:42, :75:{17,23,31,54,62}, :102:29, :106:29
+          : _regFile_io_rs2Data;	// src/main/scala/Core.scala:6:7, :22:23, :24:23, :56:27, :68:18, :70:{17,57,64}, :72:42, :73:42, :74:42, :84:{17,23,31,54,62}, :115:29, :119:29
   assign io_memWriteMask =
     _GEN
       ? ((&(_alu_io_out[1:0]))
            ? 4'h8
            : {1'h0, _writeMask_T_2 ? 3'h4 : {1'h0, _writeMask_T ? 2'h2 : 2'h1}})
-      : _GEN_0 ? (_alu_io_out[1] ? 4'hC : 4'h3) : {4{io_inst[14:12] == 3'h2}};	// \\src\\main\\scala\\Core.scala:6:7, :24:23, :50:27, :51:32, :57:13, :59:18, :61:64, :67:{17,54}, :75:31, :76:{17,23}, :80:17
+      : _GEN_0 ? (_alu_io_out[1] ? 4'hC : 4'h3) : {4{io_inst[14:12] == 3'h2}};	// src/main/scala/Core.scala:6:7, :24:23, :56:27, :57:32, :66:13, :68:18, :70:64, :76:{17,54}, :84:31, :85:{17,23}, :89:17
+  assign io_memWriteEnable = _complete_T & _decoder_io_memWrite;	// src/main/scala/Core.scala:6:7, :23:23, :99:{31,43}
+  assign io_memReadEnable = (|state) & _decoder_io_memRead;	// src/main/scala/Core.scala:6:7, :23:23, :38:22, :100:{31,44}
 endmodule
 
-module GpioController(	// \\src\\main\\scala\\soc\\GpioController.scala:5:7
-  input         clock,	// <stdin>:564:11
-                reset,	// <stdin>:565:11
-  input  [31:0] io_addr,	// \\src\\main\\scala\\soc\\GpioController.scala:6:14
-                io_writeData,	// \\src\\main\\scala\\soc\\GpioController.scala:6:14
-  input         io_writeEnable,	// \\src\\main\\scala\\soc\\GpioController.scala:6:14
-                io_readEnable,	// \\src\\main\\scala\\soc\\GpioController.scala:6:14
-  output [31:0] io_readData,	// \\src\\main\\scala\\soc\\GpioController.scala:6:14
-  output [7:0]  io_leds,	// \\src\\main\\scala\\soc\\GpioController.scala:6:14
-  input  [4:0]  io_buttons	// \\src\\main\\scala\\soc\\GpioController.scala:6:14
+module GpioController(	// src/main/scala/soc/GpioController.scala:5:7
+  input         clock,	// <stdin>:588:11
+                reset,	// <stdin>:589:11
+  input  [31:0] io_addr,	// src/main/scala/soc/GpioController.scala:6:14
+                io_writeData,	// src/main/scala/soc/GpioController.scala:6:14
+  input         io_writeEnable,	// src/main/scala/soc/GpioController.scala:6:14
+                io_readEnable,	// src/main/scala/soc/GpioController.scala:6:14
+  output [31:0] io_readData,	// src/main/scala/soc/GpioController.scala:6:14
+  output [7:0]  io_leds,	// src/main/scala/soc/GpioController.scala:6:14
+  input  [4:0]  io_buttons	// src/main/scala/soc/GpioController.scala:6:14
 );
 
-  reg [7:0] ledReg;	// \\src\\main\\scala\\soc\\GpioController.scala:20:23
-  always @(posedge clock) begin	// <stdin>:564:11
-    if (reset)	// <stdin>:564:11
-      ledReg <= 8'h0;	// \\src\\main\\scala\\soc\\GpioController.scala:20:23
-    else if (io_writeEnable & io_addr[3:0] == 4'h0)	// \\src\\main\\scala\\soc\\GpioController.scala:20:23, :26:24, :28:{17,24,33}, :29:14
-      ledReg <= io_writeData[7:0];	// \\src\\main\\scala\\soc\\GpioController.scala:20:23, :29:29
+  reg [7:0] ledReg;	// src/main/scala/soc/GpioController.scala:20:23
+  always @(posedge clock) begin	// <stdin>:588:11
+    if (reset)	// <stdin>:588:11
+      ledReg <= 8'h0;	// src/main/scala/soc/GpioController.scala:20:23
+    else if (io_writeEnable & io_addr[3:0] == 4'h0)	// src/main/scala/soc/GpioController.scala:20:23, :26:24, :28:{17,24,33}, :29:14
+      ledReg <= io_writeData[7:0];	// src/main/scala/soc/GpioController.scala:20:23, :29:29
   end // always @(posedge)
-  `ifdef ENABLE_INITIAL_REG_	// \\src\\main\\scala\\soc\\GpioController.scala:5:7
-    `ifdef FIRRTL_BEFORE_INITIAL	// \\src\\main\\scala\\soc\\GpioController.scala:5:7
-      `FIRRTL_BEFORE_INITIAL	// \\src\\main\\scala\\soc\\GpioController.scala:5:7
+  `ifdef ENABLE_INITIAL_REG_	// src/main/scala/soc/GpioController.scala:5:7
+    `ifdef FIRRTL_BEFORE_INITIAL	// src/main/scala/soc/GpioController.scala:5:7
+      `FIRRTL_BEFORE_INITIAL	// src/main/scala/soc/GpioController.scala:5:7
     `endif // FIRRTL_BEFORE_INITIAL
-    initial begin	// \\src\\main\\scala\\soc\\GpioController.scala:5:7
-      automatic logic [31:0] _RANDOM[0:0];	// \\src\\main\\scala\\soc\\GpioController.scala:5:7
-      `ifdef INIT_RANDOM_PROLOG_	// \\src\\main\\scala\\soc\\GpioController.scala:5:7
-        `INIT_RANDOM_PROLOG_	// \\src\\main\\scala\\soc\\GpioController.scala:5:7
+    initial begin	// src/main/scala/soc/GpioController.scala:5:7
+      automatic logic [31:0] _RANDOM[0:0];	// src/main/scala/soc/GpioController.scala:5:7
+      `ifdef INIT_RANDOM_PROLOG_	// src/main/scala/soc/GpioController.scala:5:7
+        `INIT_RANDOM_PROLOG_	// src/main/scala/soc/GpioController.scala:5:7
       `endif // INIT_RANDOM_PROLOG_
-      `ifdef RANDOMIZE_REG_INIT	// \\src\\main\\scala\\soc\\GpioController.scala:5:7
-        _RANDOM[/*Zero width*/ 1'b0] = `RANDOM;	// \\src\\main\\scala\\soc\\GpioController.scala:5:7
-        ledReg = _RANDOM[/*Zero width*/ 1'b0][7:0];	// \\src\\main\\scala\\soc\\GpioController.scala:5:7, :20:23
+      `ifdef RANDOMIZE_REG_INIT	// src/main/scala/soc/GpioController.scala:5:7
+        _RANDOM[/*Zero width*/ 1'b0] = `RANDOM;	// src/main/scala/soc/GpioController.scala:5:7
+        ledReg = _RANDOM[/*Zero width*/ 1'b0][7:0];	// src/main/scala/soc/GpioController.scala:5:7, :20:23
       `endif // RANDOMIZE_REG_INIT
     end // initial
-    `ifdef FIRRTL_AFTER_INITIAL	// \\src\\main\\scala\\soc\\GpioController.scala:5:7
-      `FIRRTL_AFTER_INITIAL	// \\src\\main\\scala\\soc\\GpioController.scala:5:7
+    `ifdef FIRRTL_AFTER_INITIAL	// src/main/scala/soc/GpioController.scala:5:7
+      `FIRRTL_AFTER_INITIAL	// src/main/scala/soc/GpioController.scala:5:7
     `endif // FIRRTL_AFTER_INITIAL
   `endif // ENABLE_INITIAL_REG_
-  assign io_readData = io_readEnable & io_addr[3:0] == 4'h4 ? {27'h0, io_buttons} : 32'h0;	// \\src\\main\\scala\\soc\\GpioController.scala:5:7, :24:15, :28:17, :33:23, :35:{24,33}, :36:19
-  assign io_leds = ledReg;	// \\src\\main\\scala\\soc\\GpioController.scala:5:7, :20:23
+  assign io_readData = io_readEnable & io_addr[3:0] == 4'h4 ? {27'h0, io_buttons} : 32'h0;	// src/main/scala/soc/GpioController.scala:5:7, :24:15, :28:17, :33:23, :35:{24,33}, :36:19
+  assign io_leds = ledReg;	// src/main/scala/soc/GpioController.scala:5:7, :20:23
 endmodule
 
-module UartController(	// \\src\\main\\scala\\soc\\UartController.scala:6:7
-  input         clock,	// <stdin>:585:11
-                reset,	// <stdin>:586:11
-  input  [31:0] io_addr,	// \\src\\main\\scala\\soc\\UartController.scala:7:14
-                io_writeData,	// \\src\\main\\scala\\soc\\UartController.scala:7:14
-  input         io_writeEnable,	// \\src\\main\\scala\\soc\\UartController.scala:7:14
-                io_readEnable,	// \\src\\main\\scala\\soc\\UartController.scala:7:14
-  output [31:0] io_readData,	// \\src\\main\\scala\\soc\\UartController.scala:7:14
-  output        io_tx,	// \\src\\main\\scala\\soc\\UartController.scala:7:14
-  input         io_rx	// \\src\\main\\scala\\soc\\UartController.scala:7:14
+module UartController(	// src/main/scala/soc/UartController.scala:6:7
+  input         clock,	// <stdin>:609:11
+                reset,	// <stdin>:610:11
+  input  [31:0] io_addr,	// src/main/scala/soc/UartController.scala:7:14
+                io_writeData,	// src/main/scala/soc/UartController.scala:7:14
+  input         io_writeEnable,	// src/main/scala/soc/UartController.scala:7:14
+                io_readEnable,	// src/main/scala/soc/UartController.scala:7:14
+  output [31:0] io_readData,	// src/main/scala/soc/UartController.scala:7:14
+  output        io_tx,	// src/main/scala/soc/UartController.scala:7:14
+  input         io_rx	// src/main/scala/soc/UartController.scala:7:14
 );
 
-  reg [1:0]  txState;	// \\src\\main\\scala\\soc\\UartController.scala:27:28
-  reg [15:0] txClkCount;	// \\src\\main\\scala\\soc\\UartController.scala:28:28
-  reg [2:0]  txBitIndex;	// \\src\\main\\scala\\soc\\UartController.scala:29:28
-  reg [7:0]  txBuffer;	// \\src\\main\\scala\\soc\\UartController.scala:30:28
-  reg        txReg;	// \\src\\main\\scala\\soc\\UartController.scala:31:28
-  reg [1:0]  rxState;	// \\src\\main\\scala\\soc\\UartController.scala:78:29
-  reg [15:0] rxClkCount;	// \\src\\main\\scala\\soc\\UartController.scala:79:29
-  reg [2:0]  rxBitIndex;	// \\src\\main\\scala\\soc\\UartController.scala:80:29
-  reg [7:0]  rxBuffer;	// \\src\\main\\scala\\soc\\UartController.scala:81:29
-  reg        rxValid;	// \\src\\main\\scala\\soc\\UartController.scala:82:29
-  reg [7:0]  rxDataReg;	// \\src\\main\\scala\\soc\\UartController.scala:83:29
-  reg        rxSync_REG;	// \\src\\main\\scala\\soc\\UartController.scala:86:31
-  reg        rxSync;	// \\src\\main\\scala\\soc\\UartController.scala:86:23
-  always @(posedge clock) begin	// <stdin>:585:11
-    if (reset) begin	// <stdin>:585:11
-      txState <= 2'h0;	// \\src\\main\\scala\\soc\\UartController.scala:6:7, :27:28
-      txClkCount <= 16'h0;	// \\src\\main\\scala\\soc\\UartController.scala:28:28
-      txBitIndex <= 3'h0;	// \\src\\main\\scala\\soc\\UartController.scala:29:28
-      txBuffer <= 8'h0;	// \\src\\main\\scala\\soc\\UartController.scala:30:28
-      txReg <= 1'h1;	// \\src\\main\\scala\\soc\\UartController.scala:31:28
-      rxState <= 2'h0;	// \\src\\main\\scala\\soc\\UartController.scala:6:7, :78:29
-      rxClkCount <= 16'h0;	// \\src\\main\\scala\\soc\\UartController.scala:28:28, :79:29
-      rxBitIndex <= 3'h0;	// \\src\\main\\scala\\soc\\UartController.scala:29:28, :80:29
-      rxBuffer <= 8'h0;	// \\src\\main\\scala\\soc\\UartController.scala:30:28, :81:29
-      rxValid <= 1'h0;	// \\src\\main\\scala\\soc\\UartController.scala:42:18, :82:29
-      rxDataReg <= 8'h0;	// \\src\\main\\scala\\soc\\UartController.scala:30:28, :83:29
-      rxSync_REG <= 1'h1;	// \\src\\main\\scala\\soc\\UartController.scala:31:28, :86:31
-      rxSync <= 1'h1;	// \\src\\main\\scala\\soc\\UartController.scala:31:28, :86:23
+  reg [1:0]  txState;	// src/main/scala/soc/UartController.scala:27:28
+  reg [15:0] txClkCount;	// src/main/scala/soc/UartController.scala:28:28
+  reg [2:0]  txBitIndex;	// src/main/scala/soc/UartController.scala:29:28
+  reg [7:0]  txBuffer;	// src/main/scala/soc/UartController.scala:30:28
+  reg        txReg;	// src/main/scala/soc/UartController.scala:31:28
+  reg [1:0]  rxState;	// src/main/scala/soc/UartController.scala:78:29
+  reg [15:0] rxClkCount;	// src/main/scala/soc/UartController.scala:79:29
+  reg [2:0]  rxBitIndex;	// src/main/scala/soc/UartController.scala:80:29
+  reg [7:0]  rxBuffer;	// src/main/scala/soc/UartController.scala:81:29
+  reg        rxValid;	// src/main/scala/soc/UartController.scala:82:29
+  reg [7:0]  rxDataReg;	// src/main/scala/soc/UartController.scala:83:29
+  reg        rxSync_REG;	// src/main/scala/soc/UartController.scala:86:31
+  reg        rxSync;	// src/main/scala/soc/UartController.scala:86:23
+  always @(posedge clock) begin	// <stdin>:609:11
+    if (reset) begin	// <stdin>:609:11
+      txState <= 2'h0;	// src/main/scala/soc/UartController.scala:6:7, :27:28
+      txClkCount <= 16'h0;	// src/main/scala/soc/UartController.scala:28:28
+      txBitIndex <= 3'h0;	// src/main/scala/soc/UartController.scala:29:28
+      txBuffer <= 8'h0;	// src/main/scala/soc/UartController.scala:30:28
+      txReg <= 1'h1;	// src/main/scala/soc/UartController.scala:31:28
+      rxState <= 2'h0;	// src/main/scala/soc/UartController.scala:6:7, :78:29
+      rxClkCount <= 16'h0;	// src/main/scala/soc/UartController.scala:28:28, :79:29
+      rxBitIndex <= 3'h0;	// src/main/scala/soc/UartController.scala:29:28, :80:29
+      rxBuffer <= 8'h0;	// src/main/scala/soc/UartController.scala:30:28, :81:29
+      rxValid <= 1'h0;	// src/main/scala/soc/UartController.scala:42:18, :82:29
+      rxDataReg <= 8'h0;	// src/main/scala/soc/UartController.scala:30:28, :83:29
+      rxSync_REG <= 1'h1;	// src/main/scala/soc/UartController.scala:31:28, :86:31
+      rxSync <= 1'h1;	// src/main/scala/soc/UartController.scala:31:28, :86:23
     end
-    else begin	// <stdin>:585:11
-      automatic logic            _GEN;	// \\src\\main\\scala\\soc\\UartController.scala:36:16
-      automatic logic            _GEN_0;	// \\src\\main\\scala\\soc\\UartController.scala:39:25
-      automatic logic            _GEN_1;	// \\src\\main\\scala\\soc\\UartController.scala:47:21
-      automatic logic            _GEN_2;	// \\src\\main\\scala\\soc\\UartController.scala:50:23
-      automatic logic            _GEN_3;	// \\src\\main\\scala\\soc\\UartController.scala:50:23
-      automatic logic [2:0]      _nextData_T;	// \\src\\main\\scala\\soc\\UartController.scala:57:36
-      automatic logic            _GEN_4;	// \\src\\main\\scala\\soc\\UartController.scala:88:16
-      automatic logic            _GEN_5;	// \\src\\main\\scala\\soc\\UartController.scala:97:21
-      automatic logic            _GEN_6;	// \\src\\main\\scala\\soc\\UartController.scala:100:25
-      automatic logic            _GEN_7;	// \\src\\main\\scala\\soc\\UartController.scala:97:21
-      automatic logic            _GEN_8;	// \\src\\main\\scala\\soc\\UartController.scala:112:25
-      automatic logic            _GEN_9;	// \\src\\main\\scala\\soc\\UartController.scala:95:16, :97:21, :112:48, :113:22
-      automatic logic            _GEN_10;	// \\src\\main\\scala\\soc\\UartController.scala:83:29, :97:21, :124:48, :125:24, :126:23
-      automatic logic            _GEN_11;	// \\src\\main\\scala\\soc\\UartController.scala:83:29, :88:28, :97:21
-      automatic logic [3:0][1:0] _GEN_12;	// \\src\\main\\scala\\soc\\UartController.scala:88:{16,28}, :90:19, :97:21, :100:55, :112:48
-      _GEN = txState == 2'h0;	// \\src\\main\\scala\\soc\\UartController.scala:6:7, :27:28, :36:16
-      _GEN_0 = io_writeEnable & io_addr[7:0] == 8'h10;	// \\src\\main\\scala\\soc\\UartController.scala:39:{25,36,43}
-      _GEN_1 = txClkCount == 16'h363;	// \\src\\main\\scala\\soc\\UartController.scala:28:28, :47:{21,37}
-      _GEN_2 = txState == 2'h1;	// \\src\\main\\scala\\soc\\UartController.scala:6:7, :27:28, :50:23
-      _GEN_3 = txState == 2'h2;	// \\src\\main\\scala\\soc\\UartController.scala:6:7, :27:28, :50:23
-      _nextData_T = txBitIndex + 3'h1;	// \\src\\main\\scala\\soc\\UartController.scala:29:28, :57:36
-      _GEN_4 = rxState == 2'h0;	// \\src\\main\\scala\\soc\\UartController.scala:6:7, :78:29, :88:16
-      _GEN_5 = rxState == 2'h1;	// \\src\\main\\scala\\soc\\UartController.scala:6:7, :78:29, :97:21
-      _GEN_6 = rxClkCount == 16'h1B1;	// \\src\\main\\scala\\soc\\UartController.scala:79:29, :100:25
-      _GEN_7 = rxState == 2'h2;	// \\src\\main\\scala\\soc\\UartController.scala:6:7, :78:29, :97:21
-      _GEN_8 = rxClkCount == 16'h363;	// \\src\\main\\scala\\soc\\UartController.scala:47:37, :79:29, :112:25
-      _GEN_9 = _GEN_7 & _GEN_8;	// \\src\\main\\scala\\soc\\UartController.scala:95:16, :97:21, :112:{25,48}, :113:22
-      _GEN_10 = (&rxState) & _GEN_8 & rxSync;	// \\src\\main\\scala\\soc\\UartController.scala:78:29, :83:29, :86:23, :97:21, :112:25, :124:48, :125:24, :126:23
-      _GEN_11 = _GEN_4 | _GEN_5 | _GEN_7;	// \\src\\main\\scala\\soc\\UartController.scala:83:29, :88:{16,28}, :97:21
-      if (_GEN) begin	// \\src\\main\\scala\\soc\\UartController.scala:36:16
-        if (_GEN_0) begin	// \\src\\main\\scala\\soc\\UartController.scala:39:25
-          txState <= 2'h1;	// \\src\\main\\scala\\soc\\UartController.scala:6:7, :27:28
-          txClkCount <= 16'h0;	// \\src\\main\\scala\\soc\\UartController.scala:28:28
+    else begin	// <stdin>:609:11
+      automatic logic            _GEN;	// src/main/scala/soc/UartController.scala:36:16
+      automatic logic            _GEN_0;	// src/main/scala/soc/UartController.scala:39:25
+      automatic logic            _GEN_1;	// src/main/scala/soc/UartController.scala:47:21
+      automatic logic            _GEN_2;	// src/main/scala/soc/UartController.scala:50:23
+      automatic logic            _GEN_3;	// src/main/scala/soc/UartController.scala:50:23
+      automatic logic [2:0]      _nextData_T;	// src/main/scala/soc/UartController.scala:57:36
+      automatic logic            _GEN_4;	// src/main/scala/soc/UartController.scala:88:16
+      automatic logic            _GEN_5;	// src/main/scala/soc/UartController.scala:97:21
+      automatic logic            _GEN_6;	// src/main/scala/soc/UartController.scala:100:25
+      automatic logic            _GEN_7;	// src/main/scala/soc/UartController.scala:97:21
+      automatic logic            _GEN_8;	// src/main/scala/soc/UartController.scala:112:25
+      automatic logic            _GEN_9;	// src/main/scala/soc/UartController.scala:95:16, :97:21, :112:48, :113:22
+      automatic logic            _GEN_10;	// src/main/scala/soc/UartController.scala:83:29, :97:21, :124:48, :125:24, :126:23
+      automatic logic            _GEN_11;	// src/main/scala/soc/UartController.scala:83:29, :88:28, :97:21
+      automatic logic [3:0][1:0] _GEN_12;	// src/main/scala/soc/UartController.scala:88:{16,28}, :90:19, :97:21, :100:55, :112:48
+      _GEN = txState == 2'h0;	// src/main/scala/soc/UartController.scala:6:7, :27:28, :36:16
+      _GEN_0 = io_writeEnable & io_addr[7:0] == 8'h10;	// src/main/scala/soc/UartController.scala:39:{25,36,43}
+      _GEN_1 = txClkCount == 16'h363;	// src/main/scala/soc/UartController.scala:28:28, :47:{21,37}
+      _GEN_2 = txState == 2'h1;	// src/main/scala/soc/UartController.scala:6:7, :27:28, :50:23
+      _GEN_3 = txState == 2'h2;	// src/main/scala/soc/UartController.scala:6:7, :27:28, :50:23
+      _nextData_T = txBitIndex + 3'h1;	// src/main/scala/soc/UartController.scala:29:28, :57:36
+      _GEN_4 = rxState == 2'h0;	// src/main/scala/soc/UartController.scala:6:7, :78:29, :88:16
+      _GEN_5 = rxState == 2'h1;	// src/main/scala/soc/UartController.scala:6:7, :78:29, :97:21
+      _GEN_6 = rxClkCount == 16'h1B1;	// src/main/scala/soc/UartController.scala:79:29, :100:25
+      _GEN_7 = rxState == 2'h2;	// src/main/scala/soc/UartController.scala:6:7, :78:29, :97:21
+      _GEN_8 = rxClkCount == 16'h363;	// src/main/scala/soc/UartController.scala:47:37, :79:29, :112:25
+      _GEN_9 = _GEN_7 & _GEN_8;	// src/main/scala/soc/UartController.scala:95:16, :97:21, :112:{25,48}, :113:22
+      _GEN_10 = (&rxState) & _GEN_8 & rxSync;	// src/main/scala/soc/UartController.scala:78:29, :83:29, :86:23, :97:21, :112:25, :124:48, :125:24, :126:23
+      _GEN_11 = _GEN_4 | _GEN_5 | _GEN_7;	// src/main/scala/soc/UartController.scala:83:29, :88:{16,28}, :97:21
+      if (_GEN) begin	// src/main/scala/soc/UartController.scala:36:16
+        if (_GEN_0) begin	// src/main/scala/soc/UartController.scala:39:25
+          txState <= 2'h1;	// src/main/scala/soc/UartController.scala:6:7, :27:28
+          txClkCount <= 16'h0;	// src/main/scala/soc/UartController.scala:28:28
         end
-        txReg <= ~_GEN_0 & txReg;	// \\src\\main\\scala\\soc\\UartController.scala:31:28, :39:{25,56}, :43:18
+        txReg <= ~_GEN_0 & txReg;	// src/main/scala/soc/UartController.scala:31:28, :39:{25,56}, :43:18
       end
-      else if (_GEN_1) begin	// \\src\\main\\scala\\soc\\UartController.scala:47:21
-        automatic logic [3:0][1:0] _GEN_13;	// \\src\\main\\scala\\soc\\UartController.scala:27:28, :50:23, :52:22, :58:36, :68:19
-        _GEN_13 = {{2'h0}, {(&txBitIndex) ? 2'h3 : txState}, {2'h2}, {txState}};	// \\src\\main\\scala\\soc\\UartController.scala:6:7, :27:28, :29:28, :50:23, :52:22, :58:{27,36}, :59:21, :68:19
-        txState <= _GEN_13[txState];	// \\src\\main\\scala\\soc\\UartController.scala:27:28, :50:23, :52:22, :58:36, :68:19
-        txClkCount <= 16'h0;	// \\src\\main\\scala\\soc\\UartController.scala:28:28
-        if (_GEN_2)	// \\src\\main\\scala\\soc\\UartController.scala:50:23
-          txReg <= txBuffer[0];	// \\src\\main\\scala\\soc\\UartController.scala:30:28, :31:28, :54:33
-        else if (_GEN_3) begin	// \\src\\main\\scala\\soc\\UartController.scala:50:23
-          automatic logic [7:0] nextData;	// \\src\\main\\scala\\soc\\UartController.scala:63:37
-          nextData = txBuffer >> _nextData_T;	// \\src\\main\\scala\\soc\\UartController.scala:30:28, :57:36, :63:37
-          txReg <= (&txBitIndex) | nextData[0];	// \\src\\main\\scala\\soc\\UartController.scala:29:28, :31:28, :58:{27,36}, :60:21, :63:37, :64:{19,30}
+      else if (_GEN_1) begin	// src/main/scala/soc/UartController.scala:47:21
+        automatic logic [3:0][1:0] _GEN_13;	// src/main/scala/soc/UartController.scala:27:28, :50:23, :52:22, :58:36, :68:19
+        _GEN_13 = {{2'h0}, {(&txBitIndex) ? 2'h3 : txState}, {2'h2}, {txState}};	// src/main/scala/soc/UartController.scala:6:7, :27:28, :29:28, :50:23, :52:22, :58:{27,36}, :59:21, :68:19
+        txState <= _GEN_13[txState];	// src/main/scala/soc/UartController.scala:27:28, :50:23, :52:22, :58:36, :68:19
+        txClkCount <= 16'h0;	// src/main/scala/soc/UartController.scala:28:28
+        if (_GEN_2)	// src/main/scala/soc/UartController.scala:50:23
+          txReg <= txBuffer[0];	// src/main/scala/soc/UartController.scala:30:28, :31:28, :54:33
+        else if (_GEN_3) begin	// src/main/scala/soc/UartController.scala:50:23
+          automatic logic [7:0] nextData;	// src/main/scala/soc/UartController.scala:63:37
+          nextData = txBuffer >> _nextData_T;	// src/main/scala/soc/UartController.scala:30:28, :57:36, :63:37
+          txReg <= (&txBitIndex) | nextData[0];	// src/main/scala/soc/UartController.scala:29:28, :31:28, :58:{27,36}, :60:21, :63:37, :64:{19,30}
         end
       end
-      else	// \\src\\main\\scala\\soc\\UartController.scala:47:21
-        txClkCount <= txClkCount + 16'h1;	// \\src\\main\\scala\\soc\\UartController.scala:28:28, :46:30
-      if (_GEN | ~_GEN_1) begin	// \\src\\main\\scala\\soc\\UartController.scala:29:28, :36:{16,28}, :47:{21,44}
+      else	// src/main/scala/soc/UartController.scala:47:21
+        txClkCount <= txClkCount + 16'h1;	// src/main/scala/soc/UartController.scala:28:28, :46:30
+      if (_GEN | ~_GEN_1) begin	// src/main/scala/soc/UartController.scala:29:28, :36:{16,28}, :47:{21,44}
       end
-      else if (_GEN_2)	// \\src\\main\\scala\\soc\\UartController.scala:50:23
-        txBitIndex <= 3'h0;	// \\src\\main\\scala\\soc\\UartController.scala:29:28
-      else if (_GEN_3)	// \\src\\main\\scala\\soc\\UartController.scala:50:23
-        txBitIndex <= _nextData_T;	// \\src\\main\\scala\\soc\\UartController.scala:29:28, :57:36
-      if (_GEN & _GEN_0)	// \\src\\main\\scala\\soc\\UartController.scala:30:28, :36:{16,28}, :39:{25,56}, :40:18
-        txBuffer <= io_writeData[7:0];	// \\src\\main\\scala\\soc\\UartController.scala:30:28, :40:33
+      else if (_GEN_2)	// src/main/scala/soc/UartController.scala:50:23
+        txBitIndex <= 3'h0;	// src/main/scala/soc/UartController.scala:29:28
+      else if (_GEN_3)	// src/main/scala/soc/UartController.scala:50:23
+        txBitIndex <= _nextData_T;	// src/main/scala/soc/UartController.scala:29:28, :57:36
+      if (_GEN & _GEN_0)	// src/main/scala/soc/UartController.scala:30:28, :36:{16,28}, :39:{25,56}, :40:18
+        txBuffer <= io_writeData[7:0];	// src/main/scala/soc/UartController.scala:30:28, :40:33
       _GEN_12 =
         {{(&rxState) & _GEN_8 ? 2'h0 : rxState},
          {_GEN_8 & (&rxBitIndex) ? 2'h3 : rxState},
          {_GEN_6 ? {~rxSync, 1'h0} : rxState},
-         {rxSync ? rxState : 2'h1}};	// \\src\\main\\scala\\soc\\UartController.scala:6:7, :42:18, :78:29, :80:29, :86:23, :88:{16,28}, :90:{10,19}, :91:18, :97:21, :100:{25,55}, :101:25, :103:24, :106:24, :112:{25,48}, :117:{27,36}, :118:21, :124:48, :129:19
-      rxState <= _GEN_12[rxState];	// \\src\\main\\scala\\soc\\UartController.scala:78:29, :88:{16,28}, :90:19, :97:21, :100:55, :112:48
-      if (_GEN_4) begin	// \\src\\main\\scala\\soc\\UartController.scala:88:16
-        if (rxSync) begin	// \\src\\main\\scala\\soc\\UartController.scala:86:23
+         {rxSync ? rxState : 2'h1}};	// src/main/scala/soc/UartController.scala:6:7, :42:18, :78:29, :80:29, :86:23, :88:{16,28}, :90:{10,19}, :91:18, :97:21, :100:{25,55}, :101:25, :103:24, :106:24, :112:{25,48}, :117:{27,36}, :118:21, :124:48, :129:19
+      rxState <= _GEN_12[rxState];	// src/main/scala/soc/UartController.scala:78:29, :88:{16,28}, :90:19, :97:21, :100:55, :112:48
+      if (_GEN_4) begin	// src/main/scala/soc/UartController.scala:88:16
+        if (rxSync) begin	// src/main/scala/soc/UartController.scala:86:23
         end
-        else	// \\src\\main\\scala\\soc\\UartController.scala:86:23
-          rxClkCount <= 16'h0;	// \\src\\main\\scala\\soc\\UartController.scala:28:28, :79:29
+        else	// src/main/scala/soc/UartController.scala:86:23
+          rxClkCount <= 16'h0;	// src/main/scala/soc/UartController.scala:28:28, :79:29
       end
-      else begin	// \\src\\main\\scala\\soc\\UartController.scala:88:16
-        automatic logic _GEN_14;	// \\src\\main\\scala\\soc\\UartController.scala:95:16, :100:55, :101:25, :102:24
-        _GEN_14 = _GEN_6 & ~rxSync;	// \\src\\main\\scala\\soc\\UartController.scala:86:23, :90:10, :95:16, :100:{25,55}, :101:25, :102:24
-        if (_GEN_5 ? _GEN_14 : _GEN_9)	// \\src\\main\\scala\\soc\\UartController.scala:95:16, :97:21, :100:55, :101:25, :102:24, :112:48, :113:22
-          rxClkCount <= 16'h0;	// \\src\\main\\scala\\soc\\UartController.scala:28:28, :79:29
-        else	// \\src\\main\\scala\\soc\\UartController.scala:95:16, :97:21, :100:55, :101:25, :102:24, :112:48, :113:22
-          rxClkCount <= rxClkCount + 16'h1;	// \\src\\main\\scala\\soc\\UartController.scala:46:30, :79:29, :95:30
-        if (_GEN_5) begin	// \\src\\main\\scala\\soc\\UartController.scala:97:21
-          if (_GEN_14)	// \\src\\main\\scala\\soc\\UartController.scala:95:16, :100:55, :101:25, :102:24
-            rxBitIndex <= 3'h0;	// \\src\\main\\scala\\soc\\UartController.scala:29:28, :80:29
+      else begin	// src/main/scala/soc/UartController.scala:88:16
+        automatic logic _GEN_14;	// src/main/scala/soc/UartController.scala:95:16, :100:55, :101:25, :102:24
+        _GEN_14 = _GEN_6 & ~rxSync;	// src/main/scala/soc/UartController.scala:86:23, :90:10, :95:16, :100:{25,55}, :101:25, :102:24
+        if (_GEN_5 ? _GEN_14 : _GEN_9)	// src/main/scala/soc/UartController.scala:95:16, :97:21, :100:55, :101:25, :102:24, :112:48, :113:22
+          rxClkCount <= 16'h0;	// src/main/scala/soc/UartController.scala:28:28, :79:29
+        else	// src/main/scala/soc/UartController.scala:95:16, :97:21, :100:55, :101:25, :102:24, :112:48, :113:22
+          rxClkCount <= rxClkCount + 16'h1;	// src/main/scala/soc/UartController.scala:46:30, :79:29, :95:30
+        if (_GEN_5) begin	// src/main/scala/soc/UartController.scala:97:21
+          if (_GEN_14)	// src/main/scala/soc/UartController.scala:95:16, :100:55, :101:25, :102:24
+            rxBitIndex <= 3'h0;	// src/main/scala/soc/UartController.scala:29:28, :80:29
         end
-        else if (_GEN_9)	// \\src\\main\\scala\\soc\\UartController.scala:95:16, :97:21, :112:48, :113:22
-          rxBitIndex <= rxBitIndex + 3'h1;	// \\src\\main\\scala\\soc\\UartController.scala:57:36, :80:29, :115:36
+        else if (_GEN_9)	// src/main/scala/soc/UartController.scala:95:16, :97:21, :112:48, :113:22
+          rxBitIndex <= rxBitIndex + 3'h1;	// src/main/scala/soc/UartController.scala:57:36, :80:29, :115:36
       end
-      if (_GEN_4 | _GEN_5 | ~_GEN_9) begin	// \\src\\main\\scala\\soc\\UartController.scala:81:29, :88:{16,28}, :95:16, :97:21, :112:48, :113:22
+      if (_GEN_4 | _GEN_5 | ~_GEN_9) begin	// src/main/scala/soc/UartController.scala:81:29, :88:{16,28}, :95:16, :97:21, :112:48, :113:22
       end
-      else	// \\src\\main\\scala\\soc\\UartController.scala:81:29, :88:28, :97:21
-        rxBuffer <= {rxSync, rxBuffer[7:1]};	// \\src\\main\\scala\\soc\\UartController.scala:81:29, :86:23, :114:{28,45}
+      else	// src/main/scala/soc/UartController.scala:81:29, :88:28, :97:21
+        rxBuffer <= {rxSync, rxBuffer[7:1]};	// src/main/scala/soc/UartController.scala:81:29, :86:23, :114:{28,45}
       rxValid <=
-        ~(io_readEnable & io_addr[7:0] == 8'h10) & (~_GEN_11 & _GEN_10 | rxValid);	// \\src\\main\\scala\\soc\\UartController.scala:39:43, :82:29, :83:29, :88:28, :97:21, :124:48, :125:24, :126:23, :141:{35,46,53}, :142:21, :143:13
-      if (_GEN_11 | ~_GEN_10) begin	// \\src\\main\\scala\\soc\\UartController.scala:83:29, :88:28, :97:21, :124:48, :125:24, :126:23
+        ~(io_readEnable & io_addr[7:0] == 8'h10) & (~_GEN_11 & _GEN_10 | rxValid);	// src/main/scala/soc/UartController.scala:39:43, :82:29, :83:29, :88:28, :97:21, :124:48, :125:24, :126:23, :141:{35,46,53}, :142:21, :143:13
+      if (_GEN_11 | ~_GEN_10) begin	// src/main/scala/soc/UartController.scala:83:29, :88:28, :97:21, :124:48, :125:24, :126:23
       end
-      else	// \\src\\main\\scala\\soc\\UartController.scala:83:29, :88:28, :97:21
-        rxDataReg <= rxBuffer;	// \\src\\main\\scala\\soc\\UartController.scala:81:29, :83:29
-      rxSync_REG <= io_rx;	// \\src\\main\\scala\\soc\\UartController.scala:86:31
-      rxSync <= rxSync_REG;	// \\src\\main\\scala\\soc\\UartController.scala:86:{23,31}
+      else	// src/main/scala/soc/UartController.scala:83:29, :88:28, :97:21
+        rxDataReg <= rxBuffer;	// src/main/scala/soc/UartController.scala:81:29, :83:29
+      rxSync_REG <= io_rx;	// src/main/scala/soc/UartController.scala:86:31
+      rxSync <= rxSync_REG;	// src/main/scala/soc/UartController.scala:86:{23,31}
     end
   end // always @(posedge)
-  `ifdef ENABLE_INITIAL_REG_	// \\src\\main\\scala\\soc\\UartController.scala:6:7
-    `ifdef FIRRTL_BEFORE_INITIAL	// \\src\\main\\scala\\soc\\UartController.scala:6:7
-      `FIRRTL_BEFORE_INITIAL	// \\src\\main\\scala\\soc\\UartController.scala:6:7
+  `ifdef ENABLE_INITIAL_REG_	// src/main/scala/soc/UartController.scala:6:7
+    `ifdef FIRRTL_BEFORE_INITIAL	// src/main/scala/soc/UartController.scala:6:7
+      `FIRRTL_BEFORE_INITIAL	// src/main/scala/soc/UartController.scala:6:7
     `endif // FIRRTL_BEFORE_INITIAL
-    initial begin	// \\src\\main\\scala\\soc\\UartController.scala:6:7
-      automatic logic [31:0] _RANDOM[0:2];	// \\src\\main\\scala\\soc\\UartController.scala:6:7
-      `ifdef INIT_RANDOM_PROLOG_	// \\src\\main\\scala\\soc\\UartController.scala:6:7
-        `INIT_RANDOM_PROLOG_	// \\src\\main\\scala\\soc\\UartController.scala:6:7
+    initial begin	// src/main/scala/soc/UartController.scala:6:7
+      automatic logic [31:0] _RANDOM[0:2];	// src/main/scala/soc/UartController.scala:6:7
+      `ifdef INIT_RANDOM_PROLOG_	// src/main/scala/soc/UartController.scala:6:7
+        `INIT_RANDOM_PROLOG_	// src/main/scala/soc/UartController.scala:6:7
       `endif // INIT_RANDOM_PROLOG_
-      `ifdef RANDOMIZE_REG_INIT	// \\src\\main\\scala\\soc\\UartController.scala:6:7
+      `ifdef RANDOMIZE_REG_INIT	// src/main/scala/soc/UartController.scala:6:7
         for (logic [1:0] i = 2'h0; i < 2'h3; i += 2'h1) begin
-          _RANDOM[i] = `RANDOM;	// \\src\\main\\scala\\soc\\UartController.scala:6:7
-        end	// \\src\\main\\scala\\soc\\UartController.scala:6:7
-        txState = _RANDOM[2'h0][1:0];	// \\src\\main\\scala\\soc\\UartController.scala:6:7, :27:28
-        txClkCount = _RANDOM[2'h0][17:2];	// \\src\\main\\scala\\soc\\UartController.scala:6:7, :27:28, :28:28
-        txBitIndex = _RANDOM[2'h0][20:18];	// \\src\\main\\scala\\soc\\UartController.scala:6:7, :27:28, :29:28
-        txBuffer = _RANDOM[2'h0][28:21];	// \\src\\main\\scala\\soc\\UartController.scala:6:7, :27:28, :30:28
-        txReg = _RANDOM[2'h0][29];	// \\src\\main\\scala\\soc\\UartController.scala:6:7, :27:28, :31:28
-        rxState = _RANDOM[2'h0][31:30];	// \\src\\main\\scala\\soc\\UartController.scala:6:7, :27:28, :78:29
-        rxClkCount = _RANDOM[2'h1][15:0];	// \\src\\main\\scala\\soc\\UartController.scala:6:7, :79:29
-        rxBitIndex = _RANDOM[2'h1][18:16];	// \\src\\main\\scala\\soc\\UartController.scala:6:7, :79:29, :80:29
-        rxBuffer = _RANDOM[2'h1][26:19];	// \\src\\main\\scala\\soc\\UartController.scala:6:7, :79:29, :81:29
-        rxValid = _RANDOM[2'h1][27];	// \\src\\main\\scala\\soc\\UartController.scala:6:7, :79:29, :82:29
-        rxDataReg = {_RANDOM[2'h1][31:28], _RANDOM[2'h2][3:0]};	// \\src\\main\\scala\\soc\\UartController.scala:6:7, :79:29, :83:29
-        rxSync_REG = _RANDOM[2'h2][4];	// \\src\\main\\scala\\soc\\UartController.scala:6:7, :83:29, :86:31
-        rxSync = _RANDOM[2'h2][5];	// \\src\\main\\scala\\soc\\UartController.scala:6:7, :83:29, :86:23
+          _RANDOM[i] = `RANDOM;	// src/main/scala/soc/UartController.scala:6:7
+        end	// src/main/scala/soc/UartController.scala:6:7
+        txState = _RANDOM[2'h0][1:0];	// src/main/scala/soc/UartController.scala:6:7, :27:28
+        txClkCount = _RANDOM[2'h0][17:2];	// src/main/scala/soc/UartController.scala:6:7, :27:28, :28:28
+        txBitIndex = _RANDOM[2'h0][20:18];	// src/main/scala/soc/UartController.scala:6:7, :27:28, :29:28
+        txBuffer = _RANDOM[2'h0][28:21];	// src/main/scala/soc/UartController.scala:6:7, :27:28, :30:28
+        txReg = _RANDOM[2'h0][29];	// src/main/scala/soc/UartController.scala:6:7, :27:28, :31:28
+        rxState = _RANDOM[2'h0][31:30];	// src/main/scala/soc/UartController.scala:6:7, :27:28, :78:29
+        rxClkCount = _RANDOM[2'h1][15:0];	// src/main/scala/soc/UartController.scala:6:7, :79:29
+        rxBitIndex = _RANDOM[2'h1][18:16];	// src/main/scala/soc/UartController.scala:6:7, :79:29, :80:29
+        rxBuffer = _RANDOM[2'h1][26:19];	// src/main/scala/soc/UartController.scala:6:7, :79:29, :81:29
+        rxValid = _RANDOM[2'h1][27];	// src/main/scala/soc/UartController.scala:6:7, :79:29, :82:29
+        rxDataReg = {_RANDOM[2'h1][31:28], _RANDOM[2'h2][3:0]};	// src/main/scala/soc/UartController.scala:6:7, :79:29, :83:29
+        rxSync_REG = _RANDOM[2'h2][4];	// src/main/scala/soc/UartController.scala:6:7, :83:29, :86:31
+        rxSync = _RANDOM[2'h2][5];	// src/main/scala/soc/UartController.scala:6:7, :83:29, :86:23
       `endif // RANDOMIZE_REG_INIT
     end // initial
-    `ifdef FIRRTL_AFTER_INITIAL	// \\src\\main\\scala\\soc\\UartController.scala:6:7
-      `FIRRTL_AFTER_INITIAL	// \\src\\main\\scala\\soc\\UartController.scala:6:7
+    `ifdef FIRRTL_AFTER_INITIAL	// src/main/scala/soc/UartController.scala:6:7
+      `FIRRTL_AFTER_INITIAL	// src/main/scala/soc/UartController.scala:6:7
     `endif // FIRRTL_AFTER_INITIAL
   `endif // ENABLE_INITIAL_REG_
   assign io_readData =
@@ -784,12 +801,12 @@ module UartController(	// \\src\\main\\scala\\soc\\UartController.scala:6:7
       ? (io_addr[7:0] == 8'h10
            ? {24'h0, rxDataReg}
            : io_addr[7:0] == 8'h14 ? {30'h0, rxValid, |txState} : 32'h0)
-      : 32'h0;	// \\src\\main\\scala\\soc\\UartController.scala:6:7, :27:28, :34:24, :39:43, :82:29, :83:29, :138:15, :141:46, :146:23, :147:27, :149:{32,38}, :151:{32,38}
-  assign io_tx = txReg;	// \\src\\main\\scala\\soc\\UartController.scala:6:7, :31:28
+      : 32'h0;	// src/main/scala/soc/UartController.scala:6:7, :27:28, :34:24, :39:43, :82:29, :83:29, :138:15, :141:46, :146:23, :147:27, :149:{32,38}, :151:{32,38}
+  assign io_tx = txReg;	// src/main/scala/soc/UartController.scala:6:7, :31:28
 endmodule
 
 // VCS coverage exclude_file
-module fbMem_76800x8(	// \\src\\main\\scala\\soc\\HdmiController.scala:24:26
+module fbMem_76800x8(	// src/main/scala/soc/HdmiController.scala:25:26
   input  [16:0] R0_addr,
   input         R0_en,
                 R0_clk,
@@ -800,116 +817,124 @@ module fbMem_76800x8(	// \\src\\main\\scala\\soc\\HdmiController.scala:24:26
   input  [7:0]  W0_data
 );
 
-  reg [7:0]  Memory[0:76799];	// \\src\\main\\scala\\soc\\HdmiController.scala:24:26
-  reg        _R0_en_d0;	// \\src\\main\\scala\\soc\\HdmiController.scala:24:26
-  reg [16:0] _R0_addr_d0;	// \\src\\main\\scala\\soc\\HdmiController.scala:24:26
-  always @(posedge R0_clk) begin	// \\src\\main\\scala\\soc\\HdmiController.scala:24:26
-    _R0_en_d0 <= R0_en;	// \\src\\main\\scala\\soc\\HdmiController.scala:24:26
-    _R0_addr_d0 <= R0_addr;	// \\src\\main\\scala\\soc\\HdmiController.scala:24:26
+  reg [7:0]  Memory[0:76799];	// src/main/scala/soc/HdmiController.scala:25:26
+  reg        _R0_en_d0;	// src/main/scala/soc/HdmiController.scala:25:26
+  reg [16:0] _R0_addr_d0;	// src/main/scala/soc/HdmiController.scala:25:26
+  always @(posedge R0_clk) begin	// src/main/scala/soc/HdmiController.scala:25:26
+    _R0_en_d0 <= R0_en;	// src/main/scala/soc/HdmiController.scala:25:26
+    _R0_addr_d0 <= R0_addr;	// src/main/scala/soc/HdmiController.scala:25:26
   end // always @(posedge)
-  always @(posedge W0_clk) begin	// \\src\\main\\scala\\soc\\HdmiController.scala:24:26
-    if (W0_en & 1'h1)	// \\src\\main\\scala\\soc\\HdmiController.scala:24:26
-      Memory[W0_addr] <= W0_data;	// \\src\\main\\scala\\soc\\HdmiController.scala:24:26
+  always @(posedge W0_clk) begin	// src/main/scala/soc/HdmiController.scala:25:26
+    if (W0_en & 1'h1)	// src/main/scala/soc/HdmiController.scala:25:26
+      Memory[W0_addr] <= W0_data;	// src/main/scala/soc/HdmiController.scala:25:26
   end // always @(posedge)
-  `ifdef ENABLE_INITIAL_MEM_	// \\src\\main\\scala\\soc\\HdmiController.scala:24:26
-    `ifdef RANDOMIZE_REG_INIT	// \\src\\main\\scala\\soc\\HdmiController.scala:24:26
-      reg [31:0] _RANDOM;	// \\src\\main\\scala\\soc\\HdmiController.scala:24:26
+  `ifdef ENABLE_INITIAL_MEM_	// src/main/scala/soc/HdmiController.scala:25:26
+    `ifdef RANDOMIZE_REG_INIT	// src/main/scala/soc/HdmiController.scala:25:26
+      reg [31:0] _RANDOM;	// src/main/scala/soc/HdmiController.scala:25:26
     `endif // RANDOMIZE_REG_INIT
-    reg [31:0] _RANDOM_MEM;	// \\src\\main\\scala\\soc\\HdmiController.scala:24:26
-    initial begin	// \\src\\main\\scala\\soc\\HdmiController.scala:24:26
-      `INIT_RANDOM_PROLOG_	// \\src\\main\\scala\\soc\\HdmiController.scala:24:26
-      `ifdef RANDOMIZE_MEM_INIT	// \\src\\main\\scala\\soc\\HdmiController.scala:24:26
+    reg [31:0] _RANDOM_MEM;	// src/main/scala/soc/HdmiController.scala:25:26
+    initial begin	// src/main/scala/soc/HdmiController.scala:25:26
+      `INIT_RANDOM_PROLOG_	// src/main/scala/soc/HdmiController.scala:25:26
+      `ifdef RANDOMIZE_MEM_INIT	// src/main/scala/soc/HdmiController.scala:25:26
         for (logic [16:0] i = 17'h0; i < 17'h12C00; i += 17'h1) begin
-          _RANDOM_MEM = `RANDOM;	// \\src\\main\\scala\\soc\\HdmiController.scala:24:26
-          Memory[i] = _RANDOM_MEM[7:0];	// \\src\\main\\scala\\soc\\HdmiController.scala:24:26
-        end	// \\src\\main\\scala\\soc\\HdmiController.scala:24:26
+          _RANDOM_MEM = `RANDOM;	// src/main/scala/soc/HdmiController.scala:25:26
+          Memory[i] = _RANDOM_MEM[7:0];	// src/main/scala/soc/HdmiController.scala:25:26
+        end	// src/main/scala/soc/HdmiController.scala:25:26
       `endif // RANDOMIZE_MEM_INIT
-      `ifdef RANDOMIZE_REG_INIT	// \\src\\main\\scala\\soc\\HdmiController.scala:24:26
-        _RANDOM = {`RANDOM};	// \\src\\main\\scala\\soc\\HdmiController.scala:24:26
-        _R0_en_d0 = _RANDOM[0];	// \\src\\main\\scala\\soc\\HdmiController.scala:24:26
-        _R0_addr_d0 = _RANDOM[17:1];	// \\src\\main\\scala\\soc\\HdmiController.scala:24:26
+      `ifdef RANDOMIZE_REG_INIT	// src/main/scala/soc/HdmiController.scala:25:26
+        _RANDOM = {`RANDOM};	// src/main/scala/soc/HdmiController.scala:25:26
+        _R0_en_d0 = _RANDOM[0];	// src/main/scala/soc/HdmiController.scala:25:26
+        _R0_addr_d0 = _RANDOM[17:1];	// src/main/scala/soc/HdmiController.scala:25:26
       `endif // RANDOMIZE_REG_INIT
     end // initial
   `endif // ENABLE_INITIAL_MEM_
-  assign R0_data = _R0_en_d0 ? Memory[_R0_addr_d0] : 8'bx;	// \\src\\main\\scala\\soc\\HdmiController.scala:24:26
+  assign R0_data = _R0_en_d0 ? Memory[_R0_addr_d0] : 8'bx;	// src/main/scala/soc/HdmiController.scala:25:26
 endmodule
 
-module HdmiController(	// \\src\\main\\scala\\soc\\HdmiController.scala:6:7
-  input         clock,	// <stdin>:725:11
-                reset,	// <stdin>:726:11
-  input  [31:0] io_addr,	// \\src\\main\\scala\\soc\\HdmiController.scala:7:14
-                io_writeData,	// \\src\\main\\scala\\soc\\HdmiController.scala:7:14
-  input         io_writeEnable,	// \\src\\main\\scala\\soc\\HdmiController.scala:7:14
-                io_pixelClk,	// \\src\\main\\scala\\soc\\HdmiController.scala:7:14
-  output        io_hsync,	// \\src\\main\\scala\\soc\\HdmiController.scala:7:14
-                io_vsync,	// \\src\\main\\scala\\soc\\HdmiController.scala:7:14
-                io_vde,	// \\src\\main\\scala\\soc\\HdmiController.scala:7:14
-  output [23:0] io_rgb	// \\src\\main\\scala\\soc\\HdmiController.scala:7:14
+module HdmiController(	// src/main/scala/soc/HdmiController.scala:6:7
+  input         clock,	// <stdin>:749:11
+                reset,	// <stdin>:750:11
+  input  [31:0] io_addr,	// src/main/scala/soc/HdmiController.scala:7:14
+                io_writeData,	// src/main/scala/soc/HdmiController.scala:7:14
+  input         io_writeEnable,	// src/main/scala/soc/HdmiController.scala:7:14
+  input  [3:0]  io_writeMask,	// src/main/scala/soc/HdmiController.scala:7:14
+  input         io_pixelClk,	// src/main/scala/soc/HdmiController.scala:7:14
+  output        io_hsync,	// src/main/scala/soc/HdmiController.scala:7:14
+                io_vsync,	// src/main/scala/soc/HdmiController.scala:7:14
+                io_vde,	// src/main/scala/soc/HdmiController.scala:7:14
+  output [23:0] io_rgb	// src/main/scala/soc/HdmiController.scala:7:14
 );
 
-  wire [7:0]  _fbMem_ext_R0_data;	// \\src\\main\\scala\\soc\\HdmiController.scala:24:26
-  reg  [10:0] hCount;	// \\src\\main\\scala\\soc\\HdmiController.scala:56:25
-  reg  [10:0] vCount;	// \\src\\main\\scala\\soc\\HdmiController.scala:57:25
-  wire [10:0] _nextH_T_3 = hCount + 11'h1;	// \\src\\main\\scala\\soc\\HdmiController.scala:56:25, :60:22
-  reg         hsyncReg;	// \\src\\main\\scala\\soc\\HdmiController.scala:70:27
-  reg         vsyncReg;	// \\src\\main\\scala\\soc\\HdmiController.scala:71:27
-  reg         vdeReg;	// \\src\\main\\scala\\soc\\HdmiController.scala:72:27
-  wire [10:0] nextH = hCount == 11'h31F ? 11'h0 : _nextH_T_3;	// \\src\\main\\scala\\soc\\HdmiController.scala:56:25, :60:22, :61:29, :80:{20,28}
+  wire [7:0]  _fbMem_ext_R0_data;	// src/main/scala/soc/HdmiController.scala:25:26
+  reg  [10:0] hCount;	// src/main/scala/soc/HdmiController.scala:70:25
+  reg  [10:0] vCount;	// src/main/scala/soc/HdmiController.scala:71:25
+  wire [10:0] _nextH_T_3 = hCount + 11'h1;	// src/main/scala/soc/HdmiController.scala:70:25, :74:22
+  reg         hsyncReg;	// src/main/scala/soc/HdmiController.scala:84:27
+  reg         vsyncReg;	// src/main/scala/soc/HdmiController.scala:85:27
+  reg         vdeReg;	// src/main/scala/soc/HdmiController.scala:86:27
+  wire [10:0] nextH = hCount == 11'h31F ? 11'h0 : _nextH_T_3;	// src/main/scala/soc/HdmiController.scala:70:25, :74:22, :75:29, :94:{20,28}
   wire [10:0] nextV =
-    hCount == 11'h31F ? (vCount == 11'h20C ? 11'h0 : vCount + 11'h1) : vCount;	// \\src\\main\\scala\\soc\\HdmiController.scala:56:25, :57:25, :60:22, :61:29, :64:31, :81:{20,28,50,58,89}
-  always @(posedge io_pixelClk) begin	// \\src\\main\\scala\\soc\\HdmiController.scala:7:14
-    if (reset) begin	// \\src\\main\\scala\\soc\\HdmiController.scala:7:14
-      hCount <= 11'h0;	// \\src\\main\\scala\\soc\\HdmiController.scala:56:25
-      vCount <= 11'h0;	// \\src\\main\\scala\\soc\\HdmiController.scala:56:25, :57:25
+    hCount == 11'h31F ? (vCount == 11'h20C ? 11'h0 : vCount + 11'h1) : vCount;	// src/main/scala/soc/HdmiController.scala:70:25, :71:25, :74:22, :75:29, :78:31, :95:{20,28,50,58,89}
+  always @(posedge io_pixelClk) begin	// src/main/scala/soc/HdmiController.scala:7:14
+    if (reset) begin	// src/main/scala/soc/HdmiController.scala:7:14
+      hCount <= 11'h0;	// src/main/scala/soc/HdmiController.scala:70:25
+      vCount <= 11'h0;	// src/main/scala/soc/HdmiController.scala:70:25, :71:25
     end
-    else if (hCount == 11'h31F) begin	// \\src\\main\\scala\\soc\\HdmiController.scala:56:25, :61:{17,29}
-      hCount <= 11'h0;	// \\src\\main\\scala\\soc\\HdmiController.scala:56:25
-      if (vCount == 11'h20C)	// \\src\\main\\scala\\soc\\HdmiController.scala:57:25, :64:{19,31}
-        vCount <= 11'h0;	// \\src\\main\\scala\\soc\\HdmiController.scala:56:25, :57:25
-      else	// \\src\\main\\scala\\soc\\HdmiController.scala:64:19
-        vCount <= vCount + 11'h1;	// \\src\\main\\scala\\soc\\HdmiController.scala:57:25, :60:22, :63:24
+    else if (hCount == 11'h31F) begin	// src/main/scala/soc/HdmiController.scala:70:25, :75:{17,29}
+      hCount <= 11'h0;	// src/main/scala/soc/HdmiController.scala:70:25
+      if (vCount == 11'h20C)	// src/main/scala/soc/HdmiController.scala:71:25, :78:{19,31}
+        vCount <= 11'h0;	// src/main/scala/soc/HdmiController.scala:70:25, :71:25
+      else	// src/main/scala/soc/HdmiController.scala:78:19
+        vCount <= vCount + 11'h1;	// src/main/scala/soc/HdmiController.scala:71:25, :74:22, :77:24
     end
-    else	// \\src\\main\\scala\\soc\\HdmiController.scala:61:17
-      hCount <= _nextH_T_3;	// \\src\\main\\scala\\soc\\HdmiController.scala:56:25, :60:22
-    hsyncReg <= ~(hCount > 11'h28F & hCount < 11'h2F0);	// \\src\\main\\scala\\soc\\HdmiController.scala:56:25, :70:{27,28,37,67,77,105}
-    vsyncReg <= ~(vCount > 11'h1E9 & vCount < 11'h1EC);	// \\src\\main\\scala\\soc\\HdmiController.scala:57:25, :71:{27,28,37,67,77,105}
-    vdeReg <= hCount < 11'h280 & vCount < 11'h1E0;	// \\src\\main\\scala\\soc\\HdmiController.scala:56:25, :57:25, :70:50, :71:50, :72:{27,35,46,56}
+    else	// src/main/scala/soc/HdmiController.scala:75:17
+      hCount <= _nextH_T_3;	// src/main/scala/soc/HdmiController.scala:70:25, :74:22
+    hsyncReg <= ~(hCount > 11'h28F & hCount < 11'h2F0);	// src/main/scala/soc/HdmiController.scala:70:25, :84:{27,28,37,67,77,105}
+    vsyncReg <= ~(vCount > 11'h1E9 & vCount < 11'h1EC);	// src/main/scala/soc/HdmiController.scala:71:25, :85:{27,28,37,67,77,105}
+    vdeReg <= hCount < 11'h280 & vCount < 11'h1E0;	// src/main/scala/soc/HdmiController.scala:70:25, :71:25, :84:50, :85:50, :86:{27,35,46,56}
   end // always @(posedge)
-  `ifdef ENABLE_INITIAL_REG_	// \\src\\main\\scala\\soc\\HdmiController.scala:6:7
-    `ifdef FIRRTL_BEFORE_INITIAL	// \\src\\main\\scala\\soc\\HdmiController.scala:6:7
-      `FIRRTL_BEFORE_INITIAL	// \\src\\main\\scala\\soc\\HdmiController.scala:6:7
+  `ifdef ENABLE_INITIAL_REG_	// src/main/scala/soc/HdmiController.scala:6:7
+    `ifdef FIRRTL_BEFORE_INITIAL	// src/main/scala/soc/HdmiController.scala:6:7
+      `FIRRTL_BEFORE_INITIAL	// src/main/scala/soc/HdmiController.scala:6:7
     `endif // FIRRTL_BEFORE_INITIAL
-    initial begin	// \\src\\main\\scala\\soc\\HdmiController.scala:6:7
-      automatic logic [31:0] _RANDOM[0:0];	// \\src\\main\\scala\\soc\\HdmiController.scala:6:7
-      `ifdef INIT_RANDOM_PROLOG_	// \\src\\main\\scala\\soc\\HdmiController.scala:6:7
-        `INIT_RANDOM_PROLOG_	// \\src\\main\\scala\\soc\\HdmiController.scala:6:7
+    initial begin	// src/main/scala/soc/HdmiController.scala:6:7
+      automatic logic [31:0] _RANDOM[0:0];	// src/main/scala/soc/HdmiController.scala:6:7
+      `ifdef INIT_RANDOM_PROLOG_	// src/main/scala/soc/HdmiController.scala:6:7
+        `INIT_RANDOM_PROLOG_	// src/main/scala/soc/HdmiController.scala:6:7
       `endif // INIT_RANDOM_PROLOG_
-      `ifdef RANDOMIZE_REG_INIT	// \\src\\main\\scala\\soc\\HdmiController.scala:6:7
-        _RANDOM[/*Zero width*/ 1'b0] = `RANDOM;	// \\src\\main\\scala\\soc\\HdmiController.scala:6:7
-        hCount = _RANDOM[/*Zero width*/ 1'b0][10:0];	// \\src\\main\\scala\\soc\\HdmiController.scala:6:7, :56:25
-        vCount = _RANDOM[/*Zero width*/ 1'b0][21:11];	// \\src\\main\\scala\\soc\\HdmiController.scala:6:7, :56:25, :57:25
-        hsyncReg = _RANDOM[/*Zero width*/ 1'b0][22];	// \\src\\main\\scala\\soc\\HdmiController.scala:6:7, :56:25, :70:27
-        vsyncReg = _RANDOM[/*Zero width*/ 1'b0][23];	// \\src\\main\\scala\\soc\\HdmiController.scala:6:7, :56:25, :71:27
-        vdeReg = _RANDOM[/*Zero width*/ 1'b0][24];	// \\src\\main\\scala\\soc\\HdmiController.scala:6:7, :56:25, :72:27
+      `ifdef RANDOMIZE_REG_INIT	// src/main/scala/soc/HdmiController.scala:6:7
+        _RANDOM[/*Zero width*/ 1'b0] = `RANDOM;	// src/main/scala/soc/HdmiController.scala:6:7
+        hCount = _RANDOM[/*Zero width*/ 1'b0][10:0];	// src/main/scala/soc/HdmiController.scala:6:7, :70:25
+        vCount = _RANDOM[/*Zero width*/ 1'b0][21:11];	// src/main/scala/soc/HdmiController.scala:6:7, :70:25, :71:25
+        hsyncReg = _RANDOM[/*Zero width*/ 1'b0][22];	// src/main/scala/soc/HdmiController.scala:6:7, :70:25, :84:27
+        vsyncReg = _RANDOM[/*Zero width*/ 1'b0][23];	// src/main/scala/soc/HdmiController.scala:6:7, :70:25, :85:27
+        vdeReg = _RANDOM[/*Zero width*/ 1'b0][24];	// src/main/scala/soc/HdmiController.scala:6:7, :70:25, :86:27
       `endif // RANDOMIZE_REG_INIT
     end // initial
-    `ifdef FIRRTL_AFTER_INITIAL	// \\src\\main\\scala\\soc\\HdmiController.scala:6:7
-      `FIRRTL_AFTER_INITIAL	// \\src\\main\\scala\\soc\\HdmiController.scala:6:7
+    `ifdef FIRRTL_AFTER_INITIAL	// src/main/scala/soc/HdmiController.scala:6:7
+      `FIRRTL_AFTER_INITIAL	// src/main/scala/soc/HdmiController.scala:6:7
     `endif // FIRRTL_AFTER_INITIAL
   `endif // ENABLE_INITIAL_REG_
-  fbMem_76800x8 fbMem_ext (	// \\src\\main\\scala\\soc\\HdmiController.scala:24:26
-    .R0_addr ({7'h0, nextV[10:1]} * 17'h140 + {7'h0, nextH[10:1]}),	// \\src\\main\\scala\\soc\\HdmiController.scala:80:20, :81:20, :83:21, :84:21, :85:{24,32}
-    .R0_en   (nextH < 11'h280 & nextV < 11'h1E0),	// \\src\\main\\scala\\soc\\HdmiController.scala:70:50, :71:50, :80:20, :81:20, :88:{49,60,69}
+  fbMem_76800x8 fbMem_ext (	// src/main/scala/soc/HdmiController.scala:25:26
+    .R0_addr ({7'h0, nextV[10:1]} * 17'h140 + {7'h0, nextH[10:1]}),	// src/main/scala/soc/HdmiController.scala:94:20, :95:20, :97:21, :98:21, :99:{24,32}
+    .R0_en   (nextH < 11'h280 & nextV < 11'h1E0),	// src/main/scala/soc/HdmiController.scala:84:50, :85:50, :94:20, :95:20, :102:{49,60,69}
     .R0_clk  (io_pixelClk),
     .R0_data (_fbMem_ext_R0_data),
-    .W0_addr (io_addr[16:0]),	// \\src\\main\\scala\\soc\\HdmiController.scala:32:27
-    .W0_en   (io_writeEnable & io_addr > 32'h8FFFFFFF & io_addr < 32'h90012C00),	// \\src\\main\\scala\\soc\\HdmiController.scala:31:{26,54}, :34:23
+    .W0_addr
+      (io_addr[16:0] + {15'h0, |(io_writeMask[3:2]), io_writeMask[3] | io_writeMask[1]}),	// src/main/scala/chisel3/util/OneHot.scala:30:18, :31:18, :32:{14,28}, src/main/scala/soc/HdmiController.scala:7:14, :40:31
+    .W0_en
+      (io_writeEnable & io_addr > 32'h8FFFFFFF & io_addr < 32'h90012C00
+       & (|io_writeMask)),	// src/main/scala/soc/HdmiController.scala:32:{26,54}, :48:{35,51}
     .W0_clk  (clock),
-    .W0_data (io_writeData[7:0])	// \\src\\main\\scala\\soc\\HdmiController.scala:35:40
+    .W0_data
+      ((io_writeMask[0] ? io_writeData[7:0] : 8'h0)
+       | (io_writeMask[1] ? io_writeData[15:8] : 8'h0)
+       | (io_writeMask[2] ? io_writeData[23:16] : 8'h0)
+       | (io_writeMask[3] ? io_writeData[31:24] : 8'h0))	// src/main/scala/chisel3/util/Mux.scala:30:73, :32:36, src/main/scala/soc/HdmiController.scala:42:17, :43:17, :44:17, :45:17
   );
-  assign io_hsync = hsyncReg;	// \\src\\main\\scala\\soc\\HdmiController.scala:6:7, :70:27
-  assign io_vsync = vsyncReg;	// \\src\\main\\scala\\soc\\HdmiController.scala:6:7, :71:27
-  assign io_vde = vdeReg;	// \\src\\main\\scala\\soc\\HdmiController.scala:6:7, :72:27
+  assign io_hsync = hsyncReg;	// src/main/scala/soc/HdmiController.scala:6:7, :84:27
+  assign io_vsync = vsyncReg;	// src/main/scala/soc/HdmiController.scala:6:7, :85:27
+  assign io_vde = vdeReg;	// src/main/scala/soc/HdmiController.scala:6:7, :86:27
   assign io_rgb =
     vdeReg
       ? {{2{_fbMem_ext_R0_data[7:5]}},
@@ -917,49 +942,63 @@ module HdmiController(	// \\src\\main\\scala\\soc\\HdmiController.scala:6:7
          {2{_fbMem_ext_R0_data[4:2]}},
          _fbMem_ext_R0_data[4:3],
          {4{_fbMem_ext_R0_data[1:0]}}}
-      : 24'h0;	// \\src\\main\\scala\\soc\\HdmiController.scala:6:7, :24:26, :72:27, :94:{17,28,64}, :95:{17,28,64}, :96:{17,28}, :99:{18,30}
+      : 24'h0;	// src/main/scala/soc/HdmiController.scala:6:7, :25:26, :86:27, :108:{17,28,64}, :109:{17,28,64}, :110:{17,28}, :113:{18,30}
 endmodule
 
 // VCS coverage exclude_file
-module rom_4096x32(	// \\src\\main\\scala\\soc\\SoCTop.scala:33:24
+module rom_4096x32(	// src/main/scala/soc/SoCTop.scala:36:24
   input  [11:0] R0_addr,
   input         R0_en,
                 R0_clk,
-  output [31:0] R0_data
+  output [31:0] R0_data,
+  input  [11:0] R1_addr,
+  input         R1_en,
+                R1_clk,
+  output [31:0] R1_data
 );
 
-  reg [31:0] Memory[0:4095];	// \\src\\main\\scala\\soc\\SoCTop.scala:33:24
-  reg        _R0_en_d0;	// \\src\\main\\scala\\soc\\SoCTop.scala:33:24
-  reg [11:0] _R0_addr_d0;	// \\src\\main\\scala\\soc\\SoCTop.scala:33:24
-  always @(posedge R0_clk) begin	// \\src\\main\\scala\\soc\\SoCTop.scala:33:24
-    _R0_en_d0 <= R0_en;	// \\src\\main\\scala\\soc\\SoCTop.scala:33:24
-    _R0_addr_d0 <= R0_addr;	// \\src\\main\\scala\\soc\\SoCTop.scala:33:24
+  reg [31:0] Memory[0:4095];	// src/main/scala/soc/SoCTop.scala:36:24
+  reg        _R0_en_d0;	// src/main/scala/soc/SoCTop.scala:36:24
+  reg [11:0] _R0_addr_d0;	// src/main/scala/soc/SoCTop.scala:36:24
+  always @(posedge R0_clk) begin	// src/main/scala/soc/SoCTop.scala:36:24
+    _R0_en_d0 <= R0_en;	// src/main/scala/soc/SoCTop.scala:36:24
+    _R0_addr_d0 <= R0_addr;	// src/main/scala/soc/SoCTop.scala:36:24
   end // always @(posedge)
-  `ifdef ENABLE_INITIAL_MEM_	// \\src\\main\\scala\\soc\\SoCTop.scala:33:24
-    `ifdef RANDOMIZE_REG_INIT	// \\src\\main\\scala\\soc\\SoCTop.scala:33:24
-      reg [31:0] _RANDOM;	// \\src\\main\\scala\\soc\\SoCTop.scala:33:24
+  reg        _R1_en_d0;	// src/main/scala/soc/SoCTop.scala:36:24
+  reg [11:0] _R1_addr_d0;	// src/main/scala/soc/SoCTop.scala:36:24
+  always @(posedge R1_clk) begin	// src/main/scala/soc/SoCTop.scala:36:24
+    _R1_en_d0 <= R1_en;	// src/main/scala/soc/SoCTop.scala:36:24
+    _R1_addr_d0 <= R1_addr;	// src/main/scala/soc/SoCTop.scala:36:24
+  end // always @(posedge)
+  `ifdef ENABLE_INITIAL_MEM_	// src/main/scala/soc/SoCTop.scala:36:24
+    `ifdef RANDOMIZE_REG_INIT	// src/main/scala/soc/SoCTop.scala:36:24
+      reg [31:0] _RANDOM;	// src/main/scala/soc/SoCTop.scala:36:24
     `endif // RANDOMIZE_REG_INIT
-    reg [31:0] _RANDOM_MEM;	// \\src\\main\\scala\\soc\\SoCTop.scala:33:24
-    initial begin	// \\src\\main\\scala\\soc\\SoCTop.scala:33:24
-      `INIT_RANDOM_PROLOG_	// \\src\\main\\scala\\soc\\SoCTop.scala:33:24
-      `ifdef RANDOMIZE_MEM_INIT	// \\src\\main\\scala\\soc\\SoCTop.scala:33:24
+    reg [31:0] _RANDOM_MEM;	// src/main/scala/soc/SoCTop.scala:36:24
+    initial begin	// src/main/scala/soc/SoCTop.scala:36:24
+      $readmemh("program.hex", Memory);	// src/main/scala/soc/SoCTop.scala:36:24
+      `INIT_RANDOM_PROLOG_	// src/main/scala/soc/SoCTop.scala:36:24
+      `ifdef RANDOMIZE_MEM_INIT	// src/main/scala/soc/SoCTop.scala:36:24
         for (logic [12:0] i = 13'h0; i < 13'h1000; i += 13'h1) begin
-          _RANDOM_MEM = `RANDOM;	// \\src\\main\\scala\\soc\\SoCTop.scala:33:24
-          Memory[i[11:0]] = _RANDOM_MEM;	// \\src\\main\\scala\\soc\\SoCTop.scala:33:24
-        end	// \\src\\main\\scala\\soc\\SoCTop.scala:33:24
+          _RANDOM_MEM = `RANDOM;	// src/main/scala/soc/SoCTop.scala:36:24
+          Memory[i[11:0]] = _RANDOM_MEM;	// src/main/scala/soc/SoCTop.scala:36:24
+        end	// src/main/scala/soc/SoCTop.scala:36:24
       `endif // RANDOMIZE_MEM_INIT
-      `ifdef RANDOMIZE_REG_INIT	// \\src\\main\\scala\\soc\\SoCTop.scala:33:24
-        _RANDOM = {`RANDOM};	// \\src\\main\\scala\\soc\\SoCTop.scala:33:24
-        _R0_en_d0 = _RANDOM[0];	// \\src\\main\\scala\\soc\\SoCTop.scala:33:24
-        _R0_addr_d0 = _RANDOM[12:1];	// \\src\\main\\scala\\soc\\SoCTop.scala:33:24
+      `ifdef RANDOMIZE_REG_INIT	// src/main/scala/soc/SoCTop.scala:36:24
+        _RANDOM = {`RANDOM};	// src/main/scala/soc/SoCTop.scala:36:24
+        _R0_en_d0 = _RANDOM[0];	// src/main/scala/soc/SoCTop.scala:36:24
+        _R0_addr_d0 = _RANDOM[12:1];	// src/main/scala/soc/SoCTop.scala:36:24
+        _R1_en_d0 = _RANDOM[13];	// src/main/scala/soc/SoCTop.scala:36:24
+        _R1_addr_d0 = _RANDOM[25:14];	// src/main/scala/soc/SoCTop.scala:36:24
       `endif // RANDOMIZE_REG_INIT
     end // initial
   `endif // ENABLE_INITIAL_MEM_
-  assign R0_data = _R0_en_d0 ? Memory[_R0_addr_d0] : 32'bx;	// \\src\\main\\scala\\soc\\SoCTop.scala:33:24
+  assign R0_data = _R0_en_d0 ? Memory[_R0_addr_d0] : 32'bx;	// src/main/scala/soc/SoCTop.scala:36:24
+  assign R1_data = _R1_en_d0 ? Memory[_R1_addr_d0] : 32'bx;	// src/main/scala/soc/SoCTop.scala:36:24
 endmodule
 
 // VCS coverage exclude_file
-module ram_4096x32(	// \\src\\main\\scala\\soc\\SoCTop.scala:44:24
+module ram_4096x32(	// src/main/scala/soc/SoCTop.scala:50:24
   input  [11:0] R0_addr,
   input         R0_en,
                 R0_clk,
@@ -971,150 +1010,149 @@ module ram_4096x32(	// \\src\\main\\scala\\soc\\SoCTop.scala:44:24
   input  [3:0]  W0_mask
 );
 
-  reg [31:0] Memory[0:4095];	// \\src\\main\\scala\\soc\\SoCTop.scala:44:24
-  reg        _R0_en_d0;	// \\src\\main\\scala\\soc\\SoCTop.scala:44:24
-  reg [11:0] _R0_addr_d0;	// \\src\\main\\scala\\soc\\SoCTop.scala:44:24
-  always @(posedge R0_clk) begin	// \\src\\main\\scala\\soc\\SoCTop.scala:44:24
-    _R0_en_d0 <= R0_en;	// \\src\\main\\scala\\soc\\SoCTop.scala:44:24
-    _R0_addr_d0 <= R0_addr;	// \\src\\main\\scala\\soc\\SoCTop.scala:44:24
+  reg [31:0] Memory[0:4095];	// src/main/scala/soc/SoCTop.scala:50:24
+  reg        _R0_en_d0;	// src/main/scala/soc/SoCTop.scala:50:24
+  reg [11:0] _R0_addr_d0;	// src/main/scala/soc/SoCTop.scala:50:24
+  always @(posedge R0_clk) begin	// src/main/scala/soc/SoCTop.scala:50:24
+    _R0_en_d0 <= R0_en;	// src/main/scala/soc/SoCTop.scala:50:24
+    _R0_addr_d0 <= R0_addr;	// src/main/scala/soc/SoCTop.scala:50:24
   end // always @(posedge)
-  always @(posedge W0_clk) begin	// \\src\\main\\scala\\soc\\SoCTop.scala:44:24
-    if (W0_en & W0_mask[0])	// \\src\\main\\scala\\soc\\SoCTop.scala:44:24
-      Memory[W0_addr][32'h0 +: 8] <= W0_data[7:0];	// \\src\\main\\scala\\soc\\SoCTop.scala:44:24
-    if (W0_en & W0_mask[1])	// \\src\\main\\scala\\soc\\SoCTop.scala:44:24
-      Memory[W0_addr][32'h8 +: 8] <= W0_data[15:8];	// \\src\\main\\scala\\soc\\SoCTop.scala:44:24
-    if (W0_en & W0_mask[2])	// \\src\\main\\scala\\soc\\SoCTop.scala:44:24
-      Memory[W0_addr][32'h10 +: 8] <= W0_data[23:16];	// \\src\\main\\scala\\soc\\SoCTop.scala:44:24
-    if (W0_en & W0_mask[3])	// \\src\\main\\scala\\soc\\SoCTop.scala:44:24
-      Memory[W0_addr][32'h18 +: 8] <= W0_data[31:24];	// \\src\\main\\scala\\soc\\SoCTop.scala:44:24
+  always @(posedge W0_clk) begin	// src/main/scala/soc/SoCTop.scala:50:24
+    if (W0_en & W0_mask[0])	// src/main/scala/soc/SoCTop.scala:50:24
+      Memory[W0_addr][32'h0 +: 8] <= W0_data[7:0];	// src/main/scala/soc/SoCTop.scala:50:24
+    if (W0_en & W0_mask[1])	// src/main/scala/soc/SoCTop.scala:50:24
+      Memory[W0_addr][32'h8 +: 8] <= W0_data[15:8];	// src/main/scala/soc/SoCTop.scala:50:24
+    if (W0_en & W0_mask[2])	// src/main/scala/soc/SoCTop.scala:50:24
+      Memory[W0_addr][32'h10 +: 8] <= W0_data[23:16];	// src/main/scala/soc/SoCTop.scala:50:24
+    if (W0_en & W0_mask[3])	// src/main/scala/soc/SoCTop.scala:50:24
+      Memory[W0_addr][32'h18 +: 8] <= W0_data[31:24];	// src/main/scala/soc/SoCTop.scala:50:24
   end // always @(posedge)
-  `ifdef ENABLE_INITIAL_MEM_	// \\src\\main\\scala\\soc\\SoCTop.scala:44:24
-    `ifdef RANDOMIZE_REG_INIT	// \\src\\main\\scala\\soc\\SoCTop.scala:44:24
-      reg [31:0] _RANDOM;	// \\src\\main\\scala\\soc\\SoCTop.scala:44:24
+  `ifdef ENABLE_INITIAL_MEM_	// src/main/scala/soc/SoCTop.scala:50:24
+    `ifdef RANDOMIZE_REG_INIT	// src/main/scala/soc/SoCTop.scala:50:24
+      reg [31:0] _RANDOM;	// src/main/scala/soc/SoCTop.scala:50:24
     `endif // RANDOMIZE_REG_INIT
-    reg [31:0] _RANDOM_MEM;	// \\src\\main\\scala\\soc\\SoCTop.scala:44:24
-    initial begin	// \\src\\main\\scala\\soc\\SoCTop.scala:44:24
-      `INIT_RANDOM_PROLOG_	// \\src\\main\\scala\\soc\\SoCTop.scala:44:24
-      `ifdef RANDOMIZE_MEM_INIT	// \\src\\main\\scala\\soc\\SoCTop.scala:44:24
+    reg [31:0] _RANDOM_MEM;	// src/main/scala/soc/SoCTop.scala:50:24
+    initial begin	// src/main/scala/soc/SoCTop.scala:50:24
+      `INIT_RANDOM_PROLOG_	// src/main/scala/soc/SoCTop.scala:50:24
+      `ifdef RANDOMIZE_MEM_INIT	// src/main/scala/soc/SoCTop.scala:50:24
         for (logic [12:0] i = 13'h0; i < 13'h1000; i += 13'h1) begin
-          _RANDOM_MEM = `RANDOM;	// \\src\\main\\scala\\soc\\SoCTop.scala:44:24
-          Memory[i[11:0]] = _RANDOM_MEM;	// \\src\\main\\scala\\soc\\SoCTop.scala:44:24
-        end	// \\src\\main\\scala\\soc\\SoCTop.scala:44:24
+          _RANDOM_MEM = `RANDOM;	// src/main/scala/soc/SoCTop.scala:50:24
+          Memory[i[11:0]] = _RANDOM_MEM;	// src/main/scala/soc/SoCTop.scala:50:24
+        end	// src/main/scala/soc/SoCTop.scala:50:24
       `endif // RANDOMIZE_MEM_INIT
-      `ifdef RANDOMIZE_REG_INIT	// \\src\\main\\scala\\soc\\SoCTop.scala:44:24
-        _RANDOM = {`RANDOM};	// \\src\\main\\scala\\soc\\SoCTop.scala:44:24
-        _R0_en_d0 = _RANDOM[0];	// \\src\\main\\scala\\soc\\SoCTop.scala:44:24
-        _R0_addr_d0 = _RANDOM[12:1];	// \\src\\main\\scala\\soc\\SoCTop.scala:44:24
+      `ifdef RANDOMIZE_REG_INIT	// src/main/scala/soc/SoCTop.scala:50:24
+        _RANDOM = {`RANDOM};	// src/main/scala/soc/SoCTop.scala:50:24
+        _R0_en_d0 = _RANDOM[0];	// src/main/scala/soc/SoCTop.scala:50:24
+        _R0_addr_d0 = _RANDOM[12:1];	// src/main/scala/soc/SoCTop.scala:50:24
       `endif // RANDOMIZE_REG_INIT
     end // initial
   `endif // ENABLE_INITIAL_MEM_
-  assign R0_data = _R0_en_d0 ? Memory[_R0_addr_d0] : 32'bx;	// \\src\\main\\scala\\soc\\SoCTop.scala:44:24
+  assign R0_data = _R0_en_d0 ? Memory[_R0_addr_d0] : 32'bx;	// src/main/scala/soc/SoCTop.scala:50:24
 endmodule
 
-module SoCTop(	// \\src\\main\\scala\\soc\\SoCTop.scala:7:7
-  input         clock,	// <stdin>:844:11
-                reset,	// <stdin>:845:11
-  output        io_uartTx,	// \\src\\main\\scala\\soc\\SoCTop.scala:8:14
-  input         io_uartRx,	// \\src\\main\\scala\\soc\\SoCTop.scala:8:14
-  output [7:0]  io_leds,	// \\src\\main\\scala\\soc\\SoCTop.scala:8:14
-  input  [4:0]  io_buttons,	// \\src\\main\\scala\\soc\\SoCTop.scala:8:14
-  input         io_videoPixelClk,	// \\src\\main\\scala\\soc\\SoCTop.scala:8:14
-  output        io_videoHsync,	// \\src\\main\\scala\\soc\\SoCTop.scala:8:14
-                io_videoVsync,	// \\src\\main\\scala\\soc\\SoCTop.scala:8:14
-                io_videoVde,	// \\src\\main\\scala\\soc\\SoCTop.scala:8:14
-  output [23:0] io_videoRgb	// \\src\\main\\scala\\soc\\SoCTop.scala:8:14
+module SoCTop(	// src/main/scala/soc/SoCTop.scala:7:7
+  input         clock,	// <stdin>:894:11
+                reset,	// <stdin>:895:11
+  output        io_uartTx,	// src/main/scala/soc/SoCTop.scala:8:14
+  input         io_uartRx,	// src/main/scala/soc/SoCTop.scala:8:14
+  output [7:0]  io_leds,	// src/main/scala/soc/SoCTop.scala:8:14
+  input  [4:0]  io_buttons,	// src/main/scala/soc/SoCTop.scala:8:14
+  input         io_videoPixelClk,	// src/main/scala/soc/SoCTop.scala:8:14
+  output        io_videoHsync,	// src/main/scala/soc/SoCTop.scala:8:14
+                io_videoVsync,	// src/main/scala/soc/SoCTop.scala:8:14
+                io_videoVde,	// src/main/scala/soc/SoCTop.scala:8:14
+  output [23:0] io_videoRgb	// src/main/scala/soc/SoCTop.scala:8:14
 );
 
-  wire [31:0] _ram_ext_R0_data;	// \\src\\main\\scala\\soc\\SoCTop.scala:44:24
-  wire [31:0] _rom_ext_R0_data;	// \\src\\main\\scala\\soc\\SoCTop.scala:33:24
-  wire [31:0] _uart_io_readData;	// \\src\\main\\scala\\soc\\SoCTop.scala:28:20
-  wire [31:0] _gpio_io_readData;	// \\src\\main\\scala\\soc\\SoCTop.scala:27:20
-  wire [31:0] _cpu_io_instAddr;	// \\src\\main\\scala\\soc\\SoCTop.scala:26:20
-  wire [31:0] _cpu_io_memAddr;	// \\src\\main\\scala\\soc\\SoCTop.scala:26:20
-  wire [31:0] _cpu_io_memWriteData;	// \\src\\main\\scala\\soc\\SoCTop.scala:26:20
-  wire [3:0]  _cpu_io_memWriteMask;	// \\src\\main\\scala\\soc\\SoCTop.scala:26:20
-  wire        _cpu_io_memWriteEnable;	// \\src\\main\\scala\\soc\\SoCTop.scala:26:20
-  wire        _cpu_io_memReadEnable;	// \\src\\main\\scala\\soc\\SoCTop.scala:26:20
-  wire        isRam = (|(_cpu_io_memAddr[31:14])) & _cpu_io_memAddr < 32'h8000;	// \\src\\main\\scala\\soc\\SoCTop.scala:26:20, :51:{25,41,52}
-  wire        isGpio = _cpu_io_memAddr[31] & _cpu_io_memAddr < 32'h80000010;	// \\src\\main\\scala\\soc\\SoCTop.scala:26:20, :52:{25,42,53}
-  wire        isUart = _cpu_io_memAddr > 32'h8000000F & _cpu_io_memAddr < 32'h80000020;	// \\src\\main\\scala\\soc\\SoCTop.scala:26:20, :53:{25,42,53}
-  Core cpu (	// \\src\\main\\scala\\soc\\SoCTop.scala:26:20
+  wire [31:0] _ram_ext_R0_data;	// src/main/scala/soc/SoCTop.scala:50:24
+  wire [31:0] _rom_ext_R0_data;	// src/main/scala/soc/SoCTop.scala:36:24
+  wire [31:0] _rom_ext_R1_data;	// src/main/scala/soc/SoCTop.scala:36:24
+  wire [31:0] _uart_io_readData;	// src/main/scala/soc/SoCTop.scala:28:20
+  wire [31:0] _gpio_io_readData;	// src/main/scala/soc/SoCTop.scala:27:20
+  wire [31:0] _cpu_io_instAddr;	// src/main/scala/soc/SoCTop.scala:26:20
+  wire [31:0] _cpu_io_memAddr;	// src/main/scala/soc/SoCTop.scala:26:20
+  wire [31:0] _cpu_io_memWriteData;	// src/main/scala/soc/SoCTop.scala:26:20
+  wire [3:0]  _cpu_io_memWriteMask;	// src/main/scala/soc/SoCTop.scala:26:20
+  wire        _cpu_io_memWriteEnable;	// src/main/scala/soc/SoCTop.scala:26:20
+  wire        _cpu_io_memReadEnable;	// src/main/scala/soc/SoCTop.scala:26:20
+  wire        isRom = _cpu_io_memAddr < 32'h4000;	// src/main/scala/soc/SoCTop.scala:26:20, :57:25
+  wire        isRam = (|(_cpu_io_memAddr[31:14])) & _cpu_io_memAddr < 32'h8000;	// src/main/scala/soc/SoCTop.scala:26:20, :58:{25,41,52}
+  wire        isGpio = _cpu_io_memAddr[31] & _cpu_io_memAddr < 32'h80000010;	// src/main/scala/soc/SoCTop.scala:26:20, :59:{25,42,53}
+  wire        isUart = _cpu_io_memAddr > 32'h8000000F & _cpu_io_memAddr < 32'h80000020;	// src/main/scala/soc/SoCTop.scala:26:20, :60:{25,42,53}
+  Core cpu (	// src/main/scala/soc/SoCTop.scala:26:20
     .clock             (clock),
     .reset             (reset),
     .io_instAddr       (_cpu_io_instAddr),
-    .io_inst           (_rom_ext_R0_data),	// \\src\\main\\scala\\soc\\SoCTop.scala:33:24
+    .io_inst           (_rom_ext_R1_data),	// src/main/scala/soc/SoCTop.scala:36:24
     .io_memAddr        (_cpu_io_memAddr),
     .io_memWriteData   (_cpu_io_memWriteData),
     .io_memWriteMask   (_cpu_io_memWriteMask),
     .io_memReadData
       (isRam
          ? _ram_ext_R0_data
-         : isGpio ? _gpio_io_readData : isUart ? _uart_io_readData : 32'h0),	// \\src\\main\\scala\\soc\\SoCTop.scala:27:20, :28:20, :44:24, :51:41, :52:42, :53:42, :102:28, :103:30, :104:32
+         : isRom
+             ? _rom_ext_R0_data
+             : isGpio ? _gpio_io_readData : isUart ? _uart_io_readData : 32'h0),	// src/main/scala/soc/SoCTop.scala:27:20, :28:20, :36:24, :50:24, :57:25, :58:41, :59:42, :60:42, :116:28, :117:30, :118:32, :119:34
     .io_memWriteEnable (_cpu_io_memWriteEnable),
     .io_memReadEnable  (_cpu_io_memReadEnable)
   );
-  GpioController gpio (	// \\src\\main\\scala\\soc\\SoCTop.scala:27:20
+  GpioController gpio (	// src/main/scala/soc/SoCTop.scala:27:20
     .clock          (clock),
     .reset          (reset),
-    .io_addr        (_cpu_io_memAddr),	// \\src\\main\\scala\\soc\\SoCTop.scala:26:20
-    .io_writeData   (_cpu_io_memWriteData),	// \\src\\main\\scala\\soc\\SoCTop.scala:26:20
-    .io_writeEnable (_cpu_io_memWriteEnable & isGpio),	// \\src\\main\\scala\\soc\\SoCTop.scala:26:20, :52:42, :75:48
-    .io_readEnable  (_cpu_io_memReadEnable & isGpio),	// \\src\\main\\scala\\soc\\SoCTop.scala:26:20, :52:42, :76:47
+    .io_addr        (_cpu_io_memAddr),	// src/main/scala/soc/SoCTop.scala:26:20
+    .io_writeData   (_cpu_io_memWriteData),	// src/main/scala/soc/SoCTop.scala:26:20
+    .io_writeEnable (_cpu_io_memWriteEnable & isGpio),	// src/main/scala/soc/SoCTop.scala:26:20, :59:42, :88:48
+    .io_readEnable  (_cpu_io_memReadEnable & isGpio),	// src/main/scala/soc/SoCTop.scala:26:20, :59:42, :89:47
     .io_readData    (_gpio_io_readData),
     .io_leds        (io_leds),
     .io_buttons     (io_buttons)
   );
-  UartController uart (	// \\src\\main\\scala\\soc\\SoCTop.scala:28:20
+  UartController uart (	// src/main/scala/soc/SoCTop.scala:28:20
     .clock          (clock),
     .reset          (reset),
-    .io_addr        (_cpu_io_memAddr),	// \\src\\main\\scala\\soc\\SoCTop.scala:26:20
-    .io_writeData   (_cpu_io_memWriteData),	// \\src\\main\\scala\\soc\\SoCTop.scala:26:20
-    .io_writeEnable (_cpu_io_memWriteEnable & isUart),	// \\src\\main\\scala\\soc\\SoCTop.scala:26:20, :53:42, :83:48
-    .io_readEnable  (_cpu_io_memReadEnable & isUart),	// \\src\\main\\scala\\soc\\SoCTop.scala:26:20, :53:42, :84:47
+    .io_addr        (_cpu_io_memAddr),	// src/main/scala/soc/SoCTop.scala:26:20
+    .io_writeData   (_cpu_io_memWriteData),	// src/main/scala/soc/SoCTop.scala:26:20
+    .io_writeEnable (_cpu_io_memWriteEnable & isUart),	// src/main/scala/soc/SoCTop.scala:26:20, :60:42, :96:48
+    .io_readEnable  (_cpu_io_memReadEnable & isUart),	// src/main/scala/soc/SoCTop.scala:26:20, :60:42, :97:47
     .io_readData    (_uart_io_readData),
     .io_tx          (io_uartTx),
     .io_rx          (io_uartRx)
   );
-  HdmiController hdmi (	// \\src\\main\\scala\\soc\\SoCTop.scala:29:20
+  HdmiController hdmi (	// src/main/scala/soc/SoCTop.scala:29:20
     .clock          (clock),
     .reset          (reset),
-    .io_addr        (_cpu_io_memAddr),	// \\src\\main\\scala\\soc\\SoCTop.scala:26:20
-    .io_writeData   (_cpu_io_memWriteData),	// \\src\\main\\scala\\soc\\SoCTop.scala:26:20
+    .io_addr        (_cpu_io_memAddr),	// src/main/scala/soc/SoCTop.scala:26:20
+    .io_writeData   (_cpu_io_memWriteData),	// src/main/scala/soc/SoCTop.scala:26:20
     .io_writeEnable
       (_cpu_io_memWriteEnable & _cpu_io_memAddr > 32'h8FFFFFFF
-       & _cpu_io_memAddr < 32'h90012C00),	// \\src\\main\\scala\\soc\\SoCTop.scala:26:20, :54:{25,53}, :91:48
+       & _cpu_io_memAddr < 32'h90012C00),	// src/main/scala/soc/SoCTop.scala:26:20, :61:{25,53}, :104:48
+    .io_writeMask   (_cpu_io_memWriteMask),	// src/main/scala/soc/SoCTop.scala:26:20
     .io_pixelClk    (io_videoPixelClk),
     .io_hsync       (io_videoHsync),
     .io_vsync       (io_videoVsync),
     .io_vde         (io_videoVde),
     .io_rgb         (io_videoRgb)
   );
-  rom_4096x32 rom_ext (	// \\src\\main\\scala\\soc\\SoCTop.scala:33:24
-    .R0_addr (_cpu_io_instAddr[13:2]),	// \\src\\main\\scala\\soc\\SoCTop.scala:26:20, :39:38
-    .R0_en   (1'h1),	// \\src\\main\\scala\\soc\\SoCTop.scala:7:7
+  rom_4096x32 rom_ext (	// src/main/scala/soc/SoCTop.scala:36:24
+    .R0_addr (_cpu_io_memAddr[13:2]),	// src/main/scala/soc/SoCTop.scala:26:20, :64:28
+    .R0_en   (_cpu_io_memReadEnable & isRom),	// src/main/scala/soc/SoCTop.scala:26:20, :57:25, :83:67
     .R0_clk  (clock),
-    .R0_data (_rom_ext_R0_data)
+    .R0_data (_rom_ext_R0_data),
+    .R1_addr (_cpu_io_instAddr[13:2]),	// src/main/scala/soc/SoCTop.scala:26:20, :45:38
+    .R1_en   (1'h1),	// src/main/scala/soc/SoCTop.scala:7:7
+    .R1_clk  (clock),
+    .R1_data (_rom_ext_R1_data)
   );
-  ram_4096x32 ram_ext (	// \\src\\main\\scala\\soc\\SoCTop.scala:44:24
-    .R0_addr (_cpu_io_memAddr[13:2]),	// \\src\\main\\scala\\soc\\SoCTop.scala:26:20, :57:28
-    .R0_en   (_cpu_io_memReadEnable & isRam),	// \\src\\main\\scala\\soc\\SoCTop.scala:26:20, :51:41, :69:67
+  ram_4096x32 ram_ext (	// src/main/scala/soc/SoCTop.scala:50:24
+    .R0_addr (_cpu_io_memAddr[13:2]),	// src/main/scala/soc/SoCTop.scala:26:20, :64:28
+    .R0_en   (_cpu_io_memReadEnable & isRam),	// src/main/scala/soc/SoCTop.scala:26:20, :58:41, :76:67
     .R0_clk  (clock),
     .R0_data (_ram_ext_R0_data),
-    .W0_addr (_cpu_io_memAddr[13:2]),	// \\src\\main\\scala\\soc\\SoCTop.scala:26:20, :57:28
-    .W0_en   (_cpu_io_memWriteEnable & isRam),	// \\src\\main\\scala\\soc\\SoCTop.scala:26:20, :51:41, :65:30
+    .W0_addr (_cpu_io_memAddr[13:2]),	// src/main/scala/soc/SoCTop.scala:26:20, :64:28
+    .W0_en   (_cpu_io_memWriteEnable & isRam),	// src/main/scala/soc/SoCTop.scala:26:20, :58:41, :72:30
     .W0_clk  (clock),
-    .W0_data (_cpu_io_memWriteData),	// \\src\\main\\scala\\soc\\SoCTop.scala:26:20
-    .W0_mask (_cpu_io_memWriteMask)	// \\src\\main\\scala\\soc\\SoCTop.scala:26:20
+    .W0_data (_cpu_io_memWriteData),	// src/main/scala/soc/SoCTop.scala:26:20
+    .W0_mask (_cpu_io_memWriteMask)	// src/main/scala/soc/SoCTop.scala:26:20
   );
 endmodule
 
-
-// ----- 8< ----- FILE "rom_4096x32_init.sv" ----- 8< -----
-
-// Generated by CIRCT firtool-1.62.0
-module rom_4096x32_init();	// \\src\\main\\scala\\soc\\SoCTop.scala:33:24
-  initial	// \\src\\main\\scala\\soc\\SoCTop.scala:33:24
-    $readmemh("program.hex", rom_4096x32.Memory);	// \\src\\main\\scala\\soc\\SoCTop.scala:33:24
-endmodule
-
-bind rom_4096x32 rom_4096x32_init rom_4096x32_init ();

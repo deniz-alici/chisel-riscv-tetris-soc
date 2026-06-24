@@ -36,3 +36,15 @@ sw/*.bin
 # OS files
 .DS_Store
 Thumbs.db
+
+# Build/diagnostic logs ve gecici cikti (Claude debug oturumu)
+build_*.txt
+program_log.txt
+uart_*.txt
+*.bak
+*.bak_*
+generated/*_real.v.bak
+
+# Verilator tam-sistem simulasyonu - derleme ciktisi
+sim_soc/obj_dir/
+sim_soc/program.hex

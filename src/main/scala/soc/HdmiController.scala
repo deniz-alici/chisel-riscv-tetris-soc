@@ -10,6 +10,7 @@ class HdmiController extends Module {
     val addr        = Input(UInt(32.W))
     val writeData   = Input(UInt(32.W))
     val writeEnable = Input(Bool())
+    val writeMask   = Input(UInt(4.W))   // CPU byte-yazma maskesi (SB hizalaması için)
     
     // Video Çıkış Sinyalleri (VGA Seviyesinde, Dışarıda HDMI IP'sine bağlanacak)
     val pixelClk    = Input(Clock())     // 25 MHz Piksel Saati
@@ -29,10 +30,23 @@ class HdmiController extends Module {
   // 0x90000000 ile 0x90012BFF arası adresler (76800 bayt)
   // Scala'nın taşıma hatası yapmaması için Long tipi (L) kullanıyoruz
   val isFbAddr = io.addr >= 0x90000000L.U && io.addr < 0x90012C00L.U
-  val writeAddr = io.addr - 0x90000000L.U
 
-  when(io.writeEnable && isFbAddr) {
-    fbMem.write(writeAddr, io.writeData(7, 0))
+  // io.addr CPU tarafından word-hizalı gelir (alt 2 bit sıfırlanmış). Çekirdek SB
+  // komutunda hedef baytı ilgili şeride kaydırır ve writeMask'i one-hot yapar
+  // (örn. adres ...01 -> mask=0010, veri [15:8]). Framebuffer byte-adresli olduğu
+  // için gerçek piksel adresini ve yazılacak baytı maskeden yeniden kuruyoruz.
+  val wordOffset = io.addr - 0x90000000L.U          // word-hizalı byte ofseti
+  val laneOffset = OHToUInt(io.writeMask)            // aktif şerit indeksi: 0,1,2,3
+  val writeAddr  = wordOffset + laneOffset           // gerçek piksel byte adresi
+  val writeByte  = Mux1H(io.writeMask, Seq(          // maskenin gösterdiği baytı seç
+    io.writeData( 7,  0),
+    io.writeData(15,  8),
+    io.writeData(23, 16),
+    io.writeData(31, 24)
+  ))
+
+  when(io.writeEnable && isFbAddr && io.writeMask.orR) {
+    fbMem.write(writeAddr, writeByte)
   }
 
   // ==========================================
