@@ -45,6 +45,11 @@ unsigned char old_board[BOARD_ROWS][BOARD_COLS] = {0};
 
 int current_type = 0, current_rotation = 0, current_x = 3, current_y = 0;
 int old_x = -1, old_y = -1, old_rotation = -1, old_type = -1;
+// Onceki parca cizildi mi? Eskiden bunun yerine "old_x == -1" sentineli
+// kullaniliyordu; ancak dikey I-parcasi sol kenara dayaninca current_x
+// gercekten -1 (hatta -2) olabildiginden eski pozisyon silinemiyor ve
+// sutun boyunca hayalet iz kaliyordu. Ayri bir bayrak bu cakismayi onler.
+int old_valid = 0;
 int next_type = 0;
 
 int score = 0, lines_cleared = 0;
@@ -244,7 +249,7 @@ void redraw_game(int force_all) {
         for(int r=0; r<BOARD_ROWS; r++) for(int c=0; c<BOARD_COLS; c++) old_board[r][c] = 99;
     }
 
-    if (old_x != -1 && (old_x != current_x || old_y != current_y || old_rotation != current_rotation || old_type != current_type)) {
+    if (old_valid && (old_x != current_x || old_y != current_y || old_rotation != current_rotation || old_type != current_type)) {
         unsigned short shape = tetrominoes[old_type][old_rotation];
         for (int r = 0; r < 4; r++) {
             for (int c = 0; c < 4; c++) {
@@ -277,6 +282,7 @@ void redraw_game(int force_all) {
     }
 
     old_x = current_x; old_y = current_y; old_rotation = current_rotation; old_type = current_type;
+    old_valid = 1;
     draw_info_panel(force_all);
 }
 
@@ -340,7 +346,7 @@ void spawn_new_tetromino() {
     current_type = next_type;
     next_type = rand_tetromino();
     current_rotation = 0; current_x = 3; current_y = 0;
-    old_x = -1; 
+    old_valid = 0; // yeni parca: silinecek onceki pozisyon yok
 }
 
 void reset_game() {
