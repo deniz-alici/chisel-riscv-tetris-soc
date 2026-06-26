@@ -976,7 +976,7 @@ module rom_4096x32(	// src/main/scala/soc/SoCTop.scala:36:24
     `endif // RANDOMIZE_REG_INIT
     reg [31:0] _RANDOM_MEM;	// src/main/scala/soc/SoCTop.scala:36:24
     initial begin	// src/main/scala/soc/SoCTop.scala:36:24
-      $readmemh("program.hex", Memory);	// src/main/scala/soc/SoCTop.scala:36:24
+      $readmemh("C:/Users/deniz/OneDrive/Masaüstü/tübitak_uzay/chisel/chisel-riscv-tetris-soc/sw/program.hex", Memory);	// src/main/scala/soc/SoCTop.scala:36:24
       `INIT_RANDOM_PROLOG_	// src/main/scala/soc/SoCTop.scala:36:24
       `ifdef RANDOMIZE_MEM_INIT	// src/main/scala/soc/SoCTop.scala:36:24
         for (logic [12:0] i = 13'h0; i < 13'h1000; i += 13'h1) begin
