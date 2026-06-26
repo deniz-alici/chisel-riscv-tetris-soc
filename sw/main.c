@@ -19,6 +19,13 @@
 #define INFO_X         185
 #define INFO_Y         30
 
+// Mekanik tus sekmesini (button bounce) filtrelemek icin gereken ardisik
+// kararli okuma sayisi. delay() ana donguden cikarildigi icin dongu ~50MHz'de
+// cok hizli doner; bos dongu basina birkac us dustugunden bu deger birkac ms'lik
+// sekme penceresini kapatacak sekilde secildi. Donanimda tus hala "cift"
+// algilaniyorsa artir, "yapiskan/gec" algilaniyorsa azalt.
+#define DEBOUNCE_STABLE 4000
+
 const unsigned char tetromino_colors[8] = {
     COLOR_BLACK, 0x1F, 0xFC, 0xE3, 0x1C, 0xE0, 0x03, 0xFF
 };
@@ -88,6 +95,9 @@ void fill_rect(int x, int y, int w, int h, unsigned char color) {
 }
 
 void draw_board_block(int col, int row, unsigned char color) {
+    // Sinir kontrolu: tahta disina cizim yapma. Hizli/sekmeli girislerde
+    // olusabilen hayalet blok (ghost) ve artifact'lari onler.
+    if (col < 0 || col >= BOARD_COLS || row < 0 || row >= BOARD_ROWS) return;
     int sx = BOARD_X_OFFSET + col * BLOCK_SIZE;
     int sy = BOARD_Y_OFFSET + row * BLOCK_SIZE;
     for (int y = 0; y < BLOCK_SIZE; y++) {
@@ -290,9 +300,11 @@ void place_tetromino() {
         for (int c = 0; c < 4; c++) {
             if (shape & (1 << (15 - (r * 4 + c)))) {
                 int bx = current_x + c; int by = current_y + r;
-                if (by >= 0 && by < BOARD_ROWS) {
+                // Hem satir hem sutun sinir kontrolu: sinir-disi bx, board[]
+                // dizisine tasma yazimina (bellek bozulmasi) yol acabilirdi.
+                if (bx >= 0 && bx < BOARD_COLS && by >= 0 && by < BOARD_ROWS) {
                     board[by][bx] = current_type + 1;
-                    old_board[by][bx] = 99; 
+                    old_board[by][bx] = 99;
                 }
             }
         }
@@ -347,13 +359,35 @@ int main() {
 
     unsigned int last_btn = 0;
     unsigned int drop_timer = 0;
-    
+
+    // --- Yazilim debounce durumu (mekanik tus sekmesi filtreleme) ---
+    // Ham buton degeri DEBOUNCE_STABLE ardisik dongu boyunca ayni kalmadikca
+    // kabul edilmez; kenar algilama (pressed) yalnizca kararli durum uzerinden
+    // uretilir. Boylece tek bir fiziksel basis tek bir olay olarak islenir.
+    unsigned int stable_btn   = 0;   // kabul edilmis (debounce'lanmis) durum
+    unsigned int candidate    = 0;   // son ham okuma adayi
+    unsigned int stable_count = 0;   // adayin ardisik kararli okuma sayisi
+
     // Oyun hizini arttirdik (350000 -> 180000)
-    unsigned int drop_speed = 180000; 
+    unsigned int drop_speed = 180000;
 
     while (1) {
-        unsigned int btn = *GPIO_BTNS;
-        *GPIO_LEDS = btn; 
+        unsigned int raw = *GPIO_BTNS;
+        *GPIO_LEDS = raw;
+
+        // Ham deger degisirse sayaci sifirla; ayni kaldikca say. Esik asilinca
+        // yeni durumu kararli kabul et (sekme suresince esik tekrar tekrar sifirlanir).
+        if (raw != candidate) {
+            candidate = raw;
+            stable_count = 0;
+        } else if (stable_count < DEBOUNCE_STABLE) {
+            stable_count++;
+            if (stable_count == DEBOUNCE_STABLE) {
+                stable_btn = candidate;
+            }
+        }
+
+        unsigned int btn = stable_btn;
         unsigned int pressed = btn & ~last_btn;
         last_btn = btn;
 
